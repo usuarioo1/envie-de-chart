@@ -1,0 +1,99 @@
+{
+    "title": "Chant maman-bébé. Envie de chanter avec bébé",
+    "subtitle": "Pour enfant de 0 à 3 ans accompagné d'un adulte.",
+    "description": [
+        "Le chant est un moyen privilégié de communication avec l'enfant.",
+        "Chaque séance comporte un temps d'éveil vocal pour les adultes, puis des chansons et des comptines variées pour le plaisir et l'épanouissement des petits."
+    ],
+    "formation": {
+        "title": "Formation chant et petite enfance 2026",
+        "contact": {
+            "email": "marielaurepotel@orange.fr",
+            "phone": "01 64 40 94 23"
+        },
+        "documents": [
+            "Téléchargez le programme",
+            "Réservez en ligne",
+            "Brochure des formations 2025-26"
+        ],
+        "note": "Contactez moi pour créer un stage à la demande pour intervenir auprès d'un groupe constitué en tout lieu."
+    },
+    "rencontre": {
+        "title": "Journée de rencontre professionnelle : chant et petite enfance",
+        "date": "septembre 2026",
+        "document": "Document"
+    },
+    "ateliers": [
+        {
+            "title": "Atelier collectif de chant postnatal en visio",
+            "schedule": "le vendredi à 10h",
+            "nextSession": "Prochaine séance vendredi",
+            "tarif": "10€ par enfant",
+            "duration": "1 heure",
+            "registration": "Inscrivez-vous, un lien vous sera envoyé dans l'heure qui précède la séance."
+        },
+        {
+            "title": "Paris 11ème",
+            "schedule": "le jeudi à 9h30",
+            "location": {
+                "address": "1, rue Crespin du Gast 75011 Paris",
+                "metro": "Ménilmontant ou Rue Saint Maur"
+            },
+            "tarif": "10€ par enfant",
+            "duration": "1 heure",
+            "documents": [
+                "Téléchargez le document"
+            ],
+            "contact": {
+                "name": "Marie-Laure",
+                "phone": "01 64 40 94 23",
+                "email": "marielaurepotel@orange.fr"
+            }
+        },
+        {
+            "title": "Paris 12ème",
+            "schedule": "un samedi par mois à 10h et à 11h",
+            "location": {
+                "venue": "Au Creux de l'Oreille",
+                "details": "Centre Social Charenton de la CAF",
+                "address": "295, rue de Charenton 75012 Paris"
+            },
+            "registration": "Info et inscription"
+        }
+    ],
+    "serviceIndividuel": {
+        "title": "Masser bébé en chantant en individuel sur RV",
+        "description": "Le massage et le chant s'associent pour un temps de communication tendre et joyeuse.",
+        "locations": [
+            {
+                "address": "61 avenue de la République 77680 Roissy en Brie"
+            },
+            {
+                "venue": "Studio l'Accord Parfait",
+                "address": "4 rue Cavallotti 75018 Paris",
+                "metro": "Place de Clichy"
+            },
+            {
+                "address": "47 rue Ramey",
+                "metro": "Chateau Rouge"
+            }
+        ],
+        "documents": [
+            "Flyer"
+        ],
+        "contact": {
+            "name": "Marie-Laure",
+            "phone": "01 64 40 94 23",
+            "email": "marielaurepotel@orange.fr"
+        }
+    },
+    "informationGenerale": {
+        "note": "Pour connaître les horaires, les tarifs et les lieux, contactez directement l'animatrice la plus proche de vous.",
+        "partenaire": "Je donne également des ateliers avec Au creux de l'oreille"
+    },
+    "socialMedia": {
+        "facebook": "Chant prénatal / Envie-de-chanter",
+        "instagram": "enviedechanter_chant_prenatal",
+        "linkedin": "Marie-Laure Potel"
+    }
+}

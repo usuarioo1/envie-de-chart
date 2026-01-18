@@ -1,0 +1,198 @@
+{
+    "meta": {
+        "title": "Agenda des prochains ateliers",
+        "organisation": "Envie-de-chanter / Marie-Laure Potel"
+    },
+    "media": [
+        {
+            "title": "Chronique France Musique – Faites passer",
+            "type": "radio",
+            "description": "Ré-écouter la chronique de Nathalie Moller sur le chant prénatal.",
+            "action": "ré-écouter",
+            "linkLabel": "Retrouvez la ici"
+        }
+    ],
+    "contactGeneral": {
+        "organisation": "Chant prénatal / Envie-de-chanter",
+        "instagram": "enviedechanter_chant_prenatal",
+        "contact": {
+            "name": "Marie-Laure Potel",
+            "email": "marielaurepotel@orange.fr",
+            "phone": "01 64 40 94 23"
+        }
+    },
+    "cours": [
+        {
+            "title": "Cours individuels en visioconférence",
+            "type": "cours-individuel",
+            "mode": "visioconférence",
+            "appointment": "Sur RV",
+            "contact": {
+                "phone": "01 64 40 94 23",
+                "email": "marielaurepotel@orange.fr"
+            }
+        }
+    ],
+    "agenda": [
+        {
+            "day": "Mercredi",
+            "title": "Chant prénatal en ligne",
+            "date": "17 décembre",
+            "note": "Dernière avant les fêtes",
+            "mode": "en ligne",
+            "inscription": "Inscription ici",
+            "info": "Un lien vous sera envoyé dans l’heure qui précède l’atelier"
+        },
+        {
+            "day": "Jeudi",
+            "title": "Atelier chant maman-bébé / Envie de chanter avec bébé ?",
+            "date": "18 décembre",
+            "time": "09h30",
+            "location": {
+                "address": "1 rue Crespin du Gast",
+                "postalCode": "75011",
+                "city": "Paris",
+                "metro": "Ménilmontant"
+            },
+            "price": "10€ par enfant",
+            "duration": "1 heure",
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document"
+            ]
+        },
+        {
+            "day": "Jeudi",
+            "title": "Chant prénatal Paris 18ème",
+            "date": "18 décembre",
+            "time": "12h15",
+            "location": {
+                "place": "Studio l’Accord Parfait",
+                "address": "47 rue Ramey",
+                "postalCode": "75018",
+                "city": "Paris",
+                "metro": [
+                    "Château Rouge",
+                    "Marcadet Poissonniers",
+                    "Jules Joffrin"
+                ]
+            },
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document",
+                "réservation"
+            ]
+        },
+        {
+            "day": "Jeudi",
+            "title": "Atelier de chant collectif",
+            "date": "18 décembre",
+            "time": "14h15–15h45",
+            "price": "22€ la séance",
+            "location": {
+                "place": "Studio l’Accord Parfait",
+                "address": "47 rue Ramey",
+                "postalCode": "75018",
+                "city": "Paris"
+            },
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document",
+                "réservation"
+            ]
+        },
+        {
+            "day": "Vendredi",
+            "title": "Chant postnatal en ligne",
+            "time": "10h",
+            "mode": "en ligne",
+            "links": [
+                "document",
+                "inscription"
+            ],
+            "info": "Un lien vous sera envoyé dans l’heure qui précède l’atelier"
+        },
+        {
+            "day": "Samedi",
+            "title": "Atelier musique parent-bébé",
+            "time": [
+                "10h",
+                "11h"
+            ],
+            "location": {
+                "place": "Centre social Charenton",
+                "address": "295 Rue de Charenton",
+                "postalCode": "75012",
+                "city": "Paris"
+            },
+            "partner": "Au creux de l’oreille",
+            "link": "https://www.aucreuxdeloreille.com/ateliers-centres-sociaux-caf/",
+            "contact": {
+                "phone": "06 51 75 29 38"
+            }
+        },
+        {
+            "day": "Samedi",
+            "title": "Atelier de chant collectif à Roissy",
+            "date": "10 janvier",
+            "time": "14h30–16h",
+            "location": {
+                "address": "61 avenue de la République",
+                "postalCode": "77680",
+                "city": "Roissy en Brie"
+            },
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document",
+                "réservation"
+            ]
+        },
+        {
+            "title": "Introduction au Chant prénatal",
+            "date": "17 janvier 2026",
+            "time": "16h–18h30",
+            "mode": "En ligne",
+            "description": "L’occasion de découvrir le chant prénatal : pour les professionnels, les futurs parents et toute personne intéressée",
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document",
+                "inscription"
+            ]
+        },
+        {
+            "title": "Atelier : masser bébé en chantant",
+            "type": "atelier-individuel",
+            "mode": "Sur RV individuel",
+            "location": {
+                "place": "Studio l’Accord Parfait",
+                "address": "47 rue Ramey",
+                "postalCode": "75018",
+                "city": "Paris",
+                "metro": "Château Rouge"
+            },
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "programme",
+                "réservation"
+            ]
+        }
+    ]
+}

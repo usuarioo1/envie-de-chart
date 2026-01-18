@@ -1,0 +1,32 @@
+{
+    "region": "Canada",
+    "title": "Les animateurs de chant au Canada",
+    "description": "Contactez directement l'animatrice la plus proche de chez vous.",
+    "legend": {
+        "chantPrenatal": "Chant prénatal",
+        "chantMamanBebe": "Chant maman bébé",
+        "coursChant": "Cours de chant collectifs ou individuels"
+    },
+    "areas": [
+        {
+            "name": "Montréal",
+            "animateurs": [
+                {
+                    "name": "Karine MICHON",
+                    "phone": "514-916-9944",
+                    "email": "info@studiotrepunti.com",
+                    "organization": "Les Ateliers musicaux du Studio Tre Punti",
+                    "services": [
+                        "cours de chant prénatal",
+                        "ateliers de découverte musicale",
+                        "cours d'éveil musical",
+                        "cours de chant privés"
+                    ],
+                    "address": "4827, avenue Bannantyne – Montréal, Québec – Canada, H4G 1E8",
+                    "website": "www.studiotrepunti.com",
+                    "note": "Visitez le www.studiotrepunti.com pour connaître les autres lieux et les horaires. Possibilité de cours à domicile"
+                }
+            ]
+        }
+    ]
+}

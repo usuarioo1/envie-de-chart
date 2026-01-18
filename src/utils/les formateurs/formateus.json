@@ -1,0 +1,21 @@
+{
+    "intro": "Les formateurs",
+    "profiles": [
+        {
+            "name": "Marie-Laure Potel",
+            "description": "Musicienne de formation ( piano, voix et djembé ), a découvert la Psychophonie en 1984. Formée par Marie Louise Aucher et Guy Bourgois, elle a travaillé pendant 21 ans avec Chantal Verdière, sage-femme.\nPropose des ateliers de chant et des formations basés sur la psychophonie : chant prénatal, maman-bébé, adultes, chorales, ateliers de chant thérapeutique.\nFormatrice et professeur d'initiation musicale de Grandir en Musique selon les approches pédagogiques de Maria Montessori et de Marie Jaëll (pianiste).\n\nIntervient en structures : – CAMSP  (Centre d'Accueil Médico-Social Précoce – à Dammarie les Lys 77) – CPS Paris (Centre de Prévention du Suicide à Paris 20ème)."
+        },
+        {
+            "name": "Guy Bourgois",
+            "description": "Elève et accompagnateur de Marie-Louise Aucher pendant 13 ans, Guy Bourgois : pianiste et organiste. Orthophoniste et phoniatre, il a totalement intégré la psychophonie à son travail de rééducation. Installé à Bourbon L'archambault (03160) dans le département de l'Allier.\nIl nous a quitté le 8 octobre 2021."
+        },
+        {
+            "name": "Blandine Calais Germain",
+            "description": "Depuis 1980, le travail de Blandine Calais Germain vise à rendre l'anatomie accessible pour les personnes qui pratiquent le mouvement. Ce concept a pris forme dans deux grandes méthodes : Anatomie Pour le Mouvement® et Geste anatomique® Anatomie Pour le Mouvement® est une méthode d'enseignement de l'anatomie en lien constant avec le mouvement. Elle vient de nous quitter le 31 août 2025."
+        },
+        {
+            "name": "Arts Rencontres Echanges",
+            "description": "Arts Rencontres Echanges accompagne les associations culturelles et sociales."
+        }
+    ]
+}

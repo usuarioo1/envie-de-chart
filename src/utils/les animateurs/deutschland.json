@@ -1,0 +1,24 @@
+{
+    "region": "Deutschland",
+    "title": "Workshops Tönen und Singen für Schwangere (Babybauchsingen)",
+    "introduction": "Die Zeit der Schwangerschaft ist ein Moment, der ganz besonders zum Singen einlädt. Wenn wir singen, nehmen wir unseren Körper bewusster wahr und machen ihn \"stimmig\". Beim vorgeburtlichen Singen empfindet das Baby die Vibrationen der Stimmen seiner Eltern wie eine liebevolle Klangmassage. Nach der Geburt hat das Baby viel Freude daran, die im Mutterbauch schon erlebten Melodien wieder zu hören. Das Babybauchsingen enthält ebenfalls eine Vorbereitung für die Entbindung anhand einer Stimmarbeit mit bestimmten Tönen.",
+    "target": "Für alle werdenden Mütter ab dem 1. Schwangerschaftsmonat, Väter, Familienmitglieder, Freunde, Interessierte und Mütter mit Babys bis zu 5 Monaten nach der Geburt.",
+    "regions": [
+        {
+            "name": "BADEN-WÜRTTEMBERG",
+            "animateurs": [
+                {
+                    "name": "Sigrid HAAS",
+                    "address": "Charlottenstr. 26, 88045 Friedrichshafen",
+                    "mobile": "+49 1573 1573 395",
+                    "phone": "+49 7541 487 08 02",
+                    "email": "kontakt@stimmbereit.de",
+                    "websites": {
+                        "deutschland": "www.stimmbereit.de",
+                        "spanien": "www.sigridhaas.com"
+                    }
+                }
+            ]
+        }
+    ]
+}

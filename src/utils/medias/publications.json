@@ -1,0 +1,48 @@
+{
+    "title": "Publications",
+    "subtitle": "Découvrez nos ouvrages sur le chant et la psychophonie",
+    "books": [
+        {
+            "id": 1,
+            "title": "Envie de Chanter",
+            "subtitle": "Une nouvelle approche du chant",
+            "author": "Marie-Laure POTEL",
+            "description": [
+                "Ce livre est d'abord une invitation à revisiter la place du chant dans notre vie.",
+                "Pourquoi chanter ? Parce que chanter fait partie intégrante de la vie, chacun en a les compétences, qui peuvent toujours s'acquérir.",
+                "Comment chanter ? Le corps est un instrument de musique qu'il nous faut découvrir et maîtriser. La connaissance de son rôle dans le chant est essentielle pour bien chanter.",
+                "Le chant s'inscrit par ailleurs dans une démarche personnelle faisant intervenir des aspects psychologique, émotionnel ou relationnel, d'où la nécessité d'une pédagogie du chant adaptée à chacun."
+            ],
+            "about_author": "Marie-Laure Potel est musicienne de formation. Depuis 1983 – année où elle a découvert la psychophonie auprès de Marie-Louise Aucher et de Guy Bourgois –, elle n'a jamais cessé d'approfondir sa compréhension du phénomène vocal et plus largement de ses implications. Elle propose des formations et des ateliers de chant pour adultes curieux de découvrir leur potentiel vocal ainsi que des ateliers de chant prénatal et de chant parents-enfants. Une partie de son activité professionnelle est orientée vers des publics en difficulté ou le milieu du handicap.",
+            "conclusion": "Cette longue expérience auprès de publics variés lui permet aujourd'hui de proposer un ouvrage où votre envie de chanter va trouver des pistes pour se concrétiser.",
+            "details": {
+                "pages": 128,
+                "format": "14.00 x 22.00 cm",
+                "isbn": "978-2-36403-203-3",
+                "price": "10.00 €"
+            },
+            "order_link": "https://www.adverbum.fr/editions-desiris/marie-laure-potel/envie-de-chanter_bn15q7cid49z.html"
+        },
+        {
+            "id": 2,
+            "title": "Le Chant Prénatal",
+            "author": "Marie-Laure POTEL",
+            "tagline": "Attendre et accueillir son bébé en chantant, quelle belle idée !",
+            "description": [
+                "Le chant prénatal offre cette opportunité aux femmes enceintes et aux futurs papas !",
+                "Si le temps particulier de la grossesse donne l'occasion de découvrir ou d'affiner sa voix chantée, c'est aussi le moment de développer son répertoire personnel de chansons qui accompagneront l'enfant in utero, puis dans les mois suivants et ses premières années.",
+                "Partant de l'historique du chant prénatal, cet ouvrage en aborde tous les aspects, physiologiques, psychologiques et pratiques. Il en explique le pourquoi et le comment, à chaque étape de la grossesse. Les ateliers de chant prénatal proposent des exercices originaux basés sur la voix et la respiration qui permettent aux femmes enceintes de s'approprier pleinement leur grossesse et cet événement majeur et unique qu'est l'accouchement.",
+                "Le chant prénatal se développe depuis quarante ans : il est bon qu'un livre lui soit enfin consacré."
+            ],
+            "about_author": "Marie-Laure Potel est musicienne et s'est formée très tôt à la psychophonie et au chant prénatal. Elle anime des ateliers de chant prénatal dans des maternités et pour une association de musique, mais elle intervient aussi en centre thérapeutique et dans des formations professionnelles.",
+            "recommendation": "Recommandé par la revue \"L'Obstétrique\" en février 2012",
+            "details": {
+                "pages": 160,
+                "format": "14.00 x 22.00 cm",
+                "isbn": "978-2-915418-50-7",
+                "price": "14.90 €"
+            },
+            "order_link": "https://www.adverbum.fr/editions-desiris/marie-laure-potel/le-chant-prenatal-9782915418507_4kmkqb3942jw.html"
+        }
+    ]
+}

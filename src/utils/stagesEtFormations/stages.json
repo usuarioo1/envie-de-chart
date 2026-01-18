@@ -1,0 +1,69 @@
+{
+    "title": "Stages et formations",
+    "description": "Toutes ces formations peuvent être organisées à la demande et dans un lieu de votre choix. Elles sont toutes certifiées Qualiopi",
+    "requirement": "Pour cela, vous devez constituer un groupe d'au minimum 6 personnes.",
+    "formations": [
+        {
+            "id": 1,
+            "title": "Psychophonie 1er degré – Envie de chanter ?",
+            "subtitle": "Le corps instrument de musique",
+            "type": "Psychophonie"
+        },
+        {
+            "id": 2,
+            "title": "Psychophonie 2ème degré",
+            "type": "Psychophonie"
+        },
+        {
+            "id": 3,
+            "title": "Formation au chant prénatal",
+            "type": "Chant prénatal"
+        },
+        {
+            "id": 4,
+            "title": "Formation Chant et Petite Enfance",
+            "type": "Petite enfance"
+        },
+        {
+            "id": 5,
+            "title": "Pédagogie de la psychophonie",
+            "type": "Pédagogie"
+        },
+        {
+            "id": 6,
+            "title": "Stage djembé et chansons",
+            "type": "Musique"
+        },
+        {
+            "id": 7,
+            "title": "Le chant – la voix comme outils de gestion du stress",
+            "type": "Bien-être"
+        },
+        {
+            "id": 8,
+            "title": "Formation d'animateur en psychophonie",
+            "type": "Formation professionnelle"
+        },
+        {
+            "id": 9,
+            "title": "Le bestiaire phonétique",
+            "type": "Technique vocale"
+        },
+        {
+            "id": 10,
+            "title": "Les clochettes Montessori",
+            "type": "Pédagogie"
+        },
+        {
+            "id": 11,
+            "title": "Grandir en musique",
+            "type": "Petite enfance"
+        }
+    ],
+    "contact": {
+        "name": "Marie-Laure Potel",
+        "phone": "01 64 40 94 23",
+        "email": "marielaurepotel@orange.fr"
+    },
+    "certification": "Qualiopi"
+}

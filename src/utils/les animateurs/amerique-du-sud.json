@@ -1,0 +1,133 @@
+{
+    "region": "América del Sur / do Sul",
+    "title": "Animadores en América del Sur",
+    "introduction": {
+        "es": "La etapa del embarazo es un momento privilegiado para cantar. El canto permite afinar nuestra consciencia corporal. El canto prenatal permite a los padres bañar al bebe intrauterino con las vibraciones de sus voces. Despúes del nacimiento, el niño está encantado de volver a encontrarse con las melodías que había recibido en el vientre de su mamá. Estos talleres incluyen igualmente una preparación para el parto a través de un trabajo con sonidos específicos.",
+        "pt": "A gravidez é um tempo privilegiado para cantar. Este trabalho de voz através do corpo, propõe desenvolver (melhorar) a nossa consciência corporal. O canto pré-natal transmite ao bebé in utero as vibrações das vozes dos pais. Depois do nascimento o bebé rencontra com prazer as vozes dos pais e as melodias que ouvia quando estava na barriga da mãe."
+    },
+    "countries": [
+        {
+            "name": "Chile",
+            "animateurs": [
+                {
+                    "name": "Valentina FUENTES",
+                    "whatsapp": "+56 9 8159 8351",
+                    "socialMedia": {
+                        "facebook": "madrevoz",
+                        "instagram": "madrevoz"
+                    },
+                    "sessions": [
+                        {
+                            "location": "Valparaiso",
+                            "dates": "Julio-Agosto 2025"
+                        },
+                        {
+                            "location": "Concepción",
+                            "dates": "7 al 10 de Agosto",
+                            "module": "MÓDULO I",
+                            "organizer": "@piliquinterosm"
+                        },
+                        {
+                            "location": "Santiago",
+                            "dates": "31 de Julio al 3 de agosto",
+                            "module": "MÓDULO I",
+                            "organizer": "@parteria.natural"
+                        }
+                    ],
+                    "services": [
+                        "Sesiones de psicofonia y canto prenatal 2025"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Bolivia",
+            "animateurs": [
+                {
+                    "name": "Miriam Karina CERPA",
+                    "phone": "+591 72705196",
+                    "alternativePhones": [
+                        "591 4-4356108",
+                        "591 4-4 531263"
+                    ],
+                    "email": "vibracionvital@gmail.com",
+                    "address": "Heroes de Boqueron N 1615 y Max Paredes. Barrio San Pedro",
+                    "city": "Cochabamba",
+                    "nextFormation": "octubre de 2025"
+                },
+                {
+                    "name": "Ana Maria CENTELLAS",
+                    "phone": "+591 70686736",
+                    "emails": [
+                        "miskibrown@gmail.com",
+                        "ana_iron@yahoo.com",
+                        "guardianasdelaoxitocina@gmai.com"
+                    ],
+                    "address": "Av Montenegro 946",
+                    "city": "La Paz"
+                }
+            ]
+        },
+        {
+            "name": "Perú",
+            "animateurs": [
+                {
+                    "name": "Escuela de Musica Strauss",
+                    "phones": [
+                        "(+51) 948417040",
+                        "+51 980 294 483"
+                    ],
+                    "email": "infomk@emstrauss.com",
+                    "website": "emstrauss.com",
+                    "address": "Centro Español del Perú, Av.Salaverry 1910, Jesus Maria, Lima 15072",
+                    "nextFormation": "octubre de 2025"
+                }
+            ]
+        },
+        {
+            "name": "Brasil",
+            "nextFormation": "26 – 29 de julho 2025",
+            "contact": {
+                "name": "Lizz Miranda",
+                "phone": "+55 62 99946-0601"
+            },
+            "states": [
+                {
+                    "name": "Bahia",
+                    "animateurs": [
+                        {
+                            "name": "Ciça De OLIVEIRA",
+                            "phones": [
+                                "+55 (73) 9919 2243",
+                                "+55 (73) 99838 0218"
+                            ],
+                            "location": "Reserva Refúgio dos Anjos",
+                            "address": "Rod. Ilheús/Itacaré – km 59 – Itacaré",
+                            "facebook": "https://www.facebook.com/reservarefugiodosanjos/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Mato Grosso",
+                    "animateurs": [
+                        {
+                            "name": "Jéssica Melina BEHNE VETTORELO",
+                            "phone": "(66) 3498-4028",
+                            "whatsapp": "(66) 99996-3189",
+                            "organization": "Sinfonia Escola de Música",
+                            "address": "Av. Minas Gerais 733 – Centro Primavera do Leste – MT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Paraná",
+                    "animateurs": [
+                        {
+                            "name": "Katia MORAES DELALLO"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

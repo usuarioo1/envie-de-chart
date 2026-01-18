@@ -1,0 +1,13 @@
+{
+    "title": "La Presse en parle",
+    "articles": [
+        {
+            "id": 1,
+            "source": "France Musique",
+            "program": "Faites passer",
+            "description": "Écoutez la matinale du samedi matin, chronique \"Faites passer\" de Nathalie Moller consacrée au chant prénatal.",
+            "type": "Radio",
+            "featured": true
+        }
+    ]
+}

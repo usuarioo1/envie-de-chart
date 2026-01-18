@@ -1,0 +1,151 @@
+{
+    "region": "España",
+    "title": "Talleres de canto prenatal en España",
+    "introduction": "La etapa del embarazo es un momento privilegiado para cantar. El canto permite indagar en nuestra consciencia corporal. El canto prenatal permite a los padres bañar al bebé intrauterino con las vibraciones de sus voces. Despúes del nacimiento, el niño está encantado de volver a encontrarse con las melodías que le llegaron en el vientre de su mamá. Estos talleres incluyen igualmente una preparación para el parto a través de un trabajo con sonidos específicos.",
+    "mainContact": {
+        "name": "Valentina García Plata",
+        "phone": "+34 678 579 224",
+        "email": "valentina@ayurvedabienestar.es",
+        "website": "https://cantoprenatal.org/"
+    },
+    "regions": [
+        {
+            "name": "ARAGÓN",
+            "animateurs": [
+                {
+                    "name": "Ana Isabel Ripa de la Concepción",
+                    "phones": [
+                        "656 851 485",
+                        "978 601340"
+                    ],
+                    "email": "anaisabelripa@yahoo.es",
+                    "websites": [
+                        "http://www.nuevemeses.info",
+                        "http://www.nuevemeses.info/nuevemeses/Musicoterapia_Prenatal.html"
+                    ]
+                },
+                {
+                    "name": "Irene Esteban",
+                    "phone": "610 035 661",
+                    "email": "ireneestebanhernandez@gmail.com"
+                }
+            ]
+        },
+        {
+            "name": "CASTILLA – LA MANCHA",
+            "animateurs": [
+                {
+                    "name": "Ana M. Barrios Camponovo",
+                    "city": "Cuenca",
+                    "phones": [
+                        "689 937334",
+                        "969 232689"
+                    ],
+                    "email": "animaracantar@gmail.com",
+                    "website": "http://animaracantar.wix.com/anabc"
+                }
+            ]
+        },
+        {
+            "name": "CATALUÑA",
+            "animateurs": [
+                {
+                    "name": "Alejandra Fradera",
+                    "phone": "661 520 874",
+                    "email": "sandfra@renderman.com"
+                }
+            ]
+        },
+        {
+            "name": "COMUNIDAD DE MADRID",
+            "animateurs": [
+                {
+                    "name": "Myriam Chiozza",
+                    "phone": "609 478 937",
+                    "email": "musicoterapiaprenatal@gmail.com"
+                },
+                {
+                    "name": "Esther Santiago Hernández",
+                    "phone": "629 939 849",
+                    "email": "lavozdelamaternidad@gmail.com"
+                },
+                {
+                    "name": "Carla Muñoz Navarro",
+                    "phone": "638 148 382",
+                    "email": "sobremusicoterapia@gmail.com"
+                }
+            ]
+        },
+        {
+            "name": "COMUNIDAD VALENCIANA",
+            "animateurs": [
+                {
+                    "name": "Mercedes Andrada",
+                    "phone": "670 306 585",
+                    "email": "merceandrada@telefonica.net"
+                },
+                {
+                    "name": "Esther Roca",
+                    "phone": "619 870 008",
+                    "email": "estherroca@hotmail.com"
+                }
+            ]
+        },
+        {
+            "name": "EXTREMADURA",
+            "animateurs": [
+                {
+                    "name": "Ana Domínguez",
+                    "phone": "687 678 075",
+                    "email": "anadobo@gmail.com"
+                }
+            ]
+        },
+        {
+            "name": "GALICIA",
+            "animateurs": [
+                {
+                    "name": "Carla López Vázquez",
+                    "phone": "635 426 766",
+                    "email": "carlalopezvazquez@gmail.com",
+                    "websites": [
+                        "www.musicayvida.com",
+                        "www.musicoterapiactiva.com"
+                    ]
+                },
+                {
+                    "name": "María Rodríguez",
+                    "phone": "645 496 375",
+                    "email": "alyama_22@yahoo.es"
+                }
+            ]
+        },
+        {
+            "name": "PAIS VASCO",
+            "animateurs": [
+                {
+                    "name": "Eneka Basabe",
+                    "phone": "944 666 789",
+                    "email": "info@regazofeliz.com",
+                    "website": "www.regazofeliz.com"
+                },
+                {
+                    "name": "Olga Sánchez",
+                    "phone": "685 730 224",
+                    "email": "olgasiniesta@gmail.com",
+                    "website": "www.olgasanchez.net"
+                }
+            ]
+        },
+        {
+            "name": "SANTANDER",
+            "animateurs": [
+                {
+                    "name": "Judith Piguillem Díaz",
+                    "phone": "687 805 084",
+                    "email": "lastopolinas@hotmail.com"
+                }
+            ]
+        }
+    ]
+}

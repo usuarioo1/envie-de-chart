@@ -1,0 +1,36 @@
+{
+    "region": "Suisse",
+    "title": "Workshops Tönen und Singen für Schwangere (Babybauchsingen)",
+    "introduction": {
+        "de": "Die Zeit der Schwangerschaft ist ein Moment, der ganz besonders zum Singen einlädt. Wenn wir singen, nehmen wir unseren Körper bewusster wahr und machen ihn \"stimmig\". Beim vorgeburtlichen Singen empfindet das Baby die Vibrationen der Stimmen seiner Eltern wie eine liebevolle Klangmassage. Nach der Geburt hat das Baby viel Freude daran, die im Mutterbauch schon erlebten Melodien wieder zu hören. Das Babybauchsingen enthält ebenfalls eine Vorbereitung für die Entbindung anhand einer Stimmarbeit mit bestimmten Tönen.",
+        "fr": "Contactez directement l'animatrice la plus proche de chez vous."
+    },
+    "target": "Für alle werdenden Mütter ab dem 1. Schwangerschaftsmonat, Väter, Familienmitglieder, Freunde, Interessierte und Mütter mit Babys bis zu 5 Monaten nach der Geburt.",
+    "legend": {
+        "chantPrenatal": "Chant prénatal",
+        "chantMamanBebe": "Chant maman bébé",
+        "coursChant": "Cours de chant collectifs ou individuels"
+    },
+    "animateurs": [
+        {
+            "name": "Raphaëlle GESSNER",
+            "phone": "076 476 01 69",
+            "sessions": [
+                "Montags 9:00 bis 10:30 Uhr",
+                "Donnerstags 20:00 bis 21:30",
+                "Einzelunterricht nach Anfrage"
+            ],
+            "location": "Marthalen (ZH)",
+            "email": "raphaelegessner@gmail.com",
+            "website": "www.begleitung-um-die-geburt.ch"
+        },
+        {
+            "name": "Marie-Pierre BURNET",
+            "organization": "Chantons en Corps",
+            "address": "Rue Billard 12 CH- 1188 Gimel",
+            "phone": "+41 (0) 79 549 35 73",
+            "email": "contact@chantons-en-corps.ch",
+            "website": "chantons-en-corps.ch"
+        }
+    ]
+}

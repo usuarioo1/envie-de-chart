@@ -1,0 +1,29 @@
+{
+    "title": "Cours particuliers",
+    "contact": {
+        "name": "Marie-Laure Potel",
+        "phone": "01 64 40 94 23",
+        "email": "marielaurepotel@orange.fr"
+    },
+    "subtitle": "Pour prendre rendez-vous",
+    "locations": [
+        {
+            "title": "A Paris",
+            "venue": "Studio L'Accord Parfait",
+            "address": "47 Rue Ramey",
+            "city": "75018 Paris",
+            "metro": "Chateau Rouge ou Jules Joffrin"
+        },
+        {
+            "title": "En Seine et Marne",
+            "address": "61 avenue de la République",
+            "city": "77680 Roissy en Brie",
+            "transport": "RER E : Roissy en Brie"
+        }
+    ],
+    "socialMedia": {
+        "facebook": "Chant prénatal / Envie-de-chanter",
+        "instagram": "enviedechanter_chant_prenatal",
+        "linkedin": "Marie-Laure Potel"
+    }
+}

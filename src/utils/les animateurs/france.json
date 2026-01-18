@@ -1,0 +1,223 @@
+{
+    "region": "France",
+    "title": "Les animateurs de chant en France",
+    "description": "Contactez directement l'animatrice la plus proche de chez vous.",
+    "legend": {
+        "chantPrenatal": "Chant prénatal",
+        "chantMamanBebe": "Chant maman bébé",
+        "coursChant": "Cours de chant collectifs ou individuels"
+    },
+    "areas": [
+        {
+            "name": "Région parisienne",
+            "city": "Paris",
+            "animateurs": [
+                {
+                    "name": "Marie-Laure POTEL",
+                    "phone": "01 64 40 94 23",
+                    "email": "marielaurepotel@orange.fr",
+                    "socialMedia": {
+                        "facebook": "Chant prénatal / Envie-de-chanter",
+                        "instagram": "enviedechanter_chant_prenatal",
+                        "linkedin": "Marie-Laure Potel"
+                    },
+                    "ateliers": [
+                        {
+                            "type": "Chant prénatal",
+                            "sessions": [
+                                {
+                                    "day": "mercredi",
+                                    "time": "17h30",
+                                    "format": "en Visio",
+                                    "registration": "Inscription ici"
+                                },
+                                {
+                                    "day": "jeudi",
+                                    "time": "12h15",
+                                    "location": "Studio l'Accord Parfait",
+                                    "address": "47 rue Ramey, Paris 18ème",
+                                    "metro": "Château Rouge ou Jules Joffrin"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ateliers de chant collectif",
+                            "sessions": [
+                                {
+                                    "day": "Jeudi",
+                                    "time": "14h15",
+                                    "location": "Studio l'Accord Parfait",
+                                    "address": "47 rue Ramey, Paris 18ème",
+                                    "metro": "Château Rouge ou Jules Joffrin"
+                                },
+                                {
+                                    "day": "dimanche",
+                                    "time": "10h15",
+                                    "location": "Studio l'Accord Parfait",
+                                    "address": "47 rue Ramey, Paris 18ème",
+                                    "metro": "Château Rouge ou Jules Joffrin"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Cours individuels",
+                            "format": "sur RV"
+                        },
+                        {
+                            "type": "Chant maman-bébé",
+                            "sessions": [
+                                {
+                                    "day": "jeudi",
+                                    "time": "9h30",
+                                    "address": "1 rue Crespin du Gast, paris 11ème",
+                                    "metro": "Ménilmontant ou Saint-Maur"
+                                },
+                                {
+                                    "day": "vendredi",
+                                    "time": "10h",
+                                    "format": "en Visio",
+                                    "registration": "Inscription ici"
+                                },
+                                {
+                                    "location": "Studio l'Accord Parfait",
+                                    "address": "4 rue Cavallotti, Paris 17ème",
+                                    "metro": "Place de Clichy",
+                                    "service": "Masser bébé en chantant sur RV"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Aurélie VANLERBERGHE",
+                    "organization": "Un air de famille",
+                    "address": "24 rue du Château-Landon 75010 Paris",
+                    "phone": "06 75 40 91 57"
+                },
+                {
+                    "name": "Garance BONNO-GUGOR",
+                    "phone": "06 08 81 35 62",
+                    "email": "gar_dugor@hotmail.com",
+                    "locations": [
+                        {
+                            "name": "Nat-bé",
+                            "address": "10 boulevard Blanqui Paris 13ème",
+                            "metro": "Place d'Italie"
+                        },
+                        {
+                            "name": "Sacré-Coeur Studio 9",
+                            "address": "rue Bachelet Paris 18ème"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nazha BOUHSINI",
+                    "phone": "06 13 85 84 84",
+                    "email": "nazha.bouhsini@gmail.com",
+                    "locations": [
+                        {
+                            "name": "Accueil Naissance",
+                            "address": "4 rue de la providence 75013 Paris"
+                        },
+                        {
+                            "name": "Maison Né",
+                            "address": "56 bis rue des plantes 75014 Paris",
+                            "website": "https://www.ateliers-enchantes.fr/reservations/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Anne Marie MISTOUFLET",
+                    "phone": "06 10 83 78 93",
+                    "email": "am.mistouflet@gmail.com",
+                    "address": "35 rue St Roch – Paris 1er"
+                },
+                {
+                    "name": "Guillemette DAUBREE",
+                    "email": "guillemette.daubree@club-internet.fr"
+                },
+                {
+                    "name": "Claire HERBOUX",
+                    "phone": "06.24.98.94.34",
+                    "email": "clairehbx@hotmail.fr",
+                    "address": "3 Rue Jouye Rouve 75020 Paris",
+                    "metro": "Pyrénées"
+                }
+            ]
+        },
+        {
+            "name": " Seine et Marne",
+            "animateurs": [
+                {
+                    "name": "Karène SEMAILLE",
+                    "phone": "06 88 95 89 59",
+                    "email": "karene.semaille@gmail.com",
+                    "website": "www.chantprenatal.net",
+                    "location": "Centre des Arts et Loisirs (CAL) salle 112",
+                    "address": "31-33 avenue Jean-Jaurès 77360 Vaires sur Marne"
+                },
+                {
+                    "name": "Marie-Laure POTEL",
+                    "phone": "01 64 40 94 23",
+                    "email": "marielaurepotel@orange.fr",
+                    "address": "61 avenue de la République 77680 Roissy en Brie",
+                    "services": [
+                        "Atelier de chant collectif le samedi",
+                        "Séance de chant individuel sur RV : Chant psychophonique",
+                        "Chant prénatal",
+                        "Masser bébé en chantant"
+                    ]
+                },
+                {
+                    "name": "Bertille SEVE",
+                    "phone": "06 63 90 41 77",
+                    "email": "bertilleseve@hotmail.com",
+                    "organization": "Cabinet de sage-femme",
+                    "address": "19 boulevard Crevat Durant 77300 Fontainebleau"
+                },
+                {
+                    "name": "Joëlle DAVIET",
+                    "phone": "06.50.34.97.88",
+                    "email": "joelle.daviet@sfr.fr",
+                    "city": "77300 Fontainebleau"
+                },
+                {
+                    "name": "Marion CASSEL",
+                    "phone": "06 71 57 27 25",
+                    "alternativePhone": "09 52 08 15 33",
+                    "email": "mayoncassel@gmail.com",
+                    "facebook": "https://www.facebook.com/chantprenatalmarioncassel",
+                    "city": "77300 Fontainebleau"
+                },
+                {
+                    "name": "Sandrine DUPONCEST",
+                    "phone": "01 64 63 76 99",
+                    "alternativePhone": "06 28 13 03 99",
+                    "email": "cendre.osmoza@hotmail.fr",
+                    "organization": "Ecole de musique « Double Croche »",
+                    "locations": [
+                        "Bailly Romainvillier",
+                        "Magny le Hongre"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": " Yvelines",
+            "animateurs": [
+                {
+                    "name": "Sylvie NICOT",
+                    "phone": "06 15 16 91 68",
+                    "email": "nicotsylvie@aol.com",
+                    "organization": "Cabinet de sage-femme",
+                    "address": "52 bd Vauban 78180 Montigny le Bretonneux"
+                },
+                {
+                    "name": "Anaïs ROUSSELON",
+                    "phone": "06 48 14 85 14",
+                    "email": "anaisrousselon.sf78@gmail.com"
+                }
+            ]
+        }
+    ]
+}

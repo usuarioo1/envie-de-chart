@@ -1,0 +1,236 @@
+{
+    "meta": {
+        "title": "Agenda des stages et formations",
+        "organisation": "Envie-de-chanter / Marie-Laure Potel",
+        "periode": "2025-2026"
+    },
+    "media": [
+        {
+            "title": "Chronique France Musique – Chant prénatal",
+            "type": "radio",
+            "date": "2019-05-04",
+            "time": "08:40",
+            "description": "Sur France Musique, écouter la chronique de Nathalie Moller sur le chant prénatal.",
+            "action": "écouter"
+        }
+    ],
+    "documents": [
+        {
+            "title": "Brochure des formations 2025–26",
+            "type": "brochure",
+            "note": "Toutes les formations en France sont éligibles Qualiopi"
+        }
+    ],
+    "formations": [
+        {
+            "title": "Introduction au Chant prénatal",
+            "type": "formation-en-ligne",
+            "date": "2026-01-17",
+            "time": "16h–18h30",
+            "location": "En ligne",
+            "description": "L’occasion de découvrir le chant prénatal : pour les professionnels, les futurs parents et toute personne intéressée",
+            "formatrice": "Marie-Laure Potel",
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "document",
+                "inscription"
+            ]
+        },
+        {
+            "title": "Formation Djembé et chansons",
+            "type": "stage",
+            "date": "2026-03-15",
+            "time": "10h–17h",
+            "formatrice": "Marie-Laure Potel",
+            "location": {
+                "address": "61 avenue de la République",
+                "postalCode": "77680",
+                "city": "Roissy en Brie",
+                "transport": "RER E Roissy en Brie (direction Tournan)"
+            },
+            "qualifications": [
+                "Qualiopi"
+            ],
+            "contact": {
+                "email": "marielaurepotel@orange.fr",
+                "phone": "01 64 40 94 23"
+            },
+            "links": [
+                "programme",
+                "réservation"
+            ]
+        },
+        {
+            "title": "Cure El Canto : massage et chant",
+            "type": "cure",
+            "dates": {
+                "start": "2026-04-19",
+                "end": "2026-04-25"
+            },
+            "intervenants": {
+                "massage": "Équipe Tapovan",
+                "chant": "Marie-Laure Potel"
+            },
+            "location": {
+                "place": "Tapovan Normandie",
+                "address": "65 route d’Anneville",
+                "postalCode": "76540",
+                "city": "Sassetot le Mauconduit"
+            },
+            "contact": {
+                "phone": "02 35 29 20 21",
+                "email": "tapovan@tapovan.com"
+            },
+            "links": [
+                "document"
+            ]
+        },
+        {
+            "title": "Formation chant et petite enfance / chant maman-bébé",
+            "type": "formation",
+            "dates": {
+                "start": "2026-05-01",
+                "end": "2026-05-03"
+            },
+            "formatrice": "Marie-Laure Potel",
+            "location": "Roissy en Brie",
+            "qualifications": [
+                "Qualiopi"
+            ],
+            "links": [
+                "programme",
+                "réservation"
+            ]
+        },
+        {
+            "title": "Stage Envie de chanter ? – 1er degré de psychophonie",
+            "type": "stage",
+            "dates": {
+                "start": "2026-05-14",
+                "end": "2026-05-17"
+            },
+            "formatrice": "Marie-Laure Potel",
+            "description": "Découvrir son corps – instrument de musique. 1er module de la formation au chant prénatal",
+            "location": "Tapovan Normandie",
+            "qualifications": [
+                "Qualiopi"
+            ],
+            "links": [
+                "programme",
+                "réservation"
+            ]
+        },
+        {
+            "title": "Stage Envie de chanter ? – 1er degré de psychophonie",
+            "type": "stage",
+            "year": 2026,
+            "formatrice": "Marie-Laure Potel",
+            "location": "Paris",
+            "qualifications": [
+                "Qualiopi"
+            ],
+            "links": [
+                "programme",
+                "réservation"
+            ]
+        },
+        {
+            "title": "Cure El Canto : massage et chant",
+            "type": "cure",
+            "dates": {
+                "start": "2026-06-28",
+                "end": "2026-07-04"
+            },
+            "location": "Tapovan Normandie",
+            "contact": {
+                "phone": "02 35 29 20 21",
+                "email": "tapovan@tapovan.com"
+            }
+        }
+    ],
+    "international": [
+        {
+            "title": "Formaçaõ em Canto Pré-natal",
+            "country": "Brasil",
+            "city": "São Paulo",
+            "date": "Julho 2026",
+            "professora": "Marie-Laure Potel",
+            "contact": {
+                "phone": "+55 62 99946-0601"
+            },
+            "description": "Formação em psicofonia e harmonia vital através da voz falada e cantada."
+        },
+        {
+            "title": "Curso de Formación al Canto Prenatal",
+            "country": "Perú",
+            "city": "Lima",
+            "year": 2026,
+            "profesora": "Marie-Laure Potel",
+            "coordinacion": "Escuela de Musica Strauss, Lima",
+            "contact": {
+                "email": "infomk@emstrauss.com",
+                "phone": "+51 948417040",
+                "whatsapp": "https://wa.me/51980294483"
+            }
+        },
+        {
+            "title": "Psicofonia y Canto prenatal",
+            "country": "Chile",
+            "year": 2026,
+            "cities": [
+                "Concepción",
+                "Santiago",
+                "Valparaíso"
+            ],
+            "contact": {
+                "name": "Valentina Fuentes",
+                "whatsapp": "+56 9 8159 8351",
+                "social": "madrevoz"
+            }
+        }
+    ],
+    "modules": [
+        {
+            "title": "Formation au chant prénatal",
+            "year": 2026,
+            "modules": [
+                "2ème module",
+                "3ème module"
+            ],
+            "formatrice": "Marie-Laure Potel",
+            "qualifications": [
+                "Qualiopi"
+            ]
+        },
+        {
+            "title": "Pédagogie de la Psychophonie",
+            "year": 2026,
+            "module": "4ème module",
+            "condition": "Accessible aux personnes ayant suivi les stages de psychophonie",
+            "location": "Roissy en Brie (77)",
+            "qualifications": [
+                "Qualiopi"
+            ]
+        },
+        {
+            "title": "Formation aux clochettes Montessori",
+            "type": "formation",
+            "mode": "sur demande",
+            "formatrice": "Marie-Laure Potel",
+            "qualifications": [
+                "Qualiopi"
+            ]
+        },
+        {
+            "title": "2ème degré de psychophonie",
+            "type": "formation",
+            "formatrice": "Marie-Laure Potel",
+            "qualifications": [
+                "Qualiopi"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "title": "Chant prénatal – ateliers",
+    "subtitle": "Chanter en attendant son bébé, quelle bonne idée !",
+    "media": {
+        "franceMusique": {
+            "title": "France Musique, \"Faites passer\" la chronique de Nathalie Moller sur le chant prénatal",
+            "url": "https://www.francemusique.fr/emissions/faites-passer/qu-est-ce-que-le-chant-prenatal-71589"
+        }
+    },
+    "description": [
+        "Chanter en attendant son bébé, quelle bonne idée !",
+        "Les exercices pratiqués pendant les séances favorisent le bien-être tout au long de la grossesse.",
+        "Des chansons variées évoquent la maternité. Un travail de sons spécifiques est proposé pour l'accouchement.",
+        "Le groupe retrouve avec plaisir maman et bébé pendant ses premiers mois."
+    ],
+    "contact": {
+        "name": "Marie-Laure Potel",
+        "email": "marielaurepotel@orange.fr",
+        "phone": "01 64 40 94 23",
+        "whatsapp": "Rejoindre le groupe d'informations et d'échanges Whatsapp"
+    },
+    "ateliers": [
+        {
+            "title": "Atelier collectif de chant prénatal en ligne",
+            "schedule": "tous les mercredis de 17h30 à 19h",
+            "nextSession": "mercredi 17 décembre, dernière avant les fêtes !",
+            "registration": "Inscription ici"
+        },
+        {
+            "title": "Chant prénatal au Studio l'Accord Parfait",
+            "schedule": "le jeudi de 12h15 à 13h45",
+            "nextSession": "jeudi 18 décembre 2025",
+            "location": {
+                "venue": "studio l'Accord Parfait",
+                "address": "47 rue Ramey 76018 Paris",
+                "metro": "Château-Rouge ou Jules Joffrin"
+            },
+            "contact": {
+                "name": "Marie-Laure",
+                "phone": "01 64 40 94 23",
+                "email": "marielaurepotel@orange.fr"
+            },
+            "documents": [
+                "Téléchargez le document"
+            ],
+            "registration": "Inscription en ligne"
+        }
+    ],
+    "coursParticuliers": {
+        "title": "Cours particulier sur RV",
+        "locations": [
+            {
+                "address": "61 Avenue de la République 77680 Roissy en Brie",
+                "phone": "01 64 40 94 23",
+                "email": "marielaurepotel@orange.fr"
+            },
+            "Sur Paris",
+            "En visio"
+        ]
+    },
+    "introduction": {
+        "title": "Introduction au Chant prénatal",
+        "date": "samedi 17 janvier 2026",
+        "format": "En ligne",
+        "time": "de 16h à 18h30",
+        "description": "L'occasion de découvrir le chant prénatal : pour les professionnels, les futurs parents et toute personne intéressée",
+        "contact": {
+            "email": "marielaurepotel@orange.fr",
+            "phone": "01 64 40 94 23"
+        },
+        "documents": [
+            "Téléchargez le document"
+        ],
+        "registration": "Inscription ici"
+    },
+    "groupes": {
+        "title": "Les groupes de chant prénatal",
+        "description": "Des groupes de chant prénatal existent dans différents lieux.",
+        "note": "Contactez directement l'animatrice/teur la/le plus proche de chez vous dans la liste d'animateurs"
+    },
+    "formation": {
+        "title": "Formation au chant prénatal 2026",
+        "formatrice": "Marie Laure Potel",
+        "structure": "Formation en 4 stages soit 15 jours en tout",
+        "contact": {
+            "email": "marielaurepotel@orange.fr",
+            "phone": "01 64 40 94 23"
+        },
+        "stages": [
+            {
+                "number": 1,
+                "title": "Session Envie de chanter ? 1er degré de psychophonie",
+                "duration": "5 jours"
+            },
+            {
+                "number": 2,
+                "title": "Pratiques spécifiques de l'atelier de chant prénatal",
+                "duration": "4 jours"
+            },
+            {
+                "number": 3,
+                "title": "Préparation et mise en oeuvre d'un atelier de chant prénatal avec des femmes enceintes",
+                "duration": "3 jours"
+            },
+            {
+                "number": 4,
+                "title": "Stage de pédagogie",
+                "duration": "3 jours"
+            }
+        ],
+        "documents": [
+            "Téléchargez le programme",
+            "Réservez en ligne",
+            "Page formation au chant prénatal",
+            "Brochure des formations 2025-26"
+        ]
+    },
+    "rencontre": {
+        "title": "Rencontre annuelle des animatrices – teurs de chant prénatal 2026",
+        "location": "à la maternité des Lilas",
+        "occasion": "pour les 50 ans du chant prénatal et la fermeture définitive de la maternité…"
+    },
+    "publications": {
+        "title": "Le chant prénatal aux Editions Désiris"
+    },
+    "notes": [
+        "Plus de maternité des Lilas : fermée définitivement le 31 octobre 2025",
+        "Plus de chant prénatal à la maternité des Bluets"
+    ],
+    "socialMedia": {
+        "facebook": "Chant prénatal / Envie-de-chanter",
+        "instagram": "enviedechanter_chant_prenatal",
+        "linkedin": "Marie-Laure Potel"
+    }
+}

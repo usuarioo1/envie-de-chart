@@ -1,0 +1,83 @@
+{
+    "title": "Chant collectif",
+    "subtitle": "Le corps est un instrument de musique. Tout mon corps chante !",
+    "description": [
+        "Emetteur, notre corps est aussi récepteur. Par sa fréquence, chaque son correspond à un lieu du corps et crée à cet endroit un micro-massage. C'est l'approche proposée par la psychophonie.",
+        "Chanter agit aux niveaux physique et psychique, procure bien-être, joie et plaisir.",
+        "Nous sommes tous des chanteur ! Chacun peut chanter.",
+        "Notre voix nous permet de nous exprimer, de communiquer.",
+        "La pratique du chant se fait au travers d'exercices variés et de vocalises qui nous aident à sentir notre corps et à comprendre son importance pour soutenir la voix.",
+        "Ces découvertes sont appliquées en chantant des chansons variées accompagnées au piano.",
+        "L'épanouissement personnel est notre principal objectif, sans jugement sur l'esthétique de la voix. Chanter est avant tout un plaisir !",
+        "Groupes ouverts à tous"
+    ],
+    "contact": {
+        "name": "Marie-Laure Potel",
+        "phone": "01 64 40 94 23",
+        "email": "marielaurepotel@orange.fr"
+    },
+    "ateliers": [
+        {
+            "title": "Ateliers de chant du jeudi",
+            "time": "14H15 à 15H45",
+            "location": {
+                "venue": "Studio l'Accord Parfait",
+                "address": "47 rue Ramey 75018 Paris",
+                "metro": "Château-Rouge ou Jules Joffrin"
+            },
+            "nextSession": "jeudi 18 décembre",
+            "pricing": {
+                "perSession": "22 €",
+                "package": "95 € les 5"
+            },
+            "documents": [
+                "Téléchargez le document"
+            ],
+            "registration": "Inscription en ligne"
+        },
+        {
+            "title": "Ateliers de chant du samedi",
+            "time": "14h30 à 16h",
+            "location": {
+                "address": "61 avenue de la République 77680 Roissy en Brie"
+            },
+            "nextSession": "samedi 6 décembre 2025",
+            "documents": [
+                "téléchargez le document"
+            ],
+            "registration": "Inscription en ligne"
+        }
+    ],
+    "stages": [
+        {
+            "title": "Stages Envie de Chanter ?",
+            "locations": [
+                "Tapovan Normandie 2026",
+                "Paris 2026"
+            ]
+        },
+        {
+            "title": "Cure El Canto",
+            "subtitle": "Moitié massage, moitié chant",
+            "location": "Tapovan Normandie 2026",
+            "documents": [
+                "Téléchargez le document",
+                "Brochure des formations 2025-26"
+            ]
+        }
+    ],
+    "coursIndividuels": {
+        "title": "Cours individuels",
+        "availability": "sur RV à Paris et à Roissy en Brie ou en visio-conférence",
+        "contact": {
+            "name": "Marie-Laure Potel",
+            "phone": "01 64 40 94 23",
+            "email": "marielaurepotel@orange.fr"
+        }
+    },
+    "socialMedia": {
+        "facebook": "Chant prénatal / Envie-de-chanter",
+        "instagram": "enviedechanter_chant_prenatal",
+        "linkedin": "Marie-Laure Potel"
+    }
+}

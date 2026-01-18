@@ -1,0 +1,103 @@
+{
+    "region": "Belgique",
+    "title": "Les animateurs de chant en Belgique",
+    "description": "Contactez directement l'animatrice la plus proche de chez vous.",
+    "legend": {
+        "chantPrenatal": "Chant prénatal",
+        "chantMamanBebe": "Chant maman bébé",
+        "coursChant": "Cours de chant collectifs ou individuels"
+    },
+    "animateurs": [
+        {
+            "name": "Katerina BARKA",
+            "phone": "0494/84.62.75",
+            "email": "barkaaik@gmail.com",
+            "city": "Bruxelles",
+            "instagram": "meres_enchantees_chantprenatal"
+        },
+        {
+            "name": "Evelyne CABILLAU",
+            "phone": "0472841139",
+            "city": "Bruxelles",
+            "email": "evelynecabillau@hotmail.com",
+            "website": "naissentiel.be"
+        },
+        {
+            "name": "Davina MORIS",
+            "phone": "+32 485 051 057",
+            "email": "lesptitssons@outlook.com",
+            "address": "6840 Neufchateau (province du Luxembourg)",
+            "facebook": "www.facebook.com/lesptitssons/"
+        },
+        {
+            "name": "Sophie CORNET",
+            "phone": "+32(0)485985472",
+            "email": "s.devolf@yahoo.fr",
+            "address": "51 rue de grandvoir 6800 Neuvillers"
+        },
+        {
+            "name": "Estelle DI ZENZO",
+            "phone": "0476/ 23 18 72",
+            "email": "dizenzoestelle@gmail.com",
+            "organization": "Cabinet sages-femmes La naissance en lumière",
+            "address": "17, rue du Maïeur Jean Duhot 7350 Thulin",
+            "website": "https://lanaissanceenlumiere.wordpress.com"
+        },
+        {
+            "name": "Anne Bernard-Daiwaille",
+            "phone": "04 / 382.25.14",
+            "mobile": "0499/60.49.68",
+            "email": "annedaiwaille@yahoo.fr",
+            "address": "Rue du Stiersoux 6 – 4140 Sprimont",
+            "website": "http://leberceauenchante.jimdo.com"
+        },
+        {
+            "name": "Bénédicte DEBRUYNE",
+            "phone": "0032 (0)2 851 54 53",
+            "mobile": "0032 (0)495 55 10 91",
+            "email": "info@ostinato.be",
+            "address": "Avenue Edmond Parmentier, 240 – 1150 Woluwé-Saint-Pierre",
+            "website": "www.ostinato.be"
+        },
+        {
+            "name": "Elisabeth GOETHALS",
+            "phone": "0032 / 10 888 473",
+            "email": "elisabeth@libretoit.be",
+            "address": "chemin Goffin, 6c B-1320 Tourinnes-la-Grosse"
+        },
+        {
+            "name": "Marine THOLLEMBECK",
+            "phone": "+32 499/286.186",
+            "email": "marine_thollembeck@hotmail.com",
+            "locations": [
+                "5000 NAMUR",
+                "Centre périnatal du brabant Wallon à 1470 GENAPPE"
+            ]
+        },
+        {
+            "name": "Alexandra KSIAZEK",
+            "phone": "0032 / 498621743",
+            "email": "ksiazek.a@gmail.com",
+            "address": "77, rue des nobles 5003 St Marc"
+        },
+        {
+            "name": "Huguette SPRIET",
+            "phone": "0032 (0) 4 2523063",
+            "mobile": "0032(0)495 882157",
+            "email": "h.spriet@spirale.be",
+            "locations": [
+                {
+                    "name": "SPIRALE asbl",
+                    "address": "15 rue du Batty 4000 Liège",
+                    "services": "Thérapie sonore et vocale"
+                },
+                {
+                    "name": "La croquette",
+                    "address": "16 Les Villettes – 4990 Lierneux (Ardennes)",
+                    "phone": "0032 (0) 495882157"
+                }
+            ],
+            "website": "www.spirale.be"
+        }
+    ]
+}
