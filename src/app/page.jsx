@@ -1,11 +1,14 @@
 
-import Rrss from '@/components/rrss'
+import CarouselCollage from '@/components/CarouselCollage'
+
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <Rrss />
+      
+      <CarouselCollage  />
+      
     </div>
   )
 }
