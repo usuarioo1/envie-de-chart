@@ -209,7 +209,7 @@ export default function Navbar() {
                     </div>
                 </header>
 
-                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                     {menuSections.map((section) => {
                         const isOpen = openSections.includes(section.title);
                         return (
