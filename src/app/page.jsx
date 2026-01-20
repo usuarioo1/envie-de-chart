@@ -1,14 +1,15 @@
 
 import CarouselCollage from '@/components/CarouselCollage'
+import Hero from '@/components/Hero'
 
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      
-      <CarouselCollage  />
-      
+      <Hero />
+      <CarouselCollage />
+
     </div>
   )
 }

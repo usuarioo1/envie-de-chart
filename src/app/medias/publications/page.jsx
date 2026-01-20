@@ -2,7 +2,7 @@ import publicationsData from '@/utils/medias/publications.json';
 
 export default function PublicationsPage() {
     return (
-        <div className="bg-gradient-to-b from-rose-50 via-white to-indigo-50 min-h-screen">
+        <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
                 <h1 className="text-4xl font-bold mb-3 text-slate-900">
                     {publicationsData.title}
@@ -13,15 +13,15 @@ export default function PublicationsPage() {
                     {publicationsData.books.map((book) => (
                         <div
                             key={book.id}
-                            className="p-8 border border-rose-100 rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(15,23,42,0.3)] transition-all"
+                            className="p-8 border border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-all"
                         >
                             {/* Book Header */}
-                            <div className="mb-6 border-b border-rose-100 pb-6">
+                            <div className="mb-6 border-b border-[#F2B988] pb-6">
                                 <h2 className="text-3xl font-bold mb-2 text-slate-900">
                                     {book.title}
                                 </h2>
                                 {book.subtitle && (
-                                    <p className="text-lg text-rose-600 font-semibold mb-2">
+                                    <p className="text-lg text-[#F25A38] font-semibold mb-2">
                                         {book.subtitle}
                                     </p>
                                 )}
@@ -43,7 +43,7 @@ export default function PublicationsPage() {
                             </div>
 
                             {/* About Author */}
-                            <div className="mb-6 p-6 bg-rose-50 rounded-2xl">
+                            <div className="mb-6 p-6 bg-[#F2B988]/20 rounded-2xl">
                                 <h3 className="font-semibold text-slate-900 mb-3">
                                     À propos de l'auteure
                                 </h3>
@@ -59,10 +59,10 @@ export default function PublicationsPage() {
 
                             {/* Recommendation */}
                             {book.recommendation && (
-                                <div className="mb-6 p-4 bg-indigo-50/50 rounded-2xl border border-rose-100">
+                                <div className="mb-6 p-4 bg-[#ABA0F2]/10 rounded-2xl border border-[#F2B988]">
                                     <div className="flex items-start">
                                         <svg
-                                            className="w-5 h-5 text-rose-500 mr-2 flex-shrink-0 mt-0.5"
+                                            className="w-5 h-5 text-[#F25A38] mr-2 flex-shrink-0 mt-0.5"
                                             fill="currentColor"
                                             viewBox="0 0 20 20"
                                         >
@@ -76,7 +76,7 @@ export default function PublicationsPage() {
                             )}
 
                             {/* Book Details & Order */}
-                            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pt-6 border-t border-rose-100">
+                            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pt-6 border-t border-[#F2B988]">
                                 {/* Details Grid */}
                                 <div className="grid grid-cols-2 gap-4 flex-grow">
                                     <div>
@@ -99,7 +99,7 @@ export default function PublicationsPage() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-600 mb-1">Prix</p>
-                                        <p className="font-bold text-rose-600 text-xl">
+                                        <p className="font-bold text-[#F25A38] text-xl">
                                             {book.details.price}
                                         </p>
                                     </div>
@@ -111,7 +111,7 @@ export default function PublicationsPage() {
                                         href={book.order_link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center px-8 py-3 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-all whitespace-nowrap"
+                                        className="inline-flex items-center justify-center px-8 py-3 bg-[#F25A38] text-white rounded-full hover:bg-[#732514] transition-all whitespace-nowrap"
                                     >
                                         <svg
                                             className="w-5 h-5 mr-2"
@@ -135,7 +135,7 @@ export default function PublicationsPage() {
                 </div>
 
                 {/* Contact Banner */}
-                <div className="mt-10 p-6 bg-gradient-to-r from-rose-50 to-indigo-50 rounded-3xl border border-rose-100">
+                <div className="mt-10 p-6 bg-gradient-to-r from-[#ABA0F2]/10 to-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                     <div className="text-center">
                         <h3 className="font-semibold text-slate-900 mb-2 text-xl">
                             Intéressé par nos publications ?
@@ -145,10 +145,10 @@ export default function PublicationsPage() {
                         </p>
                         <a
                             href="mailto:marielaurepotel@orange.fr"
-                            className="inline-flex items-center px-6 py-3 bg-white border border-rose-200 rounded-full text-slate-900 hover:bg-rose-50 hover:border-rose-300 transition-all"
+                            className="inline-flex items-center px-6 py-3 bg-white border border-[#F29057] rounded-full text-slate-900 hover:bg-[#F2B988]/20 hover:border-[#F25A38] transition-all"
                         >
                             <svg
-                                className="w-5 h-5 mr-2 text-rose-500"
+                                className="w-5 h-5 mr-2 text-[#F25A38]"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"

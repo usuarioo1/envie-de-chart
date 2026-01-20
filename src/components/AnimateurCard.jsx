@@ -1,7 +1,7 @@
 export default function AnimateurCard({ animateur }) {
     return (
-        <div className="p-6 border border-rose-100 rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(15,23,42,0.3)] transition-shadow">
-            <h4 className="text-xl font-bold mb-3 text-rose-500">{animateur.name}</h4>
+        <div className="p-6 border-2 border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-shadow">
+            <h4 className="text-xl font-bold mb-3 text-[#F25A38]">{animateur.name}</h4>
 
             {animateur.organization && (
                 <p className="mb-2 text-slate-700">
@@ -12,7 +12,7 @@ export default function AnimateurCard({ animateur }) {
             {animateur.phone && (
                 <p className="mb-2 text-slate-700">
                     <strong>Téléphone:</strong>{' '}
-                    <a href={`tel:${animateur.phone.replace(/\s/g, '')}`} className="text-rose-500 hover:text-rose-600">
+                    <a href={`tel:${animateur.phone.replace(/\s/g, '')}`} className="text-[#F25A38] hover:text-[#732514]">
                         {animateur.phone}
                     </a>
                 </p>
@@ -24,7 +24,7 @@ export default function AnimateurCard({ animateur }) {
                     {animateur.phones.map((phone, idx) => (
                         <span key={idx}>
                             {' '}
-                            <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-rose-500 hover:text-rose-600">
+                            <a href={`tel:${phone.replace(/\s/g, '')}`} className="text-[#F25A38] hover:text-[#732514]">
                                 {phone}
                             </a>
                             {idx < animateur.phones.length - 1 && ','}
@@ -36,7 +36,7 @@ export default function AnimateurCard({ animateur }) {
             {animateur.mobile && (
                 <p className="mb-2 text-slate-700">
                     <strong>Mobile:</strong>{' '}
-                    <a href={`tel:${animateur.mobile.replace(/\s/g, '')}`} className="text-rose-500 hover:text-rose-600">
+                    <a href={`tel:${animateur.mobile.replace(/\s/g, '')}`} className="text-[#F25A38] hover:text-[#732514]">
                         {animateur.mobile}
                     </a>
                 </p>
@@ -53,7 +53,7 @@ export default function AnimateurCard({ animateur }) {
                     <strong>Email:</strong>{' '}
                     <a
                         href={`mailto:${animateur.email}`}
-                        className="text-rose-500 hover:text-rose-600 hover:underline break-all"
+                        className="text-[#F25A38] hover:text-[#732514] hover:underline break-all"
                     >
                         {animateur.email}
                     </a>
@@ -65,7 +65,7 @@ export default function AnimateurCard({ animateur }) {
                     <strong>Emails:</strong>
                     {animateur.emails.map((email, idx) => (
                         <div key={idx} className="ml-2">
-                            <a href={`mailto:${email}`} className="text-rose-500 hover:text-rose-600 hover:underline text-sm">
+                            <a href={`mailto:${email}`} className="text-[#F25A38] hover:text-[#732514] hover:underline text-sm">
                                 {email}
                             </a>
                         </div>
@@ -97,7 +97,7 @@ export default function AnimateurCard({ animateur }) {
                         href={animateur.website.startsWith('http') ? animateur.website : `https://${animateur.website}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-rose-500 hover:text-rose-600 hover:underline text-sm"
+                        className="text-[#F25A38] hover:text-[#732514] hover:underline text-sm"
                     >
                         {animateur.website}
                     </a>
@@ -113,7 +113,7 @@ export default function AnimateurCard({ animateur }) {
                                 href={site.startsWith('http') ? site : `https://${site}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block text-rose-500 hover:text-rose-600 hover:underline text-sm"
+                                className="block text-[#F25A38] hover:text-[#732514] hover:underline text-sm"
                             >
                                 {site}
                             </a>
@@ -125,7 +125,7 @@ export default function AnimateurCard({ animateur }) {
                                 href={site.startsWith('http') ? site : `https://${site}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block text-rose-500 hover:text-rose-600 hover:underline text-sm"
+                                className="block text-[#F25A38] hover:text-[#732514] hover:underline text-sm"
                             >
                                 {key}: {site}
                             </a>
@@ -138,7 +138,7 @@ export default function AnimateurCard({ animateur }) {
                                 href={animateur.facebook}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-rose-500 hover:text-rose-600 hover:underline text-sm"
+                                className="text-[#F25A38] hover:text-[#732514] hover:underline text-sm"
                             >
                                 Facebook
                             </a>
@@ -152,7 +152,7 @@ export default function AnimateurCard({ animateur }) {
                     )}
 
                     {animateur.socialMedia && (
-                        <div className="mt-3 text-sm text-slate-600 p-3 bg-indigo-50/50 rounded-xl">
+                        <div className="mt-3 text-sm text-slate-600 p-3 bg-[#ABA0F2]/10 rounded-xl">
                             <p className="font-semibold mb-1 text-slate-900">Réseaux sociaux:</p>
                             {animateur.socialMedia.facebook && <p>📘 Facebook: {animateur.socialMedia.facebook}</p>}
                             {animateur.socialMedia.instagram && <p>📷 Instagram: {animateur.socialMedia.instagram}</p>}
@@ -168,18 +168,18 @@ export default function AnimateurCard({ animateur }) {
                                     {typeof location === 'string' ? (
                                         <p className="text-sm">• {location}</p>
                                     ) : (
-                                        <div className="mb-2 p-2 bg-rose-50/30 rounded-lg">
+                                        <div className="mb-2 p-2 bg-[#F2B988]/10 rounded-lg">
                                             {location.name && <p className="font-semibold text-slate-800">{location.name}</p>}
                                             {location.address && <p className="text-sm">{location.address}</p>}
                                             {location.metro && <p className="text-sm">Métro: {location.metro}</p>}
                                             {location.phone && <p className="text-sm">Tél: {location.phone}</p>}
-                                            {location.services && <p className="text-sm text-rose-600">{location.services}</p>}
+                                            {location.services && <p className="text-sm text-[#F25A38]">{location.services}</p>}
                                             {location.website && (
                                                 <a
                                                     href={location.website}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="text-rose-500 hover:underline text-sm"
+                                                    className="text-[#F25A38] hover:underline text-sm"
                                                 >
                                                     {location.website}
                                                 </a>
@@ -203,7 +203,7 @@ export default function AnimateurCard({ animateur }) {
                     )}
 
                     {animateur.sessions && (
-                        <div className="mt-3 p-3 bg-rose-50/50 rounded-xl">
+                        <div className="mt-3 p-3 bg-[#F2B988]/20 rounded-xl">
                             <p className="font-semibold text-slate-900 mb-2">Sessions:</p>
                             {animateur.sessions.map((session, idx) => (
                                 <div key={idx} className="text-sm text-slate-700 mb-2">
@@ -223,7 +223,7 @@ export default function AnimateurCard({ animateur }) {
                     )}
 
                     {animateur.nextFormation && (
-                        <p className="mt-3 text-rose-600 font-semibold">
+                        <p className="mt-3 text-[#F25A38] font-semibold">
                             Prochaine formation: {animateur.nextFormation}
                         </p>
                     )}

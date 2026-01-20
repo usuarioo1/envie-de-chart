@@ -28,15 +28,15 @@ const formatContact = (contact) => {
 };
 
 const Pill = ({ children }) => (
-    <span className="rounded-full border border-rose-100 bg-white/70 px-3 py-1 text-xs font-semibold text-rose-500">
+    <span className="rounded-full border border-[#F2B988] bg-white/70 px-3 py-1 text-xs font-semibold text-[#F25A38]">
         {children}
     </span>
 );
 
 const SectionCard = ({ eyebrow, title, children }) => (
-    <section className="rounded-3xl border border-rose-100 bg-white/80 p-6 shadow-[0_20px_45px_-35px_rgba(15,23,42,0.35)]">
+    <section className="rounded-3xl border border-[#F2B988] bg-white/80 p-6 shadow-[0_20px_45px_-35px_rgba(242,90,56,0.35)]">
         <div className="mb-6 space-y-2">
-            {eyebrow && <p className="text-xs uppercase tracking-[0.3em] text-rose-400">{eyebrow}</p>}
+            {eyebrow && <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">{eyebrow}</p>}
             <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
         </div>
         {children}
@@ -54,8 +54,8 @@ export default function AgendaStagesEtFormationsPage() {
     return (
         <main className="px-4 py-12">
             <div className="mx-auto max-w-6xl space-y-10">
-                <header className="rounded-3xl border border-rose-100 bg-gradient-to-br from-white via-rose-50/70 to-indigo-50/60 p-8 shadow-sm">
-                    <p className="text-xs uppercase tracking-[0.35em] text-rose-400">{meta.organisation}</p>
+                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
+                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">{meta.organisation}</p>
                     <h1 className="mt-3 text-3xl font-semibold text-slate-900">{meta.title}</h1>
                     <p className="mt-1 text-sm text-slate-600">Programme {meta.periode}</p>
                     <div className="mt-6 flex flex-wrap gap-3">
@@ -73,9 +73,9 @@ export default function AgendaStagesEtFormationsPage() {
                             {media.map((entry) => (
                                 <article
                                     key={entry.title}
-                                    className="rounded-2xl border border-rose-50 bg-rose-50/60 p-5 text-sm text-slate-700"
+                                    className="rounded-2xl border border-[#F2B988] bg-[#F2B988]/20 p-5 text-sm text-slate-700"
                                 >
-                                    <div className="flex items-center justify-between text-xs uppercase text-rose-400">
+                                    <div className="flex items-center justify-between text-xs uppercase text-[#F29057]">
                                         <span>{entry.type}</span>
                                         {(entry.date || entry.time) && (
                                             <span>

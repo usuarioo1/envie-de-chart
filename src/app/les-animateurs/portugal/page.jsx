@@ -3,11 +3,11 @@ import AnimateurCard from '@/components/AnimateurCard';
 
 export default function PortugalPage() {
     return (
-        <div className="bg-gradient-to-b from-rose-50 via-white to-indigo-50 min-h-screen">
+        <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
                 <h1 className="text-4xl font-bold mb-4 text-slate-900">{portugalData.title}</h1>
 
-                <div className="mb-8 p-6 bg-rose-50 rounded-3xl border border-rose-100">
+                <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                     <p className="text-slate-700">{portugalData.introduction}</p>
                 </div>
 

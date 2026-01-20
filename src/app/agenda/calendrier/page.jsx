@@ -28,8 +28,8 @@ const formatLocation = (location) => {
 };
 
 const TimelineCard = ({ eyebrow, title, date, children }) => (
-    <article className="relative rounded-3xl border border-rose-100 bg-white/80 p-5">
-        <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.35em] text-rose-400">
+    <article className="relative rounded-3xl border border-[#F2B988] bg-white/80 p-5">
+        <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.35em] text-[#F29057]">
             <span>{eyebrow}</span>
             <span>{date}</span>
         </div>
@@ -50,8 +50,8 @@ export default function AgendaCalendrierPage() {
     return (
         <main className="px-4 py-12">
             <div className="mx-auto max-w-6xl space-y-10">
-                <header className="rounded-3xl border border-rose-100 bg-gradient-to-br from-white via-rose-50/70 to-indigo-50/50 p-8 shadow-sm">
-                    <p className="text-xs uppercase tracking-[0.35em] text-rose-400">Envie de Chanter</p>
+                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
+                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Envie de Chanter</p>
                     <h1 className="mt-3 text-3xl font-semibold text-slate-900">Calendrier des ateliers et stages</h1>
                     <p className="mt-2 text-sm text-slate-600">
                         Synthèse des programmes : retrouvez d&apos;un coup d&apos;œil les formations longues, les stages intensifs et les ateliers hebdomadaires.
@@ -63,9 +63,9 @@ export default function AgendaCalendrierPage() {
                     </div>
                 </header>
 
-                <section className="space-y-6 rounded-3xl border border-rose-100 bg-white/80 p-6">
+                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
                     <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.35em] text-rose-400">Formations & stages</p>
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Formations & stages</p>
                         <h2 className="text-2xl font-semibold text-slate-900">Parcours 2025-2026</h2>
                     </div>
                     <div className="grid gap-5 lg:grid-cols-2">
@@ -82,7 +82,7 @@ export default function AgendaCalendrierPage() {
                                     {formatLocation(item.location) && <p>Lieu : {formatLocation(item.location)}</p>}
                                     {item.formatrice && <p>Avec {item.formatrice}</p>}
                                     {item.qualifications?.length && (
-                                        <p className="text-rose-500">{item.qualifications.join(' · ')}</p>
+                                        <p className="text-[#F25A38]">{item.qualifications.join(' · ')}</p>
                                     )}
                                 </div>
                             </TimelineCard>
@@ -90,9 +90,9 @@ export default function AgendaCalendrierPage() {
                     </div>
                 </section>
 
-                <section className="space-y-6 rounded-3xl border border-rose-100 bg-white/80 p-6">
+                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
                     <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.35em] text-rose-400">Ateliers hebdomadaires</p>
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Ateliers hebdomadaires</p>
                         <h2 className="text-2xl font-semibold text-slate-900">Planning à venir</h2>
                     </div>
                     <div className="space-y-4">
@@ -118,7 +118,7 @@ export default function AgendaCalendrierPage() {
                                         </p>
                                     )}
                                     {event.links?.length && (
-                                        <p className="text-rose-500">{event.links.join(' · ')}</p>
+                                        <p className="text-[#F25A38]">{event.links.join(' · ')}</p>
                                     )}
                                 </div>
                             </TimelineCard>

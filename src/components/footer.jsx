@@ -13,7 +13,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gradient-to-b from-indigo-50 via-rose-50 to-white border-t border-rose-100">
+        <footer className="bg-gradient-to-b from-[#ABA0F2]/10 via-[#F2B988]/20 to-white border-t-2 border-[#F29057]">
             <div className="max-w-6xl mx-auto px-4 py-12">
                 <div className="grid gap-8 md:grid-cols-3">
                     {/* À propos */}
@@ -29,12 +29,12 @@ const Footer = () => {
                                 <strong>Marie-Laure Potel</strong>
                             </p>
                             <p className="text-sm">
-                                <a href="tel:0164409423" className="text-rose-500 hover:text-rose-600 hover:underline">
+                                <a href="tel:0164409423" className="text-[#F25A38] hover:text-[#732514] hover:underline">
                                     01 64 40 94 23
                                 </a>
                             </p>
                             <p className="text-sm">
-                                <a href="mailto:marielaurepotel@orange.fr" className="text-rose-500 hover:text-rose-600 hover:underline">
+                                <a href="mailto:marielaurepotel@orange.fr" className="text-[#F25A38] hover:text-[#732514] hover:underline">
                                     marielaurepotel@orange.fr
                                 </a>
                             </p>
@@ -51,7 +51,7 @@ const Footer = () => {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-slate-600 hover:text-rose-500 text-sm transition-colors"
+                                        className="text-slate-600 hover:text-[#F25A38] text-sm transition-colors"
                                     >
                                         {link.label}
                                     </Link>
@@ -75,17 +75,17 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-8 pt-8 border-t border-rose-100">
+                <div className="mt-8 pt-8 border-t border-[#F2B988]">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-sm text-slate-600">
-                            © {currentYear} <span className="font-semibold text-rose-500">Envie de Chanter</span>. Tous droits réservés.
+                            © {currentYear} <span className="font-semibold text-[#F25A38]">Envie de Chanter</span>. Tous droits réservés.
                         </p>
                         <div className="flex gap-4 text-sm">
                             {/* <Link href="/mentions-legales" className="text-slate-600 hover:text-rose-500 transition-colors">
                                 Mentions légales
                             </Link>
                             <span className="text-slate-400">•</span>
-                            <Link href="/politique-confidentialite" className="text-slate-600 hover:text-rose-500 transition-colors">
+                            <Link href="/politique-confidentialite" className="text-slate-600 hover:text-[#F25A38] transition-colors">
                                 Politique de confidentialité
                             </Link> */}
                         </div>

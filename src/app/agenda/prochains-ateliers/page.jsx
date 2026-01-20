@@ -13,7 +13,7 @@ const formatLocation = (location) => {
 
 const ContactBlock = ({ contact }) => (
     <div className="rounded-2xl border border-slate-100 bg-white/60 p-4 text-sm text-slate-600">
-        <p className="text-xs uppercase tracking-[0.3em] text-rose-400">Contact</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">Contact</p>
         {contact?.name && <p className="mt-1 font-semibold text-slate-900">{contact.name}</p>}
         <p className="mt-2 space-y-1">
             {contact?.email && <span className="block">{contact.email}</span>}
@@ -23,7 +23,7 @@ const ContactBlock = ({ contact }) => (
 );
 
 const Pill = ({ children }) => (
-    <span className="rounded-full border border-rose-100 bg-rose-50/60 px-3 py-1 text-xs font-semibold text-rose-500">
+    <span className="rounded-full border border-[#F2B988] bg-[#F2B988]/20 px-3 py-1 text-xs font-semibold text-[#F25A38]">
         {children}
     </span>
 );
@@ -39,13 +39,13 @@ export default function AgendaProchainsAteliersPage() {
     return (
         <main className="px-4 py-12">
             <div className="mx-auto max-w-6xl space-y-10">
-                <header className="rounded-3xl border border-rose-100 bg-gradient-to-br from-white via-rose-50/60 to-indigo-50/50 p-8 shadow-sm">
-                    <p className="text-xs uppercase tracking-[0.35em] text-rose-400">{meta.organisation}</p>
+                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
+                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">{meta.organisation}</p>
                     <h1 className="mt-3 text-3xl font-semibold text-slate-900">{meta.title}</h1>
                     <p className="mt-2 text-sm text-slate-600">Agenda vivant des ateliers, cours et rendez-vous personnalisés.</p>
                     <div className="mt-6 grid gap-4 md:grid-cols-[2fr_1fr]">
                         <div className="rounded-2xl border border-slate-100 bg-white/60 p-4">
-                            <p className="text-xs uppercase tracking-[0.3em] text-rose-400">Instagram</p>
+                            <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">Instagram</p>
                             <p className="mt-2 text-lg font-semibold text-slate-900">@{contactGeneral.instagram}</p>
                             <p className="mt-2 text-sm text-slate-600">Suivez les coulisses des ateliers, annonces de nouvelles dates et coulées sonores.</p>
                         </div>
@@ -54,12 +54,12 @@ export default function AgendaProchainsAteliersPage() {
                 </header>
 
                 {media?.length ? (
-                    <section className="rounded-3xl border border-rose-100 bg-white/80 p-6">
-                        <p className="text-xs uppercase tracking-[0.3em] text-rose-400">À écouter</p>
+                    <section className="rounded-3xl border border-[#F2B988] bg-white/80 p-6">
+                        <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">À écouter</p>
                         <h2 className="mt-2 text-2xl font-semibold text-slate-900">Sélection média</h2>
                         <div className="mt-6 grid gap-4 md:grid-cols-2">
                             {media.map((entry) => (
-                                <article key={entry.title} className="rounded-2xl border border-rose-50 bg-rose-50/60 p-5 text-sm text-slate-600">
+                                <article key={entry.title} className="rounded-2xl border border-[#F2B988] bg-[#F2B988]/20 p-5 text-sm text-slate-600">
                                     <h3 className="text-lg font-semibold text-slate-900">{entry.title}</h3>
                                     <p className="mt-2">{entry.description}</p>
                                     <div className="mt-3 flex flex-wrap gap-2">

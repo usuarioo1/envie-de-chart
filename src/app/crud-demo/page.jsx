@@ -160,7 +160,7 @@ export default function ItemsPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+                            className="bg-[#F25A38] hover:bg-[#732514] text-white font-bold py-2 px-4 rounded disabled:opacity-50"
                         >
                             {loading ? 'Guardando...' : editingId ? 'Actualizar' : 'Crear'}
                         </button>

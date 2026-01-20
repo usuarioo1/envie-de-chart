@@ -2,7 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #732514;
+  --primary: #F25A38;
+  --primary-dark: #732514;
+  --secondary: #F29057;
+  --accent: #F2B988;
+  --lavender: #ABA0F2;
 }
 
 @theme inline {
@@ -12,7 +17,8 @@
 }
 
 body {
-  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff, #F2B988);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-nunito), sans-serif;
 }

@@ -49,6 +49,11 @@ export default function CarouselCollage() {
 
   return (
     <div className="w-full max-w-7xl mx-auto p-5">
+      {/* Título */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#732514]">
+        Galerie d'images des ateliers
+      </h2>
+
       <div className="relative w-full grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-4 min-h-[600px]">
         {/* Imagen principal */}
         <div className="relative w-full h-full min-h-[600px] lg:min-h-[600px] min-h-[400px] rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
@@ -66,11 +71,10 @@ export default function CarouselCollage() {
           {images.map((img, index) => (
             <div
               key={index}
-              className={`relative w-full h-[120px] md:h-[80px] lg:h-[120px] rounded-xl overflow-hidden cursor-pointer border-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg ${
-                index === currentIndex
-                  ? 'border-blue-500 shadow-blue-500/50'
-                  : 'border-transparent'
-              }`}
+              className={`relative w-full h-[120px] md:h-[80px] lg:h-[120px] rounded-xl overflow-hidden cursor-pointer border-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg ${index === currentIndex
+                ? 'border-[#F25A38] shadow-[#F25A38]/50'
+                : 'border-transparent'
+                }`}
               onClick={() => goToSlide(index)}
             >
               <Image
@@ -86,14 +90,14 @@ export default function CarouselCollage() {
         {/* Controles */}
         <button
           onClick={goToPrev}
-          className="absolute top-1/2 -translate-y-1/2 left-5 md:left-2.5 bg-white/90 hover:bg-white border-0 w-[50px] h-[50px] md:w-[40px] md:h-[40px] rounded-full text-3xl md:text-2xl cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 shadow-lg"
+          className="absolute top-1/2 -translate-y-1/2 left-5 md:left-2.5 bg-white/90 hover:bg-[#F2B988] text-[#732514] hover:text-white border-0 w-[50px] h-[50px] md:w-[40px] md:h-[40px] rounded-full text-3xl md:text-2xl cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 shadow-lg"
           aria-label="Anterior"
         >
           ‹
         </button>
         <button
           onClick={goToNext}
-          className="absolute top-1/2 -translate-y-1/2 right-5 md:right-2.5 bg-white/90 hover:bg-white border-0 w-[50px] h-[50px] md:w-[40px] md:h-[40px] rounded-full text-3xl md:text-2xl cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 shadow-lg"
+          className="absolute top-1/2 -translate-y-1/2 right-5 md:right-2.5 bg-white/90 hover:bg-[#F2B988] text-[#732514] hover:text-white border-0 w-[50px] h-[50px] md:w-[40px] md:h-[40px] rounded-full text-3xl md:text-2xl cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-110 z-10 shadow-lg"
           aria-label="Siguiente"
         >
           ›
@@ -104,11 +108,10 @@ export default function CarouselCollage() {
           {images.map((_, index) => (
             <button
               key={index}
-              className={`h-3 rounded-full border-2 border-white cursor-pointer transition-all duration-300 hover:bg-white/80 hover:scale-110 ${
-                index === currentIndex
-                  ? 'bg-white w-[30px] rounded-md'
-                  : 'bg-white/50 w-3'
-              }`}
+              className={`h-3 rounded-full border-2 border-white cursor-pointer transition-all duration-300 hover:bg-white/80 hover:scale-110 ${index === currentIndex
+                ? 'bg-white w-[30px] rounded-md'
+                : 'bg-white/50 w-3'
+                }`}
               onClick={() => goToSlide(index)}
               aria-label={`Ir a imagen ${index + 1}`}
             />

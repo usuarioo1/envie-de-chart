@@ -2,13 +2,13 @@ import franceData from '@/utils/les animateurs/france.json';
 
 export default function FrancePage() {
     return (
-        <div className="bg-gradient-to-b from-rose-50 via-white to-indigo-50 min-h-screen">
+        <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
                 <h1 className="text-4xl font-bold mb-4 text-slate-900">{franceData.title}</h1>
                 <p className="text-lg text-slate-600 mb-8">{franceData.description}</p>
 
                 {/* Legend */}
-                <div className="mb-8 p-6 bg-rose-50 rounded-3xl border border-rose-100">
+                <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                     <h3 className="text-lg font-semibold mb-3 text-slate-900">Légende des couleurs:</h3>
                     <ul className="space-y-2 text-slate-700">
                         <li>🎵 {franceData.legend.chantPrenatal}</li>
@@ -27,9 +27,9 @@ export default function FrancePage() {
                             {area.animateurs.map((animateur, index) => (
                                 <div
                                     key={index}
-                                    className="p-6 border border-rose-100 rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(15,23,42,0.3)] transition-shadow"
+                                    className="p-6 border border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-shadow"
                                 >
-                                    <h4 className="text-xl font-bold mb-3 text-rose-500">{animateur.name}</h4>
+                                    <h4 className="text-xl font-bold mb-3 text-[#F25A38]">{animateur.name}</h4>
 
                                     {animateur.organization && (
                                         <p className="mb-2 text-slate-700">
@@ -40,7 +40,7 @@ export default function FrancePage() {
                                     {animateur.phone && (
                                         <p className="mb-2 text-slate-700">
                                             <strong>Téléphone:</strong>{' '}
-                                            <a href={`tel:${animateur.phone}`} className="text-rose-500 hover:text-rose-600">
+                                            <a href={`tel:${animateur.phone}`} className="text-[#F25A38] hover:text-[#732514]">
                                                 {animateur.phone}
                                             </a>
                                         </p>
@@ -57,7 +57,7 @@ export default function FrancePage() {
                                             <strong>Email:</strong>{' '}
                                             <a
                                                 href={`mailto:${animateur.email}`}
-                                                className="text-rose-500 hover:text-rose-600 hover:underline break-all"
+                                                className="text-[#F25A38] hover:text-[#732514] hover:underline break-all"
                                             >
                                                 {animateur.email}
                                             </a>
@@ -88,7 +88,7 @@ export default function FrancePage() {
                                                 href={`https://${animateur.website}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-rose-500 hover:text-rose-600 hover:underline"
+                                                className="text-[#F25A38] hover:text-[#732514] hover:underline"
                                             >
                                                 {animateur.website}
                                             </a>
@@ -101,7 +101,7 @@ export default function FrancePage() {
                                                 href={animateur.facebook}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-rose-500 hover:text-rose-600 hover:underline"
+                                                className="text-[#F25A38] hover:text-[#732514] hover:underline"
                                             >
                                                 Facebook
                                             </a>
@@ -134,7 +134,7 @@ export default function FrancePage() {
                                                                     href={location.website}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
-                                                                    className="text-rose-500 hover:underline text-sm"
+                                                                    className="text-[#F25A38] hover:underline text-sm"
                                                                 >
                                                                     {location.website}
                                                                 </a>
@@ -150,7 +150,7 @@ export default function FrancePage() {
                                         <div className="mt-4 space-y-3">
                                             <p className="font-semibold text-slate-900">Ateliers:</p>
                                             {animateur.ateliers.map((atelier, atelierIndex) => (
-                                                <div key={atelierIndex} className="ml-4 p-3 bg-rose-50/50 rounded-xl">
+                                                <div key={atelierIndex} className="ml-4 p-3 bg-[#F2B988]/20 rounded-xl">
                                                     <p className="font-semibold text-slate-800 mb-2">{atelier.type}</p>
                                                     {atelier.sessions &&
                                                         atelier.sessions.map((session, sessionIndex) => (
@@ -162,7 +162,7 @@ export default function FrancePage() {
                                                                 {session.location && <p>{session.location}</p>}
                                                                 {session.address && <p>{session.address}</p>}
                                                                 {session.metro && <p>Métro: {session.metro}</p>}
-                                                                {session.service && <p className="text-rose-600">{session.service}</p>}
+                                                                {session.service && <p className="text-[#F25A38]">{session.service}</p>}
                                                             </div>
                                                         ))}
                                                     {atelier.format && <p className="text-sm text-slate-600">{atelier.format}</p>}

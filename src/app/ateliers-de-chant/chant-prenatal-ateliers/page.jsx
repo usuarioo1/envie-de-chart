@@ -2,13 +2,13 @@ import chantPrenatalAteliersData from '@/utils/ateliers de chant/chantprenatalAt
 
 export default function ChantPrenatalAteliersPage() {
     return (
-        <div className="bg-gradient-to-b from-rose-50 via-white to-indigo-50 min-h-screen">
+        <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
                 <h1 className="text-4xl font-bold mb-4 text-slate-900">{chantPrenatalAteliersData.title}</h1>
                 <h2 className="text-2xl text-slate-600 mb-6">{chantPrenatalAteliersData.subtitle}</h2>
 
                 {chantPrenatalAteliersData.media && (
-                    <div className="mb-8 p-6 bg-rose-50 rounded-3xl border border-rose-100">
+                    <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                         <p className="mb-2 text-slate-900">
                             <strong>{chantPrenatalAteliersData.media.franceMusique.title}</strong>
                         </p>
@@ -16,7 +16,7 @@ export default function ChantPrenatalAteliersPage() {
                             href={chantPrenatalAteliersData.media.franceMusique.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-rose-500 hover:text-rose-600 hover:underline break-all"
+                            className="text-[#F25A38] hover:text-[#732514] hover:underline break-all"
                         >
                             {chantPrenatalAteliersData.media.franceMusique.url}
                         </a>
@@ -31,14 +31,14 @@ export default function ChantPrenatalAteliersPage() {
                     ))}
                 </div>
 
-                <div className="mb-8 p-6 bg-rose-50 rounded-3xl border border-rose-100 shadow-sm">
+                <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988] shadow-sm">
                     <h3 className="text-xl font-semibold mb-3 text-slate-900">Contact</h3>
                     <p className="mb-2 text-slate-700">
                         <strong>{chantPrenatalAteliersData.contact.name}</strong>
                     </p>
                     <p className="mb-2 text-slate-700">
                         <strong>Email :</strong>{' '}
-                        <a href={`mailto:${chantPrenatalAteliersData.contact.email}`} className="text-rose-500 hover:text-rose-600 hover:underline">
+                        <a href={`mailto:${chantPrenatalAteliersData.contact.email}`} className="text-[#F25A38] hover:text-[#732514] hover:underline">
                             {chantPrenatalAteliersData.contact.email}
                         </a>
                     </p>
@@ -46,14 +46,14 @@ export default function ChantPrenatalAteliersPage() {
                         <strong>Téléphone :</strong> {chantPrenatalAteliersData.contact.phone}
                     </p>
                     {chantPrenatalAteliersData.contact.whatsapp && (
-                        <p className="text-rose-500">{chantPrenatalAteliersData.contact.whatsapp}</p>
+                        <p className="text-[#F25A38]">{chantPrenatalAteliersData.contact.whatsapp}</p>
                     )}
                 </div>
 
                 <div className="mb-8">
                     <h3 className="text-2xl font-semibold mb-4 text-slate-900">Ateliers</h3>
                     {chantPrenatalAteliersData.ateliers.map((atelier, index) => (
-                        <div key={index} className="mb-6 p-6 border border-rose-100 rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(15,23,42,0.3)] transition-shadow">
+                        <div key={index} className="mb-6 p-6 border border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-shadow">
                             <h4 className="text-xl font-semibold mb-3 text-slate-900">{atelier.title}</h4>
                             <p className="mb-2 text-slate-700">
                                 <strong>Horaire :</strong> {atelier.schedule}
@@ -71,7 +71,7 @@ export default function ChantPrenatalAteliersPage() {
                             {atelier.contact && (
                                 <p className="mb-2 text-slate-700">
                                     <strong>Contact :</strong> {atelier.contact.name} - {atelier.contact.phone} -{' '}
-                                    <a href={`mailto:${atelier.contact.email}`} className="text-rose-500 hover:text-rose-600 hover:underline">
+                                    <a href={`mailto:${atelier.contact.email}`} className="text-[#F25A38] hover:text-[#732514] hover:underline">
                                         {atelier.contact.email}
                                     </a>
                                 </p>
@@ -96,7 +96,7 @@ export default function ChantPrenatalAteliersPage() {
                 )}
 
                 {chantPrenatalAteliersData.introduction && (
-                    <div className="mb-8 p-6 border-2 border-rose-200 rounded-3xl bg-white/80 shadow-sm">
+                    <div className="mb-8 p-6 border-2 border-[#F29057] rounded-3xl bg-white/80 shadow-sm">
                         <h3 className="text-xl font-semibold mb-3 text-slate-900">{chantPrenatalAteliersData.introduction.title}</h3>
                         <p className="mb-2 text-slate-700">
                             <strong>Date :</strong> {chantPrenatalAteliersData.introduction.date}
@@ -116,7 +116,7 @@ export default function ChantPrenatalAteliersPage() {
                 )}
 
                 {chantPrenatalAteliersData.groupes && (
-                    <div className="mb-8 p-6 bg-rose-50/60 rounded-3xl border border-rose-100">
+                    <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                         <h3 className="text-xl font-semibold mb-3 text-slate-900">{chantPrenatalAteliersData.groupes.title}</h3>
                         <p className="mb-2 text-slate-700">{chantPrenatalAteliersData.groupes.description}</p>
                         <p className="text-slate-600">{chantPrenatalAteliersData.groupes.note}</p>
@@ -124,7 +124,7 @@ export default function ChantPrenatalAteliersPage() {
                 )}
 
                 {chantPrenatalAteliersData.formation && (
-                    <div className="mb-8 p-6 border border-rose-100 rounded-3xl bg-white/80 shadow-sm">
+                    <div className="mb-8 p-6 border border-[#F2B988] rounded-3xl bg-white/80 shadow-sm">
                         <h3 className="text-2xl font-semibold mb-4 text-slate-900">{chantPrenatalAteliersData.formation.title}</h3>
                         <p className="mb-2 text-slate-700">
                             <strong>Formatrice :</strong> {chantPrenatalAteliersData.formation.formatrice}
@@ -133,7 +133,7 @@ export default function ChantPrenatalAteliersPage() {
                         <div className="mb-4">
                             <h4 className="text-lg font-semibold mb-2 text-slate-900">Programme :</h4>
                             {chantPrenatalAteliersData.formation.stages.map((stage, index) => (
-                                <div key={index} className="mb-2 pl-4 border-l-2 border-rose-400">
+                                <div key={index} className="mb-2 pl-4 border-l-2 border-[#F29057]">
                                     <p className="text-slate-700">
                                         <strong>Stage {stage.number} :</strong> {stage.title} ({stage.duration})
                                     </p>
@@ -148,7 +148,7 @@ export default function ChantPrenatalAteliersPage() {
                 )}
 
                 {chantPrenatalAteliersData.rencontre && (
-                    <div className="mb-8 p-6 bg-rose-50/60 rounded-3xl border border-rose-100">
+                    <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                         <h3 className="text-xl font-semibold mb-3 text-slate-900">{chantPrenatalAteliersData.rencontre.title}</h3>
                         <p className="mb-2 text-slate-700">
                             <strong>Lieu :</strong> {chantPrenatalAteliersData.rencontre.location}
@@ -158,16 +158,16 @@ export default function ChantPrenatalAteliersPage() {
                 )}
 
                 {chantPrenatalAteliersData.publications && (
-                    <div className="mb-8 p-6 bg-indigo-50/50 rounded-3xl border border-rose-100">
+                    <div className="mb-8 p-6 bg-[#ABA0F2]/10 rounded-3xl border border-[#F2B988]">
                         <p className="font-semibold text-slate-900">{chantPrenatalAteliersData.publications.title}</p>
                     </div>
                 )}
 
                 {chantPrenatalAteliersData.notes && chantPrenatalAteliersData.notes.length > 0 && (
-                    <div className="mb-8 p-6 bg-rose-100/50 rounded-3xl border border-rose-200">
+                    <div className="mb-8 p-6 bg-[#F2B988]/30 rounded-3xl border border-[#F29057]">
                         <h4 className="font-semibold mb-2 text-slate-900">Notes importantes :</h4>
                         {chantPrenatalAteliersData.notes.map((note, index) => (
-                            <p key={index} className="mb-1 text-rose-700">• {note}</p>
+                            <p key={index} className="mb-1 text-[#732514]">• {note}</p>
                         ))}
                     </div>
                 )}
