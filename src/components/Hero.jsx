@@ -26,7 +26,7 @@ export default function Hero() {
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 drop-shadow-2xl">
                         Envie de Chanter
                     </h1>
-                    <p className="text-xl md:text-2xl lg:text-3xl text-white/95 font-light max-w-3xl drop-shadow-lg">
+                    <p className="text-xl md:text-2xl lg:text-2xl text-white/95 font-light max-w-3xl drop-shadow-lg">
                         Le chant prénatal et la psychophonie au service du bien-être
                     </p>
 

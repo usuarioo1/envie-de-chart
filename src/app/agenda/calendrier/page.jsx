@@ -1,3 +1,5 @@
+'use client';
+import { useState, useEffect } from 'react';
 import agendaData from '@/utils/agenda/agenda.json';
 import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
 
@@ -38,14 +40,29 @@ const TimelineCard = ({ eyebrow, title, date, children }) => (
     </article>
 );
 
-export const metadata = {
-    title: 'Calendrier des ateliers et stages',
-    description: 'Vue synthétique des rencontres Envie de chanter',
-};
-
 export default function AgendaCalendrierPage() {
     const formations = agendaData.formations;
     const ateliers = agendaNext.agenda;
+    const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchEvents();
+    }, []);
+
+    const fetchEvents = async () => {
+        try {
+            const response = await fetch('/api/events');
+            const data = await response.json();
+            if (data.success) {
+                setEvents(data.data);
+            }
+        } catch (err) {
+            console.error('Error fetching events:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <main className="px-4 py-12">
@@ -124,6 +141,44 @@ export default function AgendaCalendrierPage() {
                             </TimelineCard>
                         ))}
                     </div>
+                </section>
+
+                {/* Events from Database */}
+                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
+                    <div className="flex flex-col gap-2">
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Événements créés par les utilisateurs</p>
+                        <h2 className="text-2xl font-semibold text-slate-900">Événements de la communauté</h2>
+                    </div>
+                    
+                    {loading ? (
+                        <p className="text-center text-gray-500">Chargement des événements...</p>
+                    ) : events.length === 0 ? (
+                        <p className="text-center text-gray-500">Aucun événement créé pour le moment. Créez-en un depuis le tableau de bord !</p>
+                    ) : (
+                        <div className="grid gap-5 lg:grid-cols-2">
+                            {events.map((event) => (
+                                <TimelineCard
+                                    key={event._id}
+                                    eyebrow="Événement communautaire"
+                                    date={new Date(event.date).toLocaleDateString('fr-FR')}
+                                    title={event.title}
+                                >
+                                    <div className="space-y-2">
+                                        <p>{event.description}</p>
+                                        <p>📍 Lieu : {event.location}</p>
+                                        <p>💰 Tarif : {event.price}€</p>
+                                        <p>📅 {new Date(event.date).toLocaleString('fr-FR', { 
+                                            dateStyle: 'long', 
+                                            timeStyle: 'short' 
+                                        })}</p>
+                                        {event.createdBy && (
+                                            <p className="text-[#F25A38]">Créé par : {event.createdBy.name}</p>
+                                        )}
+                                    </div>
+                                </TimelineCard>
+                            ))}
+                        </div>
+                    )}
                 </section>
             </div>
         </main>

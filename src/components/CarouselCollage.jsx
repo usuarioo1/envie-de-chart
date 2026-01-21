@@ -50,9 +50,7 @@ export default function CarouselCollage() {
   return (
     <div className="w-full max-w-7xl mx-auto p-5">
       {/* Título */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#732514]">
-        Galerie d'images des ateliers
-      </h2>
+      
 
       <div className="relative w-full grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-4 min-h-[600px]">
         {/* Imagen principal */}

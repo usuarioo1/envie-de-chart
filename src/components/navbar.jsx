@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const menuSections = [
     {
@@ -78,9 +78,49 @@ export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openSubMenu, setOpenSubMenu] = useState(null);
+    const [user, setUser] = useState(null);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        // Check if user is logged in
+        const userData = localStorage.getItem('user');
+        if (userData) {
+            try {
+                setUser(JSON.parse(userData));
+            } catch (error) {
+                console.error('Error parsing user data:', error);
+                localStorage.removeItem('user');
+            }
+        }
+
+        // Listen for storage changes (e.g., login/logout from another tab)
+        const handleStorageChange = () => {
+            const userData = localStorage.getItem('user');
+            if (userData) {
+                try {
+                    setUser(JSON.parse(userData));
+                } catch (error) {
+                    console.error('Error parsing user data:', error);
+                    setUser(null);
+                }
+            } else {
+                setUser(null);
+            }
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+        return () => window.removeEventListener('storage', handleStorageChange);
+    }, []);
 
     const handleMouseEnter = (title) => {
         setOpenMenu(title);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        setUser(null);
+        window.location.href = '/';
     };
 
     const handleMouseLeave = () => {
@@ -211,6 +251,45 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
+                        
+                        {/* Auth Links */}
+                        <div className="flex items-center space-x-2 ml-4 border-l-2 border-[#F2B988] pl-4">
+                            {mounted && (
+                                <>
+                                    {user ? (
+                                        <>
+                                            <Link
+                                                href="/dashboard"
+                                                className="px-3 py-2 text-sm font-medium text-[#732514] hover:text-[#F25A38] transition"
+                                            >
+                                                Dashboard
+                                            </Link>
+                                            <button
+                                                onClick={handleLogout}
+                                                className="px-3 py-2 text-sm font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
+                                            >
+                                                Logout
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Link
+                                                href="/login"
+                                                className="px-3 py-2 text-sm font-medium text-[#732514] hover:text-[#F25A38] transition"
+                                            >
+                                                Login
+                                            </Link>
+                                            <Link
+                                                href="/register"
+                                                className="px-3 py-2 text-sm font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
+                                            >
+                                                Register
+                                            </Link>
+                                        </>
+                                    )}
+                                </>
+                            )}
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -326,6 +405,45 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
+                        
+                        {/* Mobile Auth Links */}
+                        <div className="border-t-2 border-[#F2B988] pt-2 mt-2 space-y-1">
+                            {mounted && (
+                                <>
+                                    {user ? (
+                                        <>
+                                            <Link
+                                                href="/dashboard"
+                                                className="block px-3 py-2 text-base font-medium text-[#732514] hover:text-[#F25A38] hover:bg-[#F2B988]/20 rounded-md transition"
+                                            >
+                                                Dashboard
+                                            </Link>
+                                            <button
+                                                onClick={handleLogout}
+                                                className="block w-full text-left px-3 py-2 text-base font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
+                                            >
+                                                Logout
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Link
+                                                href="/login"
+                                                className="block px-3 py-2 text-base font-medium text-[#732514] hover:text-[#F25A38] hover:bg-[#F2B988]/20 rounded-md transition"
+                                            >
+                                                Login
+                                            </Link>
+                                            <Link
+                                                href="/register"
+                                                className="block px-3 py-2 text-base font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
+                                            >
+                                                Register
+                                            </Link>
+                                        </>
+                                    )}
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}
