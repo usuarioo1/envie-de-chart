@@ -12,10 +12,10 @@ import image7 from '@/assets/WhatsApp Image 2026-01-16 at 5.19.55 PM.jpeg';
 import image8 from '@/assets/WhatsApp Image 2026-01-16 at 5.21.10 PM.jpeg';
 import image9 from '@/assets/WhatsApp Image 2026-01-16 at 5.21.22 PM.jpeg';
 import image10 from '@/assets/WhatsApp Image 2026-01-16 at 5.24.05 PM.jpeg';
-
+import image11 from '@/assets/IMG_0724.jpeg';
 const images = [
   image1, image2, image3, image4, image5,
-  image6, image7, image8, image9, image10
+  image6, image7, image8, image9, image10, image11
 ];
 
 export default function CarouselCollage() {
