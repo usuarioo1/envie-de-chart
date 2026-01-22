@@ -1,20 +1,34 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import heroImage from '@/assets/unnamed.png';
+import image12 from '@/assets/WhatsApp Image 2026-01-21 at 6.35.14 AM.jpeg';  
+
 
 export default function Hero() {
+    const [currentImage, setCurrentImage] = useState(0);
+    const images = [heroImage, image12];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 6000); // Cambia cada 6 segundos
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
     return (
         <section className="relative w-full h-0 pb-[40%] overflow-hidden mb-12">
             {/* Aspect ratio más panorámico (2.5:1) para menos altura */}
             <div className="absolute inset-0">
                 {/* Imagen de fondo */}
                 <Image
-                    src={heroImage}
+                    src={images[currentImage]}
                     alt="Envie de Chanter - Chant prénatal et psychophonie"
                     fill
                     priority
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-opacity duration-1000"
                     quality={90}
                 />
 
