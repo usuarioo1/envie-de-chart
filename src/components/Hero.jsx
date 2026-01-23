@@ -36,11 +36,11 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#732514]/60 via-[#F25A38]/40 to-[#F29057]/50"></div>
 
                 {/* Contenido del Hero */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 drop-shadow-2xl">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 mt-8 md:mt-0 drop-shadow-2xl">
                         Envie de Chanter
                     </h1>
-                    <p className="text-l md:text-2xl lg:text-2xl text-white/95 font-light max-w-3xl drop-shadow-lg">
+                    <p className="text-xs sm:text-sm md:text-2xl lg:text-2xl text-white/95 font-light max-w-3xl drop-shadow-lg whitespace-nowrap">
                         Le chant prénatal et la psychophonie au service du bien-être
                     </p>
 

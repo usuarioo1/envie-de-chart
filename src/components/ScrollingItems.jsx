@@ -1,4 +1,6 @@
 'use client';
+import ImageIcon from '@/assets/icon/icono.png';
+import Image from 'next/image';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -18,12 +20,12 @@ export default function ScrollingItems() {
             ],
             link: "/chant-prenatal/canto-prenatal",
             bgColor: "from-[#F25A38]/10 to-[#F29057]/10",
-            icon: "🎵",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
+                { label: 'Le Chant Prénatal et la Psychophonie', href: '/chant-prenatal/le-chant-prenatal-psychophonie' },
                 { label: 'Prenatal Singing', href: '/chant-prenatal/prenatal-singing' },
                 { label: 'Canto Prenatal', href: '/chant-prenatal/canto-prenatal' },
-                { label: 'Canto Pré-natal em portugais', href: '/chant-prenatal/canto-pre-natal-portugais' },
-                { label: 'Les formateurs', href: '/chant-prenatal/les-formateurs' },
+                { label: 'Canto Pré-natal em portugais', href: '/chant-prenatal/canto-pre-natal-portugais' }
             ]
         },
         {
@@ -39,7 +41,7 @@ export default function ScrollingItems() {
             ],
             link: "/ateliers-de-chant/chant-collectif",
             bgColor: "from-[#F29057]/10 to-[#F2B988]/10",
-            icon: "🎶",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
                 { label: 'Chant prénatal – ateliers', href: '/ateliers-de-chant/chant-prenatal-ateliers' },
                 { label: 'Chant maman bébé – adulte enfant', href: '/ateliers-de-chant/chant-maman-bebe' },
@@ -60,7 +62,7 @@ export default function ScrollingItems() {
             ],
             link: "/stages-et-formations",
             bgColor: "from-[#ABA0F2]/10 to-[#F25A38]/10",
-            icon: "📚",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
                 { label: 'Stages et Formations', href: '/stages-et-formations' },
             ]
@@ -78,7 +80,7 @@ export default function ScrollingItems() {
             ],
             link: "/les-animateurs/france",
             bgColor: "from-[#F2B988]/10 to-[#ABA0F2]/10",
-            icon: "🌍",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
                 { label: 'France', href: '/les-animateurs/france' },
                 { label: 'Canada', href: '/les-animateurs/canada' },
@@ -103,7 +105,7 @@ export default function ScrollingItems() {
             ],
             link: "/agenda/calendrier",
             bgColor: "from-[#F25A38]/10 to-[#F2B988]/10",
-            icon: "📅",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
                 { label: 'Agenda des stages et formations', href: '/agenda/stages-et-formations' },
                 { label: 'Agenda des prochains ateliers', href: '/agenda/prochains-ateliers' },
@@ -123,7 +125,7 @@ export default function ScrollingItems() {
             ],
             link: "/medias/la-presse-en-parle",
             bgColor: "from-[#ABA0F2]/10 to-[#F29057]/10",
-            icon: "📰",
+            icon: <Image src={ImageIcon} alt="Icon" width={40} height={40} />,
             links: [
                 { label: 'Publications', href: '/medias/publications' },
                 { label: 'La Presse en parle', href: '/medias/la-presse-en-parle' },
@@ -137,7 +139,7 @@ export default function ScrollingItems() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#732514] mb-4">
-                        Explorez nos Services /(Test layout 2)
+                        Explorez nos Services
                     </h2>
                     <p className="text-lg md:text-xl text-[#732514]/80 max-w-3xl mx-auto">
                         Découvrez l'univers du chant prénatal et de la psychophonie
@@ -172,61 +174,64 @@ function ScrollingCard({ section, index }) {
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Card Content */}
-            <div className="relative p-8 bg-white/80 backdrop-blur-sm h-full">
-                {/* Icon */}
-                <div className="text-5xl mb-4 transform transition-transform duration-500 ease-out" 
-                     style={{ 
-                         transform: isHovered ? 'scale(1.2) rotate(10deg)' : 'scale(1) rotate(0deg)'
-                     }}>
-                    {section.icon}
+            <div className="relative p-8 bg-white/80 backdrop-blur-sm h-full flex flex-col">
+                <div className="flex-grow">
+                    {/* Icon */}
+                    <div className="mb-4 transform transition-transform duration-500 ease-out flex items-center justify-center" 
+                         style={{ 
+                             transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+                             fontSize: typeof section.icon === 'string' ? '3rem' : 'inherit'
+                         }}>
+                        {section.icon}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#732514] mb-2">
+                        {section.title}
+                    </h3>
+
+                    {/* Subtitle */}
+                    <p className="text-sm md:text-base text-[#F25A38] font-semibold mb-4">
+                        {section.subtitle}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-[#732514]/80 text-sm md:text-base leading-relaxed mb-6">
+                        {section.description}
+                    </p>
+
+                    {/* Highlights */}
+                    <ul className="space-y-2 mb-6">
+                        {section.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-start text-sm text-[#732514]/70">
+                                <span className="text-[#F25A38] mr-2 mt-1 flex-shrink-0">✓</span>
+                                <span>{highlight}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* Quick Access Links */}
+                    {section.links && section.links.length > 0 && (
+                        <div className="mb-6 p-4 bg-white/80 rounded-xl border-2 border-[#F25A38]/20 shadow-sm">
+                            <p className="text-xs font-bold text-[#732514] uppercase tracking-wide mb-3 flex items-center">
+                                <span className="text-[#F25A38] mr-2">→</span>
+                                Accès direct :
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {section.links.map((link, idx) => (
+                                    <Link key={idx} href={link.href}>
+                                        <span className="inline-block px-3 py-1.5 text-xs font-medium text-white bg-gradient-to-r from-[#F25A38] to-[#F29057] rounded-lg hover:from-[#732514] hover:to-[#F25A38] transition-all duration-200 hover:shadow-lg hover:scale-105 cursor-pointer">
+                                            {link.label}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-bold text-[#732514] mb-2">
-                    {section.title}
-                </h3>
-
-                {/* Subtitle */}
-                <p className="text-sm md:text-base text-[#F25A38] font-semibold mb-4">
-                    {section.subtitle}
-                </p>
-
-                {/* Description */}
-                <p className="text-[#732514]/80 text-sm md:text-base leading-relaxed mb-6">
-                    {section.description}
-                </p>
-
-                {/* Highlights */}
-                <ul className="space-y-2 mb-6">
-                    {section.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-[#732514]/70">
-                            <span className="text-[#F25A38] mr-2 mt-1 flex-shrink-0">✓</span>
-                            <span>{highlight}</span>
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Quick Access Links */}
-                {section.links && section.links.length > 0 && (
-                    <div className="mb-6 p-4 bg-white/80 rounded-xl border-2 border-[#F25A38]/20 shadow-sm">
-                        <p className="text-xs font-bold text-[#732514] uppercase tracking-wide mb-3 flex items-center">
-                            <span className="text-[#F25A38] mr-2">→</span>
-                            Accès direct :
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            {section.links.map((link, idx) => (
-                                <Link key={idx} href={link.href}>
-                                    <span className="inline-block px-3 py-1.5 text-xs font-medium text-white bg-gradient-to-r from-[#F25A38] to-[#F29057] rounded-lg hover:from-[#732514] hover:to-[#F25A38] transition-all duration-200 hover:shadow-lg hover:scale-105 cursor-pointer">
-                                        {link.label}
-                                    </span>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
                 {/* Button */}
-                <Link href={section.link}>
+                <Link href={section.link} className="mt-auto">
                     <button
                         className={`
                             w-full py-3 px-6 rounded-xl font-semibold
