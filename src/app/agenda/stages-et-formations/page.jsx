@@ -34,7 +34,7 @@ const Pill = ({ children }) => (
 );
 
 const SectionCard = ({ eyebrow, title, children }) => (
-    <section className="rounded-3xl border border-[#F2B988] bg-white/80 p-6 shadow-[0_20px_45px_-35px_rgba(242,90,56,0.35)]">
+    <section className="pb-8 mb-8 border-b border-[#F2B988]/30 last:border-b-0 last:pb-0 last:mb-0">
         <div className="mb-6 space-y-2">
             {eyebrow && <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">{eyebrow}</p>}
             <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
@@ -52,23 +52,27 @@ export default function AgendaStagesEtFormationsPage() {
     const { meta, media, documents, formations, international, modules } = agendaData;
 
     return (
-        <main className="px-4 py-12">
-            <div className="mx-auto max-w-6xl space-y-10">
-                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">{meta.organisation}</p>
-                    <h1 className="mt-3 text-3xl font-semibold text-slate-900">{meta.title}</h1>
-                    <p className="mt-1 text-sm text-slate-600">Programme {meta.periode}</p>
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        {documents?.map((doc) => (
-                            <span key={doc.title} className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
-                                {doc.title} · {doc.type}
-                            </span>
-                        ))}
-                    </div>
-                </header>
+        <main className="px-4 py-12 bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
+            <div className="mx-auto max-w-6xl">
+                {/* Contenedor unificado */}
+                <div className="rounded-3xl border-2 border-[#F2B988] bg-white/80 shadow-[0_20px_50px_-20px_rgba(242,90,56,0.25)] overflow-hidden">
+                    
+                    <header className="bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 border-b-2 border-[#F2B988]/30">
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">{meta.organisation}</p>
+                        <h1 className="mt-3 text-3xl font-semibold text-slate-900">{meta.title}</h1>
+                        <p className="mt-1 text-sm text-slate-600">Programme {meta.periode}</p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                            {documents?.map((doc) => (
+                                <span key={doc.title} className="rounded-2xl border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
+                                    {doc.title} · {doc.type}
+                                </span>
+                            ))}
+                        </div>
+                    </header>
 
-                {media?.length ? (
-                    <SectionCard eyebrow="À diffuser" title="Sélection média">
+                    {/* Contenido interno */}
+                    <div className="p-8 space-y-0">{media?.length ? (
+                        <SectionCard eyebrow="À diffuser" title="Sélection média">
                         <div className="grid gap-4 md:grid-cols-2">
                             {media.map((entry) => (
                                 <article
@@ -215,6 +219,8 @@ export default function AgendaStagesEtFormationsPage() {
                         </div>
                     </SectionCard>
                 ) : null}
+                    </div>
+                </div>
             </div>
         </main>
     );

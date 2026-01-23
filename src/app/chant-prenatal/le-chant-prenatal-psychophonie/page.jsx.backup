@@ -1,0 +1,403 @@
+import Image from 'next/image';
+import data from '@/utils/chantPrenatal/le-chant-prenatal.json';
+
+export default function LeChantPrenatalPsychophoniePage() {
+    const { presentation, ateliers, programme, inscription, origine, fondements, psychophonie, bibliographie } = data;
+
+    return (
+        <main className="px-4 py-12">
+            <div className="mx-auto max-w-5xl space-y-10">
+                {/* Header */}
+                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
+                    <div className="flex items-center justify-center mb-4">
+                        <Image 
+                            src="/assets/icon/icono.png" 
+                            alt="Logo" 
+                            width={50} 
+                            height={50}
+                            className="object-contain"
+                        />
+                    </div>
+                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057] text-center">Le Chant Prénatal</p>
+                    <h1 className="mt-3 text-3xl font-semibold text-slate-900 text-center">
+                        {presentation.title}
+                    </h1>
+                    <p className="mt-2 text-sm text-slate-600 text-center">
+                        Méthode d'harmonie vitale par l'étude consciente de la voix parlée et chantée
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3 text-xs text-slate-500 justify-center">
+                        <span className="rounded-full border border-slate-200 px-3 py-1">Formation 2025</span>
+                        <span className="rounded-full border border-slate-200 px-3 py-1">Psychophonie</span>
+                        <span className="rounded-full border border-slate-200 px-3 py-1">Marie-Louise Aucher</span>
+                    </div>
+                </header>
+
+                {/* Média référence */}
+                <section className="rounded-3xl border border-[#F2B988] bg-white/85 p-8 shadow-[0_25px_60px_-40px_rgba(242,90,56,0.35)]">
+                    <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#F2B988]">
+                        <svg className="w-6 h-6 text-[#F25A38]" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                        </svg>
+                        <span className="font-bold text-[#F25A38] text-lg">{presentation.media.platform}</span>
+                    </div>
+                    <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057]">
+                        <p className="text-slate-700 text-sm mb-2">
+                            {presentation.media.date} à {presentation.media.time}
+                        </p>
+                        <p className="text-slate-700 text-sm">
+                            <strong>Programme:</strong> "{presentation.media.program}" de {presentation.media.author}
+                        </p>
+                        <p className="text-slate-600 text-sm mt-2">
+                            <strong>Sujet:</strong> {presentation.media.topic}
+                        </p>
+                        <a href="#" className="inline-block mt-3 text-[#F25A38] hover:text-[#732514] font-semibold text-sm">
+                            {presentation.media.link} →
+                        </a>
+                    </div>
+                </section>
+                        <h2 className="text-3xl font-bold mb-2 text-slate-900 flex items-center justify-center">
+                            <span className="inline-block w-1 h-10 bg-[#F25A38] rounded-full mr-4"></span>
+                            {ateliers.title}
+                        </h2>
+                        <p className="text-center text-slate-600 text-lg mb-6">
+                            Formation {ateliers.formation_year}
+                        </p>
+
+                        {/* Programme détaillé */}
+                        <div className="mb-6 p-6 bg-gradient-to-r from-[#F2B988]/20 to-[#ABA0F2]/10 rounded-2xl">
+                            <h3 className="text-xl font-bold text-slate-900 mb-4">{programme.title}</h3>
+                            <div className="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <p className="text-slate-700"><strong>Formatrice:</strong> {programme.formatrice}</p>
+                                    <p className="text-slate-700 mt-2">{programme.format}</p>
+                                </div>
+                                <div>
+                                    <p className="text-slate-700"><strong>Contact:</strong></p>
+                                    <p className="text-slate-700">{programme.contact.email}</p>
+                                    <p className="text-slate-700">{programme.contact.phone}</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        {/* Sessions */}
+                        <div className="space-y-4">
+                            {programme.sessions.map((session) => (
+                                <div key={session.numero} className="p-5 border-2 border-[#F2B988] rounded-2xl bg-white hover:shadow-md transition-shadow">
+                                    <div className="flex items-start gap-4">
+                                        <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#F25A38] text-white font-bold">
+                                            {session.numero}
+                                        </span>
+                                        <div className="flex-1">
+                                            <h4 className="font-bold text-slate-900 text-lg mb-1">{session.title}</h4>
+                                            {session.subtitle && (
+                                                <p className="text-sm text-[#F25A38] mb-2">{session.subtitle}</p>
+                                            )}
+                                            <p className="text-sm text-slate-600">{session.duration}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Inscription */}
+                <div className="max-w-4xl mx-auto mb-10">
+                    <div className="p-8 bg-white/80 rounded-3xl border-2 border-[#F2B988] shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)]">
+                        <h2 className="text-2xl font-bold mb-6 text-slate-900 flex items-center">
+                            <span className="inline-block w-1 h-8 bg-[#F25A38] rounded-full mr-3"></span>
+                            {inscription.title}
+                        </h2>
+                        
+                        <div className="space-y-6">
+                            <div className="p-5 bg-[#ABA0F2]/10 rounded-2xl">
+                                <h3 className="font-semibold text-slate-900 mb-2">{inscription.contact.name}</h3>
+                                <p className="text-slate-700">{inscription.contact.email}</p>
+                                <p className="text-slate-700">{inscription.contact.phone}</p>
+                                
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold text-slate-900 mb-2">Modalités :</h3>
+                                <p className="text-slate-700">{inscription.modalites}</p>
+                            </div>
+
+                            <div className="flex items-center gap-2 text-slate-700">
+                                <svg className="w-5 h-5 text-[#F25A38]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                <p>{inscription.accessibilite}</p>
+                            </div>
+
+                            <div className="p-5 bg-[#F2B988]/20 rounded-2xl border border-[#F2B988]">
+                                <h3 className="font-semibold text-slate-900 mb-2">Certification :</h3>
+                                <p className="text-slate-700"><strong>{inscription.certification.organisme}</strong> - {inscription.certification.reference}</p>
+                                <p className="text-slate-700 mt-2">{inscription.certification.prise_en_charge}</p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-semibold text-slate-900 mb-2">Responsable administrative :</h3>
+                                <p className="text-slate-700"><strong>{inscription.responsable_administrative.name}</strong></p>
+                                <p className="text-slate-700">{inscription.responsable_administrative.email}</p>
+                                <p className="text-slate-700">{inscription.responsable_administrative.phone}</p>
+                            </div>
+
+                            {inscription.documents && (
+                                <div className="flex flex-wrap gap-3">
+                                    {inscription.documents.map((doc, index) => (
+                                        <span key={index} className="px-4 py-2 bg-white border-2 border-[#F2B988] rounded-full text-sm text-slate-700">
+                                            📄 {doc}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Origine */}
+                <div className="max-w-4xl mx-auto mb-10">
+                    <div className="p-8 bg-white/80 rounded-3xl border-2 border-[#F2B988] shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)]">
+                        <h2 className="text-2xl font-bold mb-4 text-slate-900 flex items-center">
+                            <span className="inline-block w-1 h-8 bg-[#F25A38] rounded-full mr-3"></span>
+                            {origine.title}
+                        </h2>
+                        <p className="text-slate-700 mb-6 leading-relaxed">{origine.description}</p>
+                        
+                        {origine.histoire.map((item, index) => (
+                            <div key={index} className="mb-4">
+                                {item.paragraphe && (
+                                    <p className="text-slate-700 leading-relaxed">{item.paragraphe}</p>
+                                )}
+                                {item.evenement && (
+                                    <div className="flex gap-4 items-start p-4 bg-[#ABA0F2]/10 rounded-xl">
+                                        <span className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-[#F25A38] text-white font-bold">
+                                            {item.annee}
+                                        </span>
+                                        <div className="flex-1 pt-2">
+                                            <p className="text-slate-700">{item.evenement}</p>
+                                            {item.reference && (
+                                                <p className="text-sm text-slate-600 mt-2 italic">({item.reference})</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Fondements */}
+                <div className="max-w-4xl mx-auto mb-10">
+                    <div className="p-8 bg-white/80 rounded-3xl border-2 border-[#F2B988] shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)]">
+                        <h2 className="text-2xl font-bold mb-4 text-slate-900 flex items-center">
+                            <span className="inline-block w-1 h-8 bg-[#F25A38] rounded-full mr-3"></span>
+                            {fondements.title}
+                        </h2>
+                        <p className="text-slate-700 mb-4">{fondements.introduction}</p>
+                        
+                        {/* Axes principaux */}
+                        <div className="grid md:grid-cols-3 gap-4 mb-8">
+                            {fondements.axes.map((axe, index) => (
+                                <div key={index} className="p-5 bg-[#F2B988]/20 rounded-2xl border border-[#F2B988] hover:shadow-lg transition-shadow">
+                                    <div className="flex items-center justify-center mb-3">
+                                        <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#F25A38] text-white font-bold text-lg">
+                                            {index + 1}
+                                        </span>
+                                    </div>
+                                    <p className="text-slate-700 font-medium text-center">{axe}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Détails en 2 columnas */}
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {/* Bien-être */}
+                            <div className="p-5 bg-white rounded-2xl border border-[#F2B988]">
+                                <h3 className="text-lg font-bold text-slate-900 mb-2">{fondements.details.bien_etre.title}</h3>
+                                <p className="text-slate-700 text-sm mb-2">{fondements.details.bien_etre.description}</p>
+                                <p className="text-slate-700 text-sm mb-2">{fondements.details.bien_etre.travail_voix}</p>
+                                <ul className="list-disc list-inside space-y-1 text-slate-700 text-sm ml-2">
+                                    {fondements.details.bien_etre.exercices.map((exercice, index) => (
+                                        <li key={index}>{exercice}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Lien avec bébé */}
+                            <div className="p-5 bg-[#ABA0F2]/10 rounded-2xl border border-[#ABA0F2]">
+                                <h3 className="text-lg font-bold text-slate-900 mb-2">{fondements.details.lien_bebe.title}</h3>
+                                {fondements.details.lien_bebe.paragraphes.map((para, index) => (
+                                    <p key={index} className="text-slate-700 text-sm mb-2 last:mb-0">{para}</p>
+                                ))}
+                            </div>
+
+                            {/* Naissance */}
+                            <div className="p-5 bg-white rounded-2xl border border-[#F2B988]">
+                                <h3 className="text-lg font-bold text-slate-900 mb-2">{fondements.details.naissance.title}</h3>
+                                {fondements.details.naissance.paragraphes.map((para, index) => (
+                                    <p key={index} className="text-slate-700 text-sm mb-2 last:mb-0">{para}</p>
+                                ))}
+                            </div>
+
+                            {/* Post-natal */}
+                            <div className="p-5 bg-[#F2B988]/20 rounded-2xl border border-[#F2B988]">
+                                <h3 className="text-lg font-bold text-slate-900 mb-2">{fondements.details.post_natal.title}</h3>
+                                {fondements.details.post_natal.paragraphes.map((para, index) => (
+                                    <p key={index} className="text-slate-700 text-sm mb-2 last:mb-0">{para}</p>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+                {/* La Psychophonie */}
+                <div className="max-w-4xl mx-auto mb-10">
+                    <div className="p-8 bg-white/80 rounded-3xl border-2 border-[#F2B988] shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)]">
+                        <h2 className="text-3xl font-bold mb-4 text-slate-900 text-center">{psychophonie.title}</h2>
+                        
+                        <div className="p-6 bg-gradient-to-r from-[#F2B988]/20 to-[#ABA0F2]/10 rounded-2xl mb-6">
+                            <p className="text-slate-700 text-lg mb-3"><strong>Définition:</strong> {psychophonie.definition}</p>
+                            <p className="text-slate-600">{psychophonie.depot}</p>
+                        </div>
+
+                        <div className="p-5 bg-[#ABA0F2]/10 rounded-2xl mb-6 italic border-l-4 border-[#F25A38]">
+                            <p className="text-slate-700">{psychophonie.citation}</p>
+                        </div>
+
+                        
+
+                        {/* Historique */}
+                        <div className="mb-8">
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{psychophonie.historique.title}</h3>
+                            
+                            <div className="p-5 bg-[#F2B988]/20 rounded-2xl mb-4">
+                                <p className="text-slate-700 mb-2">
+                                    <strong>{psychophonie.historique.fondatrice.nom}</strong> ({psychophonie.historique.fondatrice.naissance} - {psychophonie.historique.fondatrice.deces})
+                                </p>
+                                <p className="text-slate-600">{psychophonie.historique.fondatrice.profession}</p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <p className="text-slate-700 leading-relaxed">{psychophonie.historique.decouverte}</p>
+                                <p className="text-slate-700 leading-relaxed">{psychophonie.historique.correspondance}</p>
+                                <p className="text-slate-700 leading-relaxed">{psychophonie.historique.pedagogie}</p>
+                            </div>
+                        </div>
+
+                        {/* Présentation par Marie Louise Aucher */}
+                        <div>
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{psychophonie.presentation_marie_louise.title}</h3>
+                            
+                            <div className="space-y-4 text-slate-700 leading-relaxed">
+                                <p><strong>{psychophonie.presentation_marie_louise.definition_methode}</strong></p>
+                                <ul className="list-disc list-inside space-y-2 ml-4">
+                                    {psychophonie.presentation_marie_louise.aspects.map((aspect, index) => (
+                                        <li key={index}>{aspect}</li>
+                                    ))}
+                                </ul>
+                                <p>{psychophonie.presentation_marie_louise.receptivite}</p>
+                                <p>{psychophonie.presentation_marie_louise.conscience}</p>
+                                <p>{psychophonie.presentation_marie_louise.sens_recepteurs}</p>
+                                <p className="p-4 bg-[#ABA0F2]/10 rounded-xl">{psychophonie.presentation_marie_louise.corps_instrument}</p>
+                                <p>{psychophonie.presentation_marie_louise.echelle_corps}</p>
+                                <p className="p-4 bg-[#F2B988]/20 rounded-xl">{psychophonie.presentation_marie_louise.acupuncture}</p>
+                                <p>{psychophonie.presentation_marie_louise.emission}</p>
+                                <p>{psychophonie.presentation_marie_louise.souffle}</p>
+                                <p>{psychophonie.presentation_marie_louise.plages_sensation}</p>
+                                <p>{psychophonie.presentation_marie_louise.professeur_husson}</p>
+                                <p>{psychophonie.presentation_marie_louise.onomatopees}</p>
+                                <p>{psychophonie.presentation_marie_louise.respiration}</p>
+                                <p>{psychophonie.presentation_marie_louise.neuropsychiatrie}</p>
+                                <p>{psychophonie.presentation_marie_louise.hopitaux}</p>
+                                <p>{psychophonie.presentation_marie_louise.collectivites}</p>
+                                <p className="p-4 bg-gradient-to-r from-[#F2B988]/20 to-[#ABA0F2]/10 rounded-xl italic">{psychophonie.presentation_marie_louise.conclusion}</p>
+                                <p className="text-center font-bold text-[#F25A38] text-lg p-4">{psychophonie.presentation_marie_louise.pont}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bibliographie */}
+                <div className="max-w-3xl mx-auto mb-10 p-8 bg-white rounded-3xl border-2 border-[#732514] shadow-[0_8px_30px_-15px_rgba(115,37,20,0.3)]">
+                    <div className="text-center mb-8">
+                        <h2 className="text-3xl font-bold text-[#732514] mb-2">{bibliographie.title}</h2>
+                        <p className="text-lg font-semibold text-[#F25A38]">{bibliographie.subtitle_1}</p>
+                        <p className="text-base text-slate-600 italic">{bibliographie.subtitle_2}</p>
+                    </div>
+
+                    <div className="border-t-2 border-[#F2B988] pt-6">
+                        <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                            <svg className="w-7 h-7 text-[#F25A38]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                            </svg>
+                            Bibliographie
+                        </h3>
+                        
+                        <p className="text-base text-slate-700 mb-4 font-medium">{bibliographie.intro}</p>
+
+                        <div className="grid md:grid-cols-2 gap-4 mb-8">
+                            {bibliographie.livres.map((livre, index) => (
+                                <div key={index} className={`p-3 bg-gradient-to-r ${index % 2 === 0 ? 'from-[#ABA0F2]/5' : 'from-[#F2B988]/10'} to-transparent rounded-xl border-l-4 ${index % 2 === 0 ? 'border-[#ABA0F2]' : 'border-[#F2B988]'}`}>
+                                    <p className="font-semibold text-slate-800 text-sm">{livre.titre}</p>
+                                    <p className="text-xs text-slate-600 mt-1">{livre.editeur}</p>
+                                    <p className="text-xs text-slate-500 mt-1">ISBN {livre.isbn}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <h3 className="text-2xl font-bold text-slate-800 mb-6 mt-8 flex items-center gap-3">
+                            <svg className="w-7 h-7 text-[#F29057]" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+                            </svg>
+                            {bibliographie.autres_parutions.title}
+                        </h3>
+
+                        <div className="grid md:grid-cols-2 gap-4 mb-8">
+                            {bibliographie.autres_parutions.livres.map((livre, index) => (
+                                <div key={index} className="p-3 bg-gradient-to-r from-[#F29057]/5 to-transparent rounded-xl border-l-4 border-[#F29057]">
+                                    <p className="font-semibold text-slate-800 text-sm">{livre.titre}</p>
+                                    <p className="text-xs text-slate-700 mt-1">{livre.auteur}</p>
+                                    {livre.direction && <p className="text-xs text-slate-600 italic mt-1">{livre.direction}</p>}
+                                    {livre.editeur && <p className="text-xs text-slate-600 mt-1">{livre.editeur}</p>}
+                                    {livre.isbn && <p className="text-xs text-slate-500 mt-1">ISBN {livre.isbn}</p>}
+                                    {livre.note && <p className="text-xs text-slate-500 mt-1">{livre.note}</p>}
+                                    {livre.lien && (
+                                        <a href={livre.lien} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-[#F25A38] hover:text-[#732514] mt-2 font-medium">
+                                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                            </svg>
+                                            {livre.lien_text}
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        <h3 className="text-2xl font-bold text-slate-800 mb-6 mt-8 flex items-center gap-3">
+                            <svg className="w-7 h-7 text-[#732514]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+                            </svg>
+                            {bibliographie.partitions.title}
+                        </h3>
+
+                        <div className="space-y-4">
+                            {bibliographie.partitions.items.map((partition, index) => (
+                                <div key={index} className="p-4 bg-gradient-to-r from-[#732514]/5 to-transparent rounded-xl border-l-4 border-[#732514]">
+                                    <p className="font-semibold text-slate-800">{partition.titre}</p>
+                                    <p className="text-sm text-slate-600 italic mt-1">{partition.description}</p>
+                                    <p className="text-sm text-slate-700 mt-1">{partition.auteur}</p>
+                                    <p className="text-sm text-slate-600 mt-1">{partition.editeur}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

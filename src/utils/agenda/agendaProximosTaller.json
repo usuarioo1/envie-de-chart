@@ -3,15 +3,6 @@
         "title": "Agenda des prochains ateliers",
         "organisation": "Envie-de-chanter / Marie-Laure Potel"
     },
-    "media": [
-        {
-            "title": "Chronique France Musique – Faites passer",
-            "type": "radio",
-            "description": "Ré-écouter la chronique de Nathalie Moller sur le chant prénatal.",
-            "action": "ré-écouter",
-            "linkLabel": "Retrouvez la ici"
-        }
-    ],
     "contactGeneral": {
         "organisation": "Chant prénatal / Envie-de-chanter",
         "instagram": "enviedechanter_chant_prenatal",

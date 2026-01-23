@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -189,14 +190,27 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="bg-white shadow rounded-lg p-6 mb-6">
           <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-              <p className="mt-2 text-gray-600">
-                Welcome, {user?.name}! 
-                <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
-                  {user?.role}
-                </span>
-              </p>
+            <div className="flex items-center gap-6">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <Image 
+                  src="/assets/icon/icono.png" 
+                  alt="Envie de Chanter Logo" 
+                  width={40} 
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
+              {/* Text */}
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                <p className="mt-2 text-gray-600">
+                  Welcome, {user?.name}! 
+                  <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                    {user?.role}
+                  </span>
+                </p>
+              </div>
             </div>
             <div className="flex items-center gap-3">
               <Link

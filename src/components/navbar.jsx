@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const menuSections = [
@@ -12,22 +13,20 @@ const menuSections = [
             { label: 'Calendrier des ateliers et stages', href: '/agenda/calendrier' },
         ],
     },
-    {
-        title: 'Boutique',
-        items: ['Boutique', 'Panier', 'Mon compte', 'Conditions générales de ventes'],
-    },
+    // {
+    //     title: 'Boutique',
+    //     items: ['Boutique', 'Panier', 'Mon compte', 'Conditions générales de ventes'],
+    // },
     {
         title: 'Chant prénatal',
         items: [
-            {
-                title: 'le Chant Prénatal et la Psychophonie',
-                children: [
-                    { label: 'Prenatal Singing', href: '/chant-prenatal/prenatal-singing' },
-                    { label: 'Canto Prenatal', href: '/chant-prenatal/canto-prenatal' },
-                    { label: 'Canto Pré-natal em portugais', href: '/chant-prenatal/canto-pre-natal-portugais' },
-                ],
+            { 
+                label: 'Le Chant Prénatal et la Psychophonie', 
+                href: '/chant-prenatal/le-chant-prenatal-psychophonie' 
             },
-            { label: 'Les formateurs', href: '/chant-prenatal/les-formateurs' },
+            { label: 'Prenatal Singing', href: '/chant-prenatal/prenatal-singing' },
+            { label: 'Canto Prenatal', href: '/chant-prenatal/canto-prenatal' },
+            { label: 'Canto Pré-natal em portugais', href: '/chant-prenatal/canto-pre-natal-portugais' }
         ],
     },
     {
@@ -209,12 +208,19 @@ export default function Navbar() {
 
     return (
         <nav className="bg-white shadow-md sticky top-0 z-50 border-b-2 border-[#F2B988]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+                <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center">
-                            <span className="text-2xl font-bold text-[#F25A38]">Envie de Chanter</span>
+                        <Link href="/" className="flex items-center gap-1">
+                            <Image 
+                                src="/assets/icon/icono.png" 
+                                alt="Envie de Chanter Logo" 
+                                width={40} 
+                                height={40}
+                                className="object-contain"
+                            />
+                            <span className="text-xl sm:text-2xl font-bold text-[#F25A38]">Envie de Chanter</span>
                         </Link>
                     </div>
 

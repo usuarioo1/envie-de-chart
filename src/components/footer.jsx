@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Rrss from './rrss';
 
 const Footer = () => {
@@ -18,9 +19,18 @@ const Footer = () => {
                 <div className="grid gap-8 md:grid-cols-3">
                     {/* À propos */}
                     <div>
-                        <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                            Envie de Chanter
-                        </h3>
+                        <div className="flex items-center gap-2 mb-4">
+                            <Image 
+                                src="/assets/icon/icono.png" 
+                                alt="Logo" 
+                                width={40} 
+                                height={40}
+                                className="object-contain"
+                            />
+                            <h3 className="text-lg font-semibold text-slate-900">
+                                Envie de Chanter
+                            </h3>
+                        </div>
                         <p className="text-slate-600 text-sm leading-relaxed mb-4">
                             Le chant prénatal et la psychophonie au service du bien-être et de l'épanouissement personnel.
                         </p>

@@ -1,0 +1,255 @@
+{
+  "presentation": {
+   
+    "socials": {
+      "facebook": "Chant prénatal / Envie-de-chanter",
+      "instagram": "enviedechanter_chant_prenatal",
+      "linkedin": "Marie-Laure Potel"
+    }
+  },
+  "ateliers": {
+    "title": "Ateliers de chant prénatal",
+    "formation_year": "2025"
+  },
+  "programme": {
+    "title": "Programme détaillé de la formation chant prénatal",
+    "formatrice": "Marie Laure Potel",
+    "format": "Formation en 4 stages soit 15 jours en tout",
+    "contact": {
+      "email": "marielaurepotel@orange.fr",
+      "phone": "01 64 40 94 23"
+    },
+    "actions": [
+      "Téléchargez le programme",
+      "Réservez en ligne"
+    ],
+    "sessions": [
+      {
+        "numero": 1,
+        "title": "Session Envie de chanter ?",
+        "subtitle": "1er degré de psychophonie",
+        "duration": "session de 5 jours"
+      },
+      {
+        "numero": 2,
+        "title": "Pratiques spécifiques de l'atelier de chant prénatal",
+        "duration": "4 jours"
+      },
+      {
+        "numero": 3,
+        "title": "Préparation et mise en oeuvre d'un atelier de chant prénatal avec des femmes enceintes",
+        "duration": "3 jours"
+      },
+      {
+        "numero": 4,
+        "title": "Stage de pédagogie",
+        "duration": "3 jours"
+      }
+    ]
+  },
+  "inscription": {
+    "title": "Renseignements et inscriptions",
+    "contact": {
+      "name": "Marie-Laure Potel",
+      "email": "marielaurepotel@orange.fr",
+      "phone": "01 64 40 94 23"
+    },
+    "reservation": "Réservez en ligne",
+    "modalites": "Les inscriptions peuvent se faire jusqu'à la veille du stage dans la limite des places disponibles en contactant la formatrice.",
+    "accessibilite": "Locaux accessibles aux personnes handicapées",
+    "certification": {
+      "organisme": "ARE",
+      "reference": "Organisme de formation référencé sur Qualiopi",
+      "prise_en_charge": "prise en charge possible en nous contactant directement"
+    },
+    "responsable_administrative": {
+      "name": "Justine Jakubowska",
+      "email": "admi.artsrencontres@gmail.com",
+      "phone": "06 24 09 85 22"
+    },
+    "documents": [
+      "Brochure des formations 2025-26"
+    ]
+  },
+  "origine": {
+    "title": "Origine du chant prénatal",
+    "description": "Le chant prénatal est une application particulière de la psychophonie créée par la française Marie-Louise Aucher dans les années 60.",
+    "histoire": [
+      {
+        "paragraphe": "Professeure de chant, la grossesse de quelques élèves l'a amenée à s'intéresser à la maternité (ceci est raconté dans son livre « Vivre sur sept octaves »)."
+      },
+      {
+        "annee": 1976,
+        "evenement": "le professeur Michel Odent de la maternité de l'hôpital de Pithiviers lui demande de venir y animer un groupe de chant prénatal.",
+        "reference": "L'aube des sens – P92 : les maternités chantantes"
+      },
+      {
+        "annee": 1976,
+        "evenement": "un atelier s'ouvre au sein de la maternité des Lilas (93 ville limitrophe de Paris)."
+      }
+    ]
+  },
+  "fondements": {
+    "title": "Fondements du chant prénatal",
+    "introduction": "Cette approche de la voix basée sur la conscience corporelle propose plusieurs axes :",
+    "axes": [
+      "Le bien-être pendant la grossesse.",
+      "La communication avec le bébé in utero.",
+      "Un accompagnement des différents temps de la gestation, de l'accouchement et du post-natal."
+    ],
+    "details": {
+      "bien_etre": {
+        "title": "Bien-être et conscience corporelle",
+        "description": "La grossesse est un moment privilégié pour chanter : durant ses 9 mois, une grande attention est portée au corps et à ses changements qui demandent une adaptation… pas toujours facile. Chanter permet de sentir son corps de façon variée et ludique.",
+        "travail_voix": "Travailler sa voix affine la conscience corporelle au travers d'exercices variés :",
+        "exercices": [
+          "la vibration liée à la réception ou l'émission sonore",
+          "la musculature de soutien : les pieds et les jambes, le bassins et les abdominaux…",
+          "les respirations",
+          "les postures",
+          "la phonation"
+        ]
+      },
+      "lien_bebe": {
+        "title": "Le lien avec bébé",
+        "paragraphes": [
+          "Le chant prénatal apporte au bébé in utero les vibrations de la voix de ses parents. C'est une empreinte très profonde. Le répertoire spécifique : chansons sur la grossesse, berceuses, chants poétiques,… favorise le lien, la communication, la complicité, la création de moments privilégiés avec le bébé in utero. Celui-ci répond à sa façon et à déjà des préférences pour certains chants.",
+          "Le bien-être corporel découlant des exercices bénéficie au bébé qui profite d'un espace plus souple et plus détendu."
+        ]
+      },
+      "naissance": {
+        "title": "La naissance",
+        "paragraphes": [
+          "La respiration est indissociable du chant. La pratique régulière de toute une gamme d'exercices donne des outils utiles pendant les contractions. Le souffle est sonorisé, ce qui permet de gérer très facilement le débit d'air et de profiter dans le même temps de la vibration et des fréquences sonores qui agissent à la façon d'un « micro massage », particulièrement dans le bassin. Les sons sont en lien avec l'échelle des résonances de la psychophonie : chaque note de la voix chantée correspond à une partie du corps.",
+          "La voix change pendant la grossesse, en lien avec le système hormonal et le développement du volume utérin. En fin de grossesse et surtout pendant l'accouchement, la femme peut atteindre des sons très graves sur des notes qu'elle ne pourra plus rechanter ensuite. Ces notes correspondent au bassin dans l'échelle des résonances."
+        ]
+      },
+      "post_natal": {
+        "title": "Le post-natal",
+        "paragraphes": [
+          "Le bébé né retrouve avec bonheur la voix de ses parents et les mélodies qu'il recevait dans le ventre de sa maman. C'est un lien entre l'avant et l'après naissance. Il manifeste ses goûts par des mouvements ou des sons.",
+          "Tous les exercices corporels sont repris et adaptés pour aider la jeune maman à ressentir son corps sans bébé et accompagner ses changements."
+        ]
+      }
+    }
+  },
+  "psychophonie": {
+    "title": "LA PSYCHOPHONIE",
+    "definition": "La Psychophonie est une méthode d'harmonie vitale par l'étude consciente de la voix parlée et chantée selon les correspondances entre les sons, les rythmes et l'Homme.",
+    "depot": "Cette découverte de Marie-Louise Aucher fut déposée à l'Académie des Sciences en 1960.",
+    "citation": "Le chant, en psychophonie, est à la fois but et moyen : pratiquer la psychophonie pour mieux chanter et maîtriser sa voix, et bien chanter pour s'épanouir. Guy Bourgois, psychophoniste",
+    "document": "Téléchargez le livret de présentation",
+    "historique": {
+      "title": "Historique",
+      "fondatrice": {
+        "nom": "Marie-Louise Aucher",
+        "naissance": "15 janvier 1908",
+        "deces": "10 octobre 1994",
+        "profession": "cantatrice"
+      },
+      "decouverte": "Chanteuse professionnelle à l'église de l'Ecole Militaire pour les cérémonies religieuses, elle reprend souvent les mêmes œuvres. Du fait de ces répétitions, elle observe qu'elle ressent des vibrations dans son corps à des endroits précis en fonction de la note émise. Par exemple, le ré médium dans le bas du thorax. Ceci l'amène progressivement à établir l' « échelle des sons », qui est le fondement de la psychophonie. Celle-ci comporte quatre octaves répartis sur des plages de résonances allant des pieds à la tête, du grave à l'aigu.",
+      "correspondance": "C'est dans l'acupuncture que Marie-Louise Aucher va trouver une correspondance avec son échelle des sons. Elle dépose sa découverte en 1960 à l'Académie des Sciences.",
+      "pedagogie": "Dans le même temps, en tant que professeur de chant, elle développe une pédagogie de la voix basée sur la conscience. Pour cela, elle établit une liste des points du chanteur permettant un enseignement progressif et adaptable à chaque élève."
+    },
+    "presentation_marie_louise": {
+      "title": "Présentation de la psychophonie par Marie Louise AUCHER",
+      "definition_methode": "La psychophonie est une méthode d'éducation et de rééducation qui tient compte, dans le cours du travail de la pose de la voix, de l'homme considéré :",
+      "aspects": [
+        "1 – comme poste récepteur des sons et instrument vivant",
+        "2 – comme poste émetteur en réponse conditionnée à la réceptivité correcte des sons. Tout homme est d'ailleurs impliqué dans l'échange verbal et doit en bénéficier."
+      ],
+      "receptivite": "La réceptivité correcte des sons exige non seulement une oreille bien conditionnée, mais une sensibilité nerveuse et tactile développée ; enfin des transmissions nerveuses correctes depuis les postes sensoriels externes jusqu'au centre de la conscience.",
+      "conscience": "Pénétrant dans le domaine de la conscience, les sons non seulement sont évalués quant à leur fréquence vibratoire, mais, s'il s'agit de la voix humaine, évoquent une image intérieure, éclairée et colorée en fonction du niveau mental et affectif de l'être qui reçoit le message. Ce niveau mental et affectif est évidemment fonction de la prise de conscience qu'a faite l'enfant au début de sa vie. Elle est conditionnée, non seulement par le degré des réceptivités sensorielles, mais aussi par le climat affectif dans lequel l'enfant s'épanouit, ou faute duquel il végète ou se traumatise.",
+      "sens_recepteurs": "Il faut tenir compte pour ce qui concerne le poste humain dit « récepteur » des messages enregistrés par : la vue, l'audition, le tact, le goût, l'odorat.",
+      "corps_instrument": "Si nous avons tous plus ou moins conscience du travail dévolu à la tête pour la réceptivité des sons, il nous est moins commun de considérer le corps entier de l'homme comme un instrument vibrant autant à la réceptivité des sons qu'à leur émission.",
+      "echelle_corps": "De longues constatations ou expériences volontaires réparties sur des années nous ont permis de retrouver, échelonnées tout le long du corps humain depuis le haut du crâne jusqu'en bas des pieds, la place d'élection des sons que la voix humaine a la possibilité de produire, soit du do 2 au do 6 – c'est le long de la colonne vertébrale pour le corps, sur les jambes et sur la tête, que nous voyons les sons se disposer électivement, reproduisant quatre octaves de la gamme : les sons graves aux pieds, les aigus à la tête.",
+      "acupuncture": "C'est grâce à l'encouragement que m'a procuré le docteur Martiny, professeur à l'École d'Anthropologie de Paris, que j'ai pu, après sa suggestion, constater la parfaite coïncidence de ces zones vibratoires avec les points d'acupuncture chinoise, en ce qui concerne la ligne dite « grand vaisseau gouverneur des forces physiques et psychiques » : les deux tracés sont absolument identiques, s'étalant du haut en bas du corps avec discontinuité sur les vertèbres cervicales.",
+      "emission": "L'émission de la voix mobilisera les mêmes régions du corps humain, c'est-à-dire : tête avec ses organes sensoriels pour la préparation du moule du son, corps et ses places vibratoires pour l'amplification du son, et enfin l'ensemble de l'homme en action volontaire par le souffle.",
+      "souffle": "Le souffle sera dynamisé par la vigueur de la pression de la sangle abdominale ; le diaphragme en égalisera le débit conditionné à la force et à l'expression. Le timbrage et l'articulation sont dévolus à la tête. Une attitude ferme et rigoureuse des jambes et élastique du ventre, des fesses et de la taille. Le tonus et le contrôle constant sont exigés du chanteur.",
+      "plages_sensation": "La direction de l'action phonatoire deviendra lucide et docile quand le chanteur aura senti « les plages de sensation » qui sont localisées dans des régions anatomiquement très précises.",
+      "professeur_husson": "C'est au professeur Raoul Husson que les chanteurs doivent, à la suite des coïncidences qu'il a démontrées entre ces dites « plages » et les centres nerveux de l'homme, la fin de la suspicion pesant sur l'empirisme de la pose de la voix.",
+      "onomatopees": "La connaissance et la reconnaissance de ces plages de sensation sont rapides et aisées par le travail des onomatopées universelles. Les mêmes interjections sont communes à l'homme pour exprimer ses émotions : étonnement, indignation, plainte, rire, joie, indifférence, hésitation, ironie, etc… Tous ces sentiments ont dans notre corps un support d'émissivité modulée. La possibilité d'identifier des sentiments à des puissances actives du corps établit une jonction dans les différents plans de l'homme ainsi qu'un contrôle de lui-même.",
+      "respiration": "La respiration établit, si elle est pratiquée avec la connaissance de ces différents modes, une dérivation facile à l'afflux de vitalité sur certaines places supportant un excès de sentiments, tandis que la véritable gymnastique qu'exige le chant développe celles qui sont déficientes. La Psychophonie est un moyen d'équilibre complet.",
+      "neuropsychiatrie": "L'activité et la régulation des transmissions nerveuses sont favorisées et développées par ce travail. Le quart avant supérieur de la tête entre en activité survoltée surtout à cause de l'odorat et du goût dont la sollicitation est de la plus haute importance pour le timbrage et l'amplification du son. Nous touchons là un domaine de neuropsychiatrie qui, outre la santé que l'oxygénation procure au chanteur, peut faire désirer à tous les établissements d'avoir un service de Psychophonie.",
+      "hopitaux": "Depuis des années, nous avons prouvé dans les hôpitaux parisiens les bienfaits des cours collectifs ou individuels de chant selon notre méthode. Successivement auprès du professeur Baruk à l'Hôpital-Hospice de Charenton, du professeur madame Aubry à la Polyclinique de l'Hôpital Bichat, à l'Hôpital Trousseau auprès du docteur Bürger, au premier hôpital de jour « l'élan retrouvé » : directeur docteur de Verbizier, des hommes, des femmes des enfants ont bénéficié de ces cours. Nombreuses sont les sessions auprès des éducateurs et professeurs, orthophonistes, rééducateurs, etc…",
+      "collectivites": "Nous avons mis aussi la Psychophonie au service de collectivités parfaitement équilibrées comme méthode de deuxième prise de conscience et de maîtrise du comportement (école des éducateurs spécialisés, noviciat des R.P. jésuites, choeurs de chant de plusieurs abbayes de Bénédictins, Institut Catholique de Paris, etc…)",
+      "conclusion": "J'ajoute que l'utilisation de la Psychophonie comme méthode naturelle d'investigation, d'éducation et de rééducation de soi-même n'est pas seulement un passage en thérapie, mais elle est ce qu'elle fut et est encore pour moi, cantatrice, but, moyen et but sans fin, puisque l'accès au chant en groupe ou en soliste permet les plus belles joies de culture et d'expression humaine en utilisant les chefs d'œuvres de la musique passée et contemporaine.",
+      "pont": "Nous avons donc jeté un pont par la Psychophonie entre l'éducation, la rééducation, la neuropsychiatrie, l'acupuncture et les affaires culturelles en un vrai carrefour de la Vie Humaine."
+    }
+  },
+  "bibliographie": {
+    "title": "M-L AUCHER",
+    "subtitle_1": "Professeur de Psychophonie",
+    "subtitle_2": "Créatrice de la Méthode",
+    "intro": "Marie-Louise Aucher, fondatrice de la Psychophonie (marque déposée) :",
+    "livres": [
+      {
+        "titre": "L'Homme sonore",
+        "editeur": "Editions Hommes et Groupes",
+        "isbn": "978-2869840294"
+      },
+      {
+        "titre": "Les plans d'expression",
+        "editeur": "Edition Epi",
+        "isbn": "978-2704500451"
+      },
+      {
+        "titre": "Vivre sur 7 octaves",
+        "editeur": "Editions Hommes et Groupes",
+        "isbn": "2-220-02710-4"
+      },
+      {
+        "titre": "En Corps Chanté",
+        "editeur": "Editions Hommes et Groupes",
+        "isbn": "978-2869840133"
+      },
+      {
+        "titre": "Le chant de l'énergie",
+        "editeur": "Editions Hommes et Groupes",
+        "isbn": "978-2869840263"
+      }
+    ],
+    "autres_parutions": {
+      "title": "Autre parutions :",
+      "livres": [
+        {
+          "titre": "Le chant prénatal",
+          "auteur": "Marie-Laure Potel",
+          "editeur": "Editions Désiris",
+          "isbn": "978-2-915418-50-7"
+        },
+        {
+          "titre": "Envie de chanter ?",
+          "auteur": "Marie-Laure Potel",
+          "editeur": "Editions Désiris",
+          "isbn": "978-2-36403-203-3"
+        },
+        {
+          "titre": "Le bébé est un mammifère",
+          "auteur": "Michel Odent",
+          "editeur": "Editions L'Instant Présent",
+          "isbn": "978-2916032160"
+        },
+        {
+          "titre": "L'Aube des sens",
+          "auteur": "Ouvrage collectif sur les perceptions sensorielles fœtales et néonatales",
+          "direction": "Sous la direction de Etienne Herbinet et Marie-Claire Busnel",
+          "note": "(Epuisé)",
+          "lien": "http://les-cahiers-du-nn.weebly.com/uploads/3/5/3/5/3535814/l-aube_des_sens_ensemble_du_livre_v1.pdf",
+          "lien_text": "Lecture en ligne"
+        }
+      ]
+    },
+    "partitions": {
+      "title": "Partitions :",
+      "items": [
+        {
+          "titre": "Chansons pour l'enfant à naître",
+          "description": "(16 chansons à chanter durant la grossesse)",
+          "auteur": "Marie-Louise Aucher",
+          "editeur": "Editions Résonances"
+        }
+      ]
+    }
+  }
+}

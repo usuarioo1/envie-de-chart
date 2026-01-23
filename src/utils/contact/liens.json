@@ -1,42 +1,14 @@
 {
-    "title": "Liens",
-    "subtitle": "Nos partenaires et ressources recommandées",
-    "links": [
-        {
-            "id": 1,
-            "name": "Blandine Calais Germain",
-            "url": "https://www.calais-germain.com/",
-            "category": "Formation"
-        },
-        {
-            "id": 2,
-            "name": "L'enfant et la vie",
-            "url": "https://lenfantetlavie.fr/",
-            "category": "Petite enfance"
-        },
-        {
-            "id": 3,
-            "name": "Association Montessori",
-            "url": "http://www.montessori-france.asso.fr/",
-            "category": "Pédagogie"
-        },
-        {
-            "id": 4,
-            "name": "Mimo pédagogie",
-            "url": "https://www.mimopedagogie.com/",
-            "category": "Pédagogie"
-        },
-        {
-            "id": 5,
-            "name": "Fola percussions",
-            "url": "https://www.folapercussions.fr/",
-            "category": "Musique"
-        },
-        {
-            "id": 6,
-            "name": "Didier Monge",
-            "url": "https://lalathings.com/-/home/pedagogie/",
-            "category": "Formation"
+    "title": "Contact",
+    "subtitle": "Contactez-nous pour plus d'informations",
+    "contact": {
+        "name": "Marie-Laure Potel",
+        "phone": "01 64 40 94 23",
+        "email": "marielaurepotel@orange.fr",
+        "socials": {
+            "facebook": "https://www.facebook.com/enviedechanter",
+            "instagram": "https://www.instagram.com/enviedechanter_chant_prenatal/",
+            "linkedin": "https://www.linkedin.com/in/marie-laure-potel/"
         }
-    ]
+    }
 }

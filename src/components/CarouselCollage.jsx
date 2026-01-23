@@ -5,7 +5,6 @@ import Image from 'next/image';
 import image1 from '@/assets/WhatsApp Image 2026-01-16 at 5.11.47 PM.jpeg';
 import image2 from '@/assets/WhatsApp Image 2026-01-16 at 5.12.02 PM.jpeg';
 import image3 from '@/assets/WhatsApp Image 2026-01-16 at 5.14.04 PM.jpeg';
-import image4 from '@/assets/WhatsApp Image 2026-01-16 at 5.14.09 PM.jpeg';
 import image5 from '@/assets/WhatsApp Image 2026-01-16 at 5.15.16 PM.jpeg';
 import image6 from '@/assets/WhatsApp Image 2026-01-16 at 5.18.54 PM.jpeg';
 import image7 from '@/assets/WhatsApp Image 2026-01-16 at 5.19.55 PM.jpeg';
@@ -14,10 +13,11 @@ import image9 from '@/assets/WhatsApp Image 2026-01-16 at 5.21.22 PM.jpeg';
 import image10 from '@/assets/WhatsApp Image 2026-01-16 at 5.24.05 PM.jpeg';
 import image11 from '@/assets/IMG_0724.jpeg';
 import image12 from '@/assets/WhatsApp Image 2026-01-21 at 6.35.14 AM.jpeg';  
+import image13 from '@/assets/WhatsApp Image 2026-01-22 at 4.41.08 PM.jpeg'
 
 const images = [
-  image1, image2, image3, image4, image5,
-  image6, image7, image8, image9, image10, image11, image12
+  image1, image2, image3, image5,
+  image6, image7, image8, image9, image10, image11, image12, image13
 ];
 
 export default function CarouselCollage() {

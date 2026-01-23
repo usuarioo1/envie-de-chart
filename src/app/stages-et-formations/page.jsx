@@ -1,10 +1,20 @@
+import Image from 'next/image';
 import stagesData from '@/utils/stagesEtFormations/stages.json';
 
 export default function StagesEtFormationsPage() {
     return (
         <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
-                <h1 className="text-4xl font-bold mb-4 text-slate-900">{stagesData.title}</h1>
+                <div className="flex items-center justify-center mb-6">
+                    <Image 
+                        src="/assets/icon/icono.png" 
+                        alt="Logo" 
+                        width={60} 
+                        height={60}
+                        className="object-contain"
+                    />
+                </div>
+                <h1 className="text-4xl font-bold mb-4 text-slate-900 text-center">{stagesData.title}</h1>
 
                 <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
                     <p className="text-lg text-slate-700 mb-4">{stagesData.description}</p>
