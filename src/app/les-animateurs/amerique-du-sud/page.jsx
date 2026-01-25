@@ -31,9 +31,11 @@ export default function AmeriqueDuSudPage() {
                         )}
 
                         {country.animateurs && (
-                            <div className="grid gap-6 md:grid-cols-2">
+                            <div className="space-y-0 divide-y divide-[#F2B988]/30">
                                 {country.animateurs.map((animateur, index) => (
-                                    <AnimateurCard key={index} animateur={animateur} />
+                                    <div key={index} className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors">
+                                        <AnimateurCard animateur={animateur} />
+                                    </div>
                                 ))}
                             </div>
                         )}
@@ -41,9 +43,11 @@ export default function AmeriqueDuSudPage() {
                         {country.states && country.states.map((state, stateIndex) => (
                             <div key={stateIndex} className="mt-8">
                                 <h3 className="text-2xl font-semibold mb-4 text-slate-800">{state.name}</h3>
-                                <div className="grid gap-6 md:grid-cols-2">
+                                <div className="space-y-0 divide-y divide-[#F2B988]/30">
                                     {state.animateurs.map((animateur, index) => (
-                                        <AnimateurCard key={index} animateur={animateur} />
+                                        <div key={index} className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors">
+                                            <AnimateurCard animateur={animateur} />
+                                        </div>
                                     ))}
                                 </div>
                             </div>

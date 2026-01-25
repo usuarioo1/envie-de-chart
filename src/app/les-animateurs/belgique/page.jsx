@@ -8,9 +8,11 @@ export default function BelgiquePage() {
                 <h1 className="text-4xl font-bold mb-4 text-slate-900">{belgiqueData.title}</h1>
                 <p className="text-lg text-slate-600 mb-8">{belgiqueData.description}</p>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-0 divide-y divide-[#F2B988]/30">
                     {belgiqueData.animateurs.map((animateur, index) => (
-                        <AnimateurCard key={index} animateur={animateur} />
+                        <div key={index} className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors">
+                            <AnimateurCard animateur={animateur} />
+                        </div>
                     ))}
                 </div>
             </div>

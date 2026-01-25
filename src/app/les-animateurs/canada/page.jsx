@@ -11,9 +11,11 @@ export default function CanadaPage() {
                 {canadaData.areas.map((area, areaIndex) => (
                     <div key={areaIndex} className="mb-10">
                         <h2 className="text-3xl font-bold mb-6 text-slate-900">{area.name}</h2>
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-0 divide-y divide-[#F2B988]/30">
                             {area.animateurs.map((animateur, index) => (
-                                <AnimateurCard key={index} animateur={animateur} />
+                                <div key={index} className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors">
+                                    <AnimateurCard animateur={animateur} />
+                                </div>
                             ))}
                         </div>
                     </div>

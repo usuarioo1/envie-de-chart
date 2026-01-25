@@ -1,6 +1,6 @@
 export default function AnimateurCard({ animateur }) {
     return (
-        <div className="p-6 border-2 border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-shadow">
+        <div>
             <h4 className="text-xl font-bold mb-3 text-[#F25A38]">{animateur.name}</h4>
 
             {animateur.organization && (

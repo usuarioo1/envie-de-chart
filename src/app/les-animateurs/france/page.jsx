@@ -7,27 +7,17 @@ export default function FrancePage() {
                 <h1 className="text-4xl font-bold mb-4 text-slate-900">{franceData.title}</h1>
                 <p className="text-lg text-slate-600 mb-8">{franceData.description}</p>
 
-                {/* Legend */}
-                <div className="mb-8 p-6 bg-[#F2B988]/20 rounded-3xl border border-[#F2B988]">
-                    <h3 className="text-lg font-semibold mb-3 text-slate-900">Légende des couleurs:</h3>
-                    <ul className="space-y-2 text-slate-700">
-                        <li>🎵 {franceData.legend.chantPrenatal}</li>
-                        <li>👶 {franceData.legend.chantMamanBebe}</li>
-                        <li>🎤 {franceData.legend.coursChant}</li>
-                    </ul>
-                </div>
-
                 {/* Areas */}
                 {franceData.areas.map((area, areaIndex) => (
                     <div key={areaIndex} className="mb-10">
                         <h2 className="text-3xl font-bold mb-6 text-slate-900">{area.name}</h2>
                         {area.city && <h3 className="text-xl text-slate-600 mb-4">{area.city}</h3>}
 
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-0 divide-y divide-[#F2B988]/30">
                             {area.animateurs.map((animateur, index) => (
                                 <div
                                     key={index}
-                                    className="p-6 border border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] transition-shadow"
+                                    className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors"
                                 >
                                     <h4 className="text-xl font-bold mb-3 text-[#F25A38]">{animateur.name}</h4>
 

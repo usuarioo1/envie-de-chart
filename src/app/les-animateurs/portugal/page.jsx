@@ -11,9 +11,11 @@ export default function PortugalPage() {
                     <p className="text-slate-700">{portugalData.introduction}</p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-0 divide-y divide-[#F2B988]/30">
                     {portugalData.animateurs.map((animateur, index) => (
-                        <AnimateurCard key={index} animateur={animateur} />
+                        <div key={index} className="py-6 px-4 hover:bg-[#F2B988]/5 transition-colors">
+                            <AnimateurCard animateur={animateur} />
+                        </div>
                     ))}
                 </div>
             </div>
