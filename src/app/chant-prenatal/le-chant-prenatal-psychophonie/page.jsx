@@ -10,10 +10,10 @@ export default function LeChantPrenatalPsychophoniePage() {
                 {/* Header */}
                 <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
                     <div className="flex items-center justify-center mb-4">
-                        <Image 
-                            src="/assets/icon/icono.png" 
-                            alt="Logo" 
-                            width={50} 
+                        <Image
+                            src="/assets/icon/icono.png"
+                            alt="Logo"
+                            width={50}
                             height={50}
                             className="object-contain"
                         />
@@ -28,7 +28,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                     <div className="mt-6 flex flex-wrap gap-3 text-xs text-slate-500 justify-center">
                         <span className="rounded-full border border-slate-200 px-3 py-1">Formation 2026</span>
                         <span className="rounded-full border border-slate-200 px-3 py-1">Psychophonie</span>
-                        
+
                     </div>
                 </header>
 
@@ -87,7 +87,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                         </svg>
                         <h2 className="text-2xl font-semibold text-slate-900">{inscription.title}</h2>
                     </div>
-                    
+
                     <div className="space-y-4">
                         <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#ABA0F2]/10 to-transparent rounded-lg border-l-2 border-[#ABA0F2]">
                             <h3 className="font-semibold text-slate-900 text-sm mb-1">{inscription.contact.name}</h3>
@@ -124,7 +124,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                     </div>
                 </section>
 
-    
+
 
                 {/* Origine */}
                 <section className="rounded-3xl border border-[#F2B988] bg-white/85 p-8 shadow-[0_25px_60px_-40px_rgba(242,90,56,0.35)]">
@@ -137,7 +137,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                     <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057] mb-4">
                         <p className="text-slate-700 leading-relaxed text-sm">{origine.description}</p>
                     </div>
-                    
+
                     {origine.histoire.map((item, index) => (
                         <div key={index} className="mb-4">
                             {item.paragraphe && (
@@ -173,7 +173,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                     <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057] mb-6">
                         <p className="text-slate-700 text-sm">{fondements.introduction}</p>
                     </div>
-                    
+
                     {/* Axes principaux */}
                     <div className="grid md:grid-cols-3 gap-4 mb-6">
                         {fondements.axes.map((axe, index) => (
@@ -232,7 +232,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                         </svg>
                         <h2 className="text-2xl font-semibold text-slate-900">{psychophonie.title}</h2>
                     </div>
-                        
+
                     <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057] mb-4">
                         <p className="text-slate-700 text-sm mb-2"><strong>Définition:</strong> {psychophonie.definition}</p>
                         <p className="text-slate-600 text-sm">{psychophonie.depot}</p>
@@ -242,7 +242,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                         <p className="text-slate-700 text-sm">{psychophonie.citation}</p>
                     </div>
 
-                        
+
 
                     {/* Historique */}
                     <div className="mb-6">
@@ -250,57 +250,150 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <span className="w-1 h-6 bg-[#F29057] rounded-full"></span>
                             {psychophonie.historique.title}
                         </h3>
-                        
+
                         <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057] mb-3">
                             <p className="text-slate-700 text-sm mb-1">
-                                <strong>{psychophonie.historique.fondatrice.nom}</strong> ({psychophonie.historique.fondatrice.naissance} - {psychophonie.historique.fondatrice.deces})
+                                <strong>{psychophonie.historique.fondatrice.nom}</strong>
+                                ({psychophonie.historique.fondatrice.naissance} - {psychophonie.historique.fondatrice.deces})
                             </p>
-                            <p className="text-slate-600 text-sm">{psychophonie.historique.fondatrice.profession}</p>
+                            <p className="text-slate-600 text-sm">
+                                {psychophonie.historique.fondatrice.profession}
+                            </p>
                         </div>
+
+
+                        {/* Imagen 1 */}
+                        <div className="pl-8 mb-4 flex justify-center">
+                            <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
+                                <img
+                                    src="https://via.placeholder.com/600x400"
+                                    alt="Imagen histórica ilustrativa"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+
 
                         <div className="space-y-3">
                             <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057]">
-                                <p className="text-slate-700 leading-relaxed text-sm">{psychophonie.historique.decouverte}</p>
+                                <p className="text-slate-700 leading-relaxed text-sm">
+                                    {psychophonie.historique.decouverte}
+                                </p>
                             </div>
+
                             <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057]">
-                                <p className="text-slate-700 leading-relaxed text-sm">{psychophonie.historique.correspondance}</p>
+                                <p className="text-slate-700 leading-relaxed text-sm">
+                                    {psychophonie.historique.correspondance}
+                                </p>
                             </div>
+
+                            {/* Imagen 2 */}
+                            <div className="pl-8 my-4 flex justify-center">
+                                <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
+                                    <img
+                                        src="https://via.placeholder.com/600x400"
+                                        alt="Imagen pedagógica ilustrativa"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+
                             <div className="pl-8 pr-4 py-3 bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg border-l-2 border-[#F29057]">
-                                <p className="text-slate-700 leading-relaxed text-sm">{psychophonie.historique.pedagogie}</p>
+                                <p className="text-slate-700 leading-relaxed text-sm">
+                                    {psychophonie.historique.pedagogie}
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                        {/* Présentation par Marie Louise Aucher */}
-                        <div>
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4">{psychophonie.presentation_marie_louise.title}</h3>
-                            
-                            <div className="space-y-4 text-slate-700 leading-relaxed">
-                                <p><strong>{psychophonie.presentation_marie_louise.definition_methode}</strong></p>
-                                <ul className="list-disc list-inside space-y-2 ml-4">
-                                    {psychophonie.presentation_marie_louise.aspects.map((aspect, index) => (
-                                        <li key={index}>{aspect}</li>
-                                    ))}
-                                </ul>
-                                <p>{psychophonie.presentation_marie_louise.receptivite}</p>
-                                <p>{psychophonie.presentation_marie_louise.conscience}</p>
-                                <p>{psychophonie.presentation_marie_louise.sens_recepteurs}</p>
-                                <p className="p-4 bg-[#ABA0F2]/10 rounded-xl">{psychophonie.presentation_marie_louise.corps_instrument}</p>
-                                <p>{psychophonie.presentation_marie_louise.echelle_corps}</p>
-                                <p className="p-4 bg-[#F2B988]/20 rounded-xl">{psychophonie.presentation_marie_louise.acupuncture}</p>
-                                <p>{psychophonie.presentation_marie_louise.emission}</p>
-                                <p>{psychophonie.presentation_marie_louise.souffle}</p>
-                                <p>{psychophonie.presentation_marie_louise.plages_sensation}</p>
-                                <p>{psychophonie.presentation_marie_louise.professeur_husson}</p>
-                                <p>{psychophonie.presentation_marie_louise.onomatopees}</p>
-                                <p>{psychophonie.presentation_marie_louise.respiration}</p>
-                                <p>{psychophonie.presentation_marie_louise.neuropsychiatrie}</p>
-                                <p>{psychophonie.presentation_marie_louise.hopitaux}</p>
-                                <p>{psychophonie.presentation_marie_louise.collectivites}</p>
-                                <p className="p-4 bg-gradient-to-r from-[#F2B988]/20 to-[#ABA0F2]/10 rounded-xl italic">{psychophonie.presentation_marie_louise.conclusion}</p>
-                                <p className="text-center font-bold text-[#F25A38] text-lg p-4">{psychophonie.presentation_marie_louise.pont}</p>
+
+                    {/* Présentation par Marie Louise Aucher */}
+                    <div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                            {psychophonie.presentation_marie_louise.title}
+                        </h3>
+
+                        <div className="space-y-6 text-slate-700 leading-relaxed">
+
+                            <p>
+                                <strong>{psychophonie.presentation_marie_louise.definition_methode}</strong>
+                            </p>
+
+                            {/* Imagen 1 - Derecha */}
+                            <div className="flex justify-center">
+                                <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
+                                    <img
+                                        src="https://via.placeholder.com/600x400"
+                                        alt="Illustration méthode"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
+
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                {psychophonie.presentation_marie_louise.aspects.map((aspect, index) => (
+                                    <li key={index}>{aspect}</li>
+                                ))}
+                            </ul>
+
+                            <p>{psychophonie.presentation_marie_louise.receptivite}</p>
+                            <p>{psychophonie.presentation_marie_louise.conscience}</p>
+
+                            {/* Imagen 2 - Izquierda */}
+                            <div className="flex justify-center">
+                                <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
+                                    <img
+                                        src="https://via.placeholder.com/600x400"
+                                        alt="Illustration conscience corporelle"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <p>{psychophonie.presentation_marie_louise.sens_recepteurs}</p>
+
+                            <p className="p-4 bg-[#ABA0F2]/10 rounded-xl">
+                                {psychophonie.presentation_marie_louise.corps_instrument}
+                            </p>
+
+                            <p>{psychophonie.presentation_marie_louise.echelle_corps}</p>
+
+                            {/* Imagen 3 - Derecha */}
+                            <div className="flex justify-center">
+                                <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
+                                    <img
+                                        src="https://via.placeholder.com/600x400"
+                                        alt="Illustration souffle et voix"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            <p className="p-4 bg-[#F2B988]/20 rounded-xl">
+                                {psychophonie.presentation_marie_louise.acupuncture}
+                            </p>
+
+                            <p>{psychophonie.presentation_marie_louise.emission}</p>
+                            <p>{psychophonie.presentation_marie_louise.souffle}</p>
+                            <p>{psychophonie.presentation_marie_louise.plages_sensation}</p>
+                            <p>{psychophonie.presentation_marie_louise.professeur_husson}</p>
+                            <p>{psychophonie.presentation_marie_louise.onomatopees}</p>
+                            <p>{psychophonie.presentation_marie_louise.respiration}</p>
+                            <p>{psychophonie.presentation_marie_louise.neuropsychiatrie}</p>
+                            <p>{psychophonie.presentation_marie_louise.hopitaux}</p>
+                            <p>{psychophonie.presentation_marie_louise.collectivites}</p>
+
+                            <p className="p-4 bg-gradient-to-r from-[#F2B988]/20 to-[#ABA0F2]/10 rounded-xl italic">
+                                {psychophonie.presentation_marie_louise.conclusion}
+                            </p>
+
+                            <p className="text-center font-bold text-[#F25A38] text-lg p-4">
+                                {psychophonie.presentation_marie_louise.pont}
+                            </p>
                         </div>
+                    </div>
+
                 </section>
 
                 {/* Bibliographie */}
@@ -321,7 +414,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <span className="w-1 h-6 bg-[#F29057] rounded-full"></span>
                             Bibliographie
                         </h3>
-                        
+
                         <p className="text-base text-slate-700 mb-4 font-medium">{bibliographie.intro}</p>
 
                         <div className="grid md:grid-cols-2 gap-4 mb-8">

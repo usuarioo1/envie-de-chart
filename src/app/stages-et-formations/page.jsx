@@ -6,10 +6,10 @@ export default function StagesEtFormationsPage() {
         <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
             <div className="container mx-auto px-4 py-10">
                 <div className="flex items-center justify-center mb-6">
-                    <Image 
-                        src="/assets/icon/icono.png" 
-                        alt="Logo" 
-                        width={60} 
+                    <Image
+                        src="/assets/icon/icono.png"
+                        alt="Logo"
+                        width={60}
                         height={60}
                         className="object-contain"
                     />
@@ -41,26 +41,31 @@ export default function StagesEtFormationsPage() {
                     </div>
                 </div>
 
-                {/* Formations Grid */}
+                {/* Formations List */}
                 <div className="mb-10">
                     <h2 className="text-2xl font-semibold mb-6 text-slate-900">Nos formations disponibles</h2>
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {stagesData.formations.map((formation) => (
+                    <div className="space-y-4">
+                        {stagesData.formations.map((formation, index) => (
                             <div
                                 key={formation.id}
-                                className="p-6 border border-[#F2B988] rounded-3xl bg-white/80 shadow-[0_8px_30px_-15px_rgba(242,90,56,0.2)] hover:shadow-[0_20px_50px_-15px_rgba(242,90,56,0.3)] hover:-translate-y-1 transition-all"
+                                className="flex items-start gap-4 p-5 border-l-4 border-[#F29057] bg-gradient-to-r from-[#F2B988]/10 to-transparent rounded-lg hover:from-[#F2B988]/20 transition-all"
                             >
-                                <div className="mb-3">
-                                    <span className="inline-block px-3 py-1 text-xs font-semibold text-[#732514] bg-[#F2B988] rounded-full">
-                                        {formation.type}
-                                    </span>
+                                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-[#F25A38] text-white font-bold">
+                                    {index + 1}
                                 </div>
-                                <h3 className="text-lg font-bold mb-2 text-slate-900">
-                                    {formation.title}
-                                </h3>
-                                {formation.subtitle && (
-                                    <p className="text-sm text-slate-600">{formation.subtitle}</p>
-                                )}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h3 className="text-lg font-bold text-slate-900">
+                                            {formation.title}
+                                        </h3>
+                                        <span className="px-3 py-1 text-xs font-semibold text-[#732514] bg-[#F2B988] rounded-full">
+                                            {formation.type}
+                                        </span>
+                                    </div>
+                                    {formation.subtitle && (
+                                        <p className="text-sm text-slate-600">{formation.subtitle}</p>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
