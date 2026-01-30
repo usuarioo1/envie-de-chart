@@ -1,0 +1,62 @@
+{
+    "title": "Vidéos",
+    "subtitle": "Découvrez nos vidéos sur le chant et la psychophonie",
+    "videos": [
+        {
+            "id": 1,
+            "title": "Prenatal Wellness Summit – Promoting Mother and Baby’s Physical, emotional, spiritual and hocial health Marie-Laure POTEL –",
+            "url": "https://www.youtube.com/watch?v=rn2NlkGj9U4",
+            "type": "youtube",
+            "videoId": "rn2NlkGj9U4"
+        },
+        {
+            "id": 2,
+            "title": "Présentation de l’ouvrage “Envie de chanter ?” ",
+            "url": "https://www.youtube.com/watch?v=rBxJaCdBNtk",
+            "type": "youtube",
+            "videoId": "rBxJaCdBNtk"
+        },
+        {
+            "id": 3,
+            "title": "Portrait de coach – Marie Laure Potel",
+            "url": "https://www.youtube.com/watch?v=gqsf8LFEt38",
+            "type": "youtube",
+            "videoId": "gqsf8LFEt38"
+        },
+        {
+            "id": 4,
+            "title": "Interview Marie Laure Potel sur Grandes Oyentes ",
+            "url": "https://www.youtube.com/watch?v=9UtnYlDlEOM",
+            "type": "youtube",
+            "videoId": "9UtnYlDlEOM"
+        },
+        {
+            "id": 6,
+            "title": "Le chant prénatal à la maternité des Lilas ",
+            "url": "https://www.envie-de-chanter.com/-/wp-content/uploads/2020/04/Maternit%C3%A9-des-Lilas-Episode-3-Le-chant-Facebook.mp4",
+            "type": "video",
+            "videoId": ""
+        },
+        {
+            "id": 8,
+            "title": "Chanter pour aller Mieux ",
+            "url": "https://www.youtube.com/watch?v=a83exKqTaCo",
+            "type": "youtube",
+            "videoId": "a83exKqTaCo"
+        },
+        {
+            "id": 9,
+            "title": "Tous parents : le chant prénatal ",
+            "url": "https://www.youtube.com/watch?v=vmv-Dh6Kf1Y",
+            "type": "youtube",
+            "videoId": "vmv-Dh6Kf1Y"
+        },
+        {
+            "id": 10,
+            "title": "1 an à la maternité ",
+            "url": "https://www.youtube.com/watch?v=Fmd7tWEJd2U",
+            "type": "youtube",
+            "videoId": "Fmd7tWEJd2U"
+        }
+    ]
+}

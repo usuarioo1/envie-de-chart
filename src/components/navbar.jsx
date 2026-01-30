@@ -62,7 +62,7 @@ const menuSections = [
         items: [
             { label: 'Publications', href: '/medias/publications' },
             { label: 'La Presse en parle', href: '/medias/la-presse-en-parle' },
-            'Vidéo',
+            { label:'vidéo', href:'/medias/videos'}
         ],
     },
     {
