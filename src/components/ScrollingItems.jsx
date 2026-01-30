@@ -139,11 +139,9 @@ export default function ScrollingItems() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#732514] mb-4">
-                        Explorez nos Services
-                    </h2>
-                    <p className="text-lg md:text-xl text-[#732514]/80 max-w-3xl mx-auto">
                         Découvrez l'univers du chant prénatal et de la psychophonie
-                    </p>
+                    </h2>
+
                     <div className="mt-6 w-24 h-1 bg-[#F25A38] rounded-full mx-auto"></div>
                 </div>
 
@@ -177,11 +175,11 @@ function ScrollingCard({ section, index }) {
             <div className="relative p-8 bg-white/80 backdrop-blur-sm h-full flex flex-col">
                 <div className="flex-grow">
                     {/* Icon */}
-                    <div className="mb-4 transform transition-transform duration-500 ease-out flex items-center justify-center" 
-                         style={{ 
-                             transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-                             fontSize: typeof section.icon === 'string' ? '3rem' : 'inherit'
-                         }}>
+                    <div className="mb-4 transform transition-transform duration-500 ease-out flex items-center justify-center"
+                        style={{
+                            transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+                            fontSize: typeof section.icon === 'string' ? '3rem' : 'inherit'
+                        }}>
                         {section.icon}
                     </div>
 
@@ -248,7 +246,7 @@ function ScrollingCard({ section, index }) {
                 </Link>
 
                 {/* Decorative Corner */}
-                <div 
+                <div
                     className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#F25A38]/20 to-transparent rounded-bl-full transition-all duration-500"
                     style={{
                         transform: isHovered ? 'scale(1.5)' : 'scale(1)',

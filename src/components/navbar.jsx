@@ -10,7 +10,7 @@ const menuSections = [
         items: [
             { label: 'Agenda des stages et formations', href: '/agenda/stages-et-formations' },
             { label: 'Agenda des prochains ateliers', href: '/agenda/prochains-ateliers' },
-            { label: 'Calendrier des ateliers et stages', href: '/agenda/calendrier' },
+            // { label: 'Calendrier des ateliers et stages', href: '/agenda/calendrier' },
         ],
     },
     // {
@@ -20,9 +20,9 @@ const menuSections = [
     {
         title: 'Chant prénatal',
         items: [
-            { 
-                label: 'Le Chant Prénatal et la Psychophonie', 
-                href: '/chant-prenatal/le-chant-prenatal-psychophonie' 
+            {
+                label: 'Le Chant Prénatal et la Psychophonie',
+                href: '/chant-prenatal/le-chant-prenatal-psychophonie'
             },
             { label: 'Prenatal Singing', href: '/chant-prenatal/prenatal-singing' },
             { label: 'Canto Prenatal', href: '/chant-prenatal/canto-prenatal' },
@@ -213,10 +213,10 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center gap-1">
-                            <Image 
-                                src="/assets/icon/icono.png" 
-                                alt="Envie de Chanter Logo" 
-                                width={40} 
+                            <Image
+                                src="/assets/icon/icono.png"
+                                alt="Envie de Chanter Logo"
+                                width={40}
                                 height={40}
                                 className="object-contain"
                             />
@@ -257,7 +257,7 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
-                        
+
                         {/* Auth Links */}
                         <div className="flex items-center space-x-2 ml-4 border-l-2 border-[#F2B988] pl-4">
                             {mounted && (
@@ -411,7 +411,7 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
-                        
+
                         {/* Mobile Auth Links */}
                         <div className="border-t-2 border-[#F2B988] pt-2 mt-2 space-y-1">
                             {mounted && (

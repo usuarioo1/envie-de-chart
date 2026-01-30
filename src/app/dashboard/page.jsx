@@ -29,15 +29,15 @@ export default function DashboardPage() {
       router.push('/login');
       return;
     }
-    
+
     const parsedUser = JSON.parse(userData);
-    
+
     // Check if user is admin
     if (parsedUser.role !== 'admin') {
       router.push('/');
       return;
     }
-    
+
     fetchUsers();
     setUser(parsedUser);
     fetchEvents();
@@ -193,19 +193,19 @@ export default function DashboardPage() {
             <div className="flex items-center gap-6">
               {/* Logo */}
               <div className="flex-shrink-0">
-                <Image 
-                  src="/assets/icon/icono.png" 
-                  alt="Envie de Chanter Logo" 
-                  width={40} 
+                <Image
+                  src="/assets/icon/icono.png"
+                  alt="Envie de Chanter Logo"
+                  width={40}
                   height={40}
                   className="object-contain"
                 />
               </div>
               {/* Text */}
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+                <h1 className="text-3xl font-bold text-gray-900">Tableau de Bord</h1>
                 <p className="mt-2 text-gray-600">
-                  Welcome, {user?.name}! 
+                  Bienvenue, {user?.name}!
                   <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
                     {user?.role}
                   </span>
@@ -217,17 +217,18 @@ export default function DashboardPage() {
                 href="/users"
                 className="px-4 py-2 border border-indigo-600 text-sm font-medium rounded-md text-indigo-600 hover:bg-indigo-50"
               >
-                View Users
+                Voir les utilisateurs
               </Link>
               <button
                 onClick={handleLogout}
                 className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
               >
-                Logout
+                Déconnecter
               </button>
             </div>
           </div>
         </div>
+
 
         {/* Notifications */}
         {error && (
@@ -241,15 +242,15 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Create Event Section */}
-        <div className="bg-white shadow rounded-lg p-6 mb-6">
+        {/* para activar esta seccion descomentarla */}
+        {/* <div className="bg-white shadow rounded-lg p-6 mb-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">Create Event</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Créer un Événement</h2>
             <button
               onClick={() => setShowEventForm(!showEventForm)}
               className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
             >
-              {showEventForm ? 'Cancel' : 'New Event'}
+              {showEventForm ? 'Annuler' : 'Nouvel Événement'}
             </button>
           </div>
 
@@ -257,7 +258,7 @@ export default function DashboardPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="title" className="block text-sm font-medium text-gray-700">
-                  Title
+                  Titre
                 </label>
                 <input
                   type="text"
@@ -321,7 +322,7 @@ export default function DashboardPage() {
 
               <div>
                 <label htmlFor="location" className="block text-sm font-medium text-gray-700">
-                  Location
+                  Localisation
                 </label>
                 <input
                   type="text"
@@ -338,24 +339,24 @@ export default function DashboardPage() {
                 type="submit"
                 className="w-full px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Create Event
+                Créer un événement
               </button>
             </form>
           )}
-        </div>
+        </div> */}
 
-        {/* Events List */}
+        {/* Events List
         <div className="bg-white shadow rounded-lg p-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">All Events</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Tous les Événements</h2>
             <Link
               href="/agenda/calendrier"
               className="text-indigo-600 hover:text-indigo-900"
             >
-              View Calendar
+              Voir le Calendrier
             </Link>
           </div>
-          
+
           {events.length === 0 ? (
             <p className="text-gray-500">No events yet. Create your first event!</p>
           ) : (
@@ -395,40 +396,56 @@ export default function DashboardPage() {
               ))}
             </div>
           )}
+        </div> */}
+
+        {/* Contact Messages Section */}
+        <div className="bg-white shadow rounded-lg p-6 mt-2 mb-2">
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">Messages de Contact</h2>
+              <p className="text-gray-600 mt-1">Gérez les messages reçus via le formulaire de contact</p>
+            </div>
+            <Link
+              href="/dashboard/contact-messages"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#F25A38] hover:bg-[#E84A28] transition-colors"
+            >
+              Voir les Messages →
+            </Link>
+          </div>
         </div>
 
         {/* Users Management Section */}
         <div className="bg-white shadow rounded-lg p-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">Users Management</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Gestion des Utilisateurs</h2>
             <Link
               href="/users"
               className="text-indigo-600 hover:text-indigo-900"
             >
-              View All Users
+              Voir tous les utilisateurs
             </Link>
           </div>
-          
+
           {loadingUsers ? (
-            <p className="text-gray-500">Loading users...</p>
+            <p className="text-gray-500">Chargement des utilisateurs...</p>
           ) : users.length === 0 ? (
-            <p className="text-gray-500">No users found.</p>
+            <p className="text-gray-500">Aucun utilisateur trouvé.</p>
           ) : (
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      User
+                      Utilisateur
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Email
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Role
+                      Rôle
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Joined
+                      Inscrit
                     </th>
                   </tr>
                 </thead>
@@ -490,13 +507,15 @@ export default function DashboardPage() {
                     href="/users"
                     className="text-sm text-indigo-600 hover:text-indigo-900"
                   >
-                    View all {users.length} users →
+                    Voir tous les {users.length} utilisateurs →
                   </Link>
                 </div>
               )}
             </div>
           )}
         </div>
+
+
       </div>
     </div>
   );
