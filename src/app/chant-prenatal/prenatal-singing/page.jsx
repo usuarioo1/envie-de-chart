@@ -1,4 +1,8 @@
 import contentData from '@/utils/chantPrenatal/prenatalsinging.json';
+import Prenatal1 from '@/assets/fotoprenatal1.jpeg';
+import Prenatal2 from '@/assets/fotoprenatal2.jpeg';
+import Prenatal3 from '@/assets/fotoprenatal3.jpeg';
+import Prenatal4 from '@/assets/fotoprenatal4.jpeg';
 
 const BlockRenderer = () => {
     const sectionsToAddImageAfter = [
@@ -7,6 +11,13 @@ const BlockRenderer = () => {
         'Post-natal',
         'PSYCHOPHONIE'
     ];
+
+    const imageMap = {
+        'Origins': Prenatal1,
+        'Developping the bond with the baby in the womb': Prenatal2,
+        'Post-natal': Prenatal3,
+        'PSYCHOPHONIE': Prenatal4
+    };
 
     return (
         <div className="space-y-8">
@@ -37,7 +48,7 @@ const BlockRenderer = () => {
                             <div className="pl-6 mt-6 flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src="https://via.placeholder.com/600x400"
+                                        src={imageMap[section.content].src}
                                         alt={`Illustration for ${section.content}`}
                                         className="w-full h-full object-cover"
                                     />

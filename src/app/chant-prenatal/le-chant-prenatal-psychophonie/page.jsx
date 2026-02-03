@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import data from '@/utils/chantPrenatal/le-chant-prenatal.json';
+import Prenatal1 from '@/assets/fotoprenatal1.jpeg';
+import Prenatal2 from '@/assets/fotoprenatal2.jpeg';
+import Prenatal3 from '@/assets/fotoprenatal3.jpeg';
+import Prenatal4 from '@/assets/fotoprenatal4.jpeg';
 
 export default function LeChantPrenatalPsychophoniePage() {
     const { presentation, ateliers, programme, inscription, origine, fondements, psychophonie, bibliographie } = data;
@@ -266,7 +270,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                         <div className="pl-8 mb-4 flex justify-center">
                             <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                 <img
-                                    src="https://via.placeholder.com/600x400"
+                                    src={Prenatal1.src}
                                     alt="Imagen histórica ilustrativa"
                                     className="w-full h-full object-cover"
                                 />
@@ -291,7 +295,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <div className="pl-8 my-4 flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src="https://via.placeholder.com/600x400"
+                                        src={Prenatal2.src}
                                         alt="Imagen pedagógica ilustrativa"
                                         className="w-full h-full object-cover"
                                     />
@@ -324,7 +328,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <div className="flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src="https://via.placeholder.com/600x400"
+                                        src={Prenatal3.src}
                                         alt="Illustration méthode"
                                         className="w-full h-full object-cover"
                                     />
@@ -344,7 +348,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <div className="flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src="https://via.placeholder.com/600x400"
+                                        src={Prenatal4.src}
                                         alt="Illustration conscience corporelle"
                                         className="w-full h-full object-cover"
                                     />
@@ -363,7 +367,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <div className="flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src="https://via.placeholder.com/600x400"
+                                        src={Prenatal1.src}
                                         alt="Illustration souffle et voix"
                                         className="w-full h-full object-cover"
                                     />

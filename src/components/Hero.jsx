@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import heroImage from '@/assets/unnamed.png';
-import image12 from '@/assets/WhatsApp Image 2026-01-21 at 6.35.14 AM.jpeg';  
+import HeroImg from '@/assets/fotoHero.jpeg'
 
 
 export default function Hero() {
     const [currentImage, setCurrentImage] = useState(0);
-    const images = [heroImage, image12];
+    const images = [HeroImg];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -19,7 +18,7 @@ export default function Hero() {
     }, [images.length]);
 
     return (
-        <section className="relative w-full h-0 pb-[40%] overflow-hidden mb-12">
+        <section className="relative w-full h-0 pb-[50%] overflow-hidden mb-12">
             {/* Aspect ratio más panorámico (2.5:1) para menos altura */}
             <div className="absolute inset-0">
                 {/* Imagen de fondo */}
