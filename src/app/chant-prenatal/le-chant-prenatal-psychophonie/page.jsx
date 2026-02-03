@@ -4,6 +4,7 @@ import Prenatal1 from '@/assets/fotoprenatal1.jpeg';
 import Prenatal2 from '@/assets/fotoprenatal2.jpeg';
 import Prenatal3 from '@/assets/fotoprenatal3.jpeg';
 import Prenatal4 from '@/assets/fotoprenatal4.jpeg';
+import prenatal5 from '@/assets/fotoHero.jpeg';
 
 export default function LeChantPrenatalPsychophoniePage() {
     const { presentation, ateliers, programme, inscription, origine, fondements, psychophonie, bibliographie } = data;
@@ -367,7 +368,7 @@ export default function LeChantPrenatalPsychophoniePage() {
                             <div className="flex justify-center">
                                 <div className="w-full max-w-[600px] aspect-[3/2] bg-slate-200 rounded-lg overflow-hidden">
                                     <img
-                                        src={Prenatal1.src}
+                                        src={prenatal5.src}
                                         alt="Illustration souffle et voix"
                                         className="w-full h-full object-cover"
                                     />
