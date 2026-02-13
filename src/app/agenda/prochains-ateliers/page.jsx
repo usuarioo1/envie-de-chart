@@ -1,4 +1,5 @@
 import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
+import DynamicWorkshopsSection from '@/components/DynamicWorkshopsSection';
 
 const formatLocation = (location) => {
     if (!location) return null;
@@ -53,6 +54,9 @@ export default function AgendaProchainsAteliersPage() {
                     </div>
                 </header>
 
+                {/* Dynamic Workshops from Database */}
+                <DynamicWorkshopsSection />
+
                 {media?.length ? (
                     <section className="rounded-3xl border border-[#F2B988] bg-white/80 p-6">
                         <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">À écouter</p>
@@ -103,7 +107,6 @@ export default function AgendaProchainsAteliersPage() {
 
                 <section className="rounded-3xl border border-rose-100 bg-white/80 p-6">
                     <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.3em] text-rose-400">Semaine type</p>
                         <h2 className="text-2xl font-semibold text-slate-900">Ateliers à venir</h2>
                         <p className="text-sm text-slate-600">Consultez les créneaux ouverts, les éléments pratiques et réservez votre place.</p>
                     </div>
