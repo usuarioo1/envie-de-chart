@@ -1,5 +1,6 @@
 import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
 import DynamicWorkshopsSection from '@/components/DynamicWorkshopsSection';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const formatLocation = (location) => {
     if (!location) return null;
@@ -46,9 +47,32 @@ export default function AgendaProchainsAteliersPage() {
                     <p className="mt-2 text-sm text-slate-600">Agenda vivant des ateliers, cours et rendez-vous personnalisés.</p>
                     <div className="mt-6 grid gap-4 md:grid-cols-[2fr_1fr]">
                         <div className="rounded-2xl border border-slate-100 bg-white/60 p-4">
-                            <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">Instagram</p>
-                            <p className="mt-2 text-lg font-semibold text-slate-900">@{contactGeneral.instagram}</p>
-                            <p className="mt-2 text-sm text-slate-600">Suivez les coulisses des ateliers, annonces de nouvelles dates et coulées sonores.</p>
+                            <p className="text-xs uppercase tracking-[0.3em] text-[#F29057]">Réseaux sociaux</p>
+                            <div className="mt-3 space-y-2 text-sm">
+                                {contactGeneral.instagram && (
+                                    <a
+                                        href={`https://www.instagram.com/${contactGeneral.instagram.replace(/^@/, '')}/`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-slate-900 hover:text-[#F25A38]"
+                                    >
+                                        <FaInstagram className="text-[#F25A38]" aria-hidden="true" />
+                                        <span className="font-semibold">Instagram</span>
+                                        <span className="text-slate-600">@{contactGeneral.instagram.replace(/^@/, '')}</span>
+                                    </a>
+                                )}
+                                <a
+                                    href="https://web.facebook.com/Enviedechanter"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-slate-900 hover:text-[#F25A38]"
+                                >
+                                    <FaFacebook className="text-[#F25A38]" aria-hidden="true" />
+                                    <span className="font-semibold">Facebook</span>
+                                    <span className="text-slate-600">Enviedechanter</span>
+                                </a>
+                            </div>
+                            <p className="mt-2 text-sm text-slate-600">Suivez les coulisses des ateliers, annonces de nouvelles dates.</p>
                         </div>
                         <ContactBlock contact={contactGeneral.contact} />
                     </div>
