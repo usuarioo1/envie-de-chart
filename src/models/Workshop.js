@@ -19,6 +19,11 @@ const WorkshopSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    price: {
+        type: Number,
+        required: false,
+        default: 0
+    },
     isActive: {
         type: Boolean,
         default: true

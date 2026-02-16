@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Workshop from '@/models/Workshop';
+import User from '@/models/User'; // Needed for populate to work
 
 // GET - Fetch all workshops or a specific workshop by ID
 export async function GET(request) {

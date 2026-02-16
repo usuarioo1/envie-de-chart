@@ -41,7 +41,8 @@ export default function DashboardPage() {
   const [workshopFormData, setWorkshopFormData] = useState({
     title: '',
     description: '',
-    date: ''
+    date: '',
+    price: ''
   });
   const [animateurFormData, setAnimateurFormData] = useState({
     name: '',
@@ -151,8 +152,8 @@ export default function DashboardPage() {
 
   const fetchAnimateurs = async () => {
     try {
-      const url = selectedCountry === 'all' 
-        ? '/api/animateurs' 
+      const url = selectedCountry === 'all'
+        ? '/api/animateurs'
         : `/api/animateurs?country=${selectedCountry}`;
       const response = await fetch(url);
       const data = await response.json();
@@ -295,9 +296,15 @@ export default function DashboardPage() {
       const url = isEditing ? '/api/workshops' : '/api/workshops';
       const method = isEditing ? 'PUT' : 'POST';
 
+      // Parse price to number if provided
+      const workshopData = {
+        ...workshopFormData,
+        price: workshopFormData.price ? parseFloat(workshopFormData.price) : 0
+      };
+
       const bodyData = isEditing
-        ? { id: editingWorkshop._id, ...workshopFormData }
-        : { ...workshopFormData, userId: user.id };
+        ? { id: editingWorkshop._id, ...workshopData }
+        : { ...workshopData, userId: user.id };
 
       const response = await fetch(url, {
         method,
@@ -314,7 +321,8 @@ export default function DashboardPage() {
         setWorkshopFormData({
           title: '',
           description: '',
-          date: ''
+          date: '',
+          price: ''
         });
         setShowWorkshopForm(false);
         setEditingWorkshop(null);
@@ -338,7 +346,8 @@ export default function DashboardPage() {
     setWorkshopFormData({
       title: workshop.title,
       description: workshop.description,
-      date: formattedDate
+      date: formattedDate,
+      price: workshop.price || ''
     });
     setShowWorkshopForm(true);
     setError('');
@@ -350,7 +359,8 @@ export default function DashboardPage() {
     setWorkshopFormData({
       title: '',
       description: '',
-      date: ''
+      date: '',
+      price: ''
     });
     setShowWorkshopForm(false);
   };
@@ -614,7 +624,7 @@ export default function DashboardPage() {
       const method = isEditing ? 'PUT' : 'POST';
       const bodyData = isEditing
         ? { id: editingStage._id, ...stageFormData }
-        : stageFormData;
+        : { ...stageFormData, status: 'published' }; // Ensure new stages are published
 
       const response = await fetch('/api/stages', {
         method,
@@ -868,7 +878,7 @@ export default function DashboardPage() {
           </div>
         )}
 
-        
+
 
         {/* Contact Messages Section */}
         <div className="bg-white shadow rounded-lg p-6 mt-2 mb-2">
@@ -965,6 +975,23 @@ export default function DashboardPage() {
                 />
               </div>
 
+              <div>
+                <label htmlFor="workshop-price" className="block text-sm font-medium text-gray-700 mb-1">
+                  Prix (€)
+                </label>
+                <input
+                  type="number"
+                  id="workshop-price"
+                  name="price"
+                  step="0.01"
+                  min="0"
+                  value={workshopFormData.price}
+                  onChange={handleWorkshopChange}
+                  placeholder="Ex: 30.00"
+                  className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F25A38] focus:border-transparent"
+                />
+              </div>
+
               <div className="flex gap-3">
                 <button
                   type="submit"
@@ -1031,6 +1058,11 @@ export default function DashboardPage() {
                                   minute: '2-digit'
                                 })}
                               </span>
+                              {workshop.price && workshop.price > 0 && (
+                                <span className="flex items-center gap-1 font-semibold text-[#F25A38]">
+                                  💰 {workshop.price.toFixed(2)} €
+                                </span>
+                              )}
                             </div>
                             {workshop.createdBy && (
                               <p className="mt-2 text-xs text-gray-400">
@@ -1347,7 +1379,7 @@ export default function DashboardPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 {editingAnimateur ? 'Modifier l\'animateur' : 'Créer un nouvel animateur'}
               </h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -1489,9 +1521,8 @@ export default function DashboardPage() {
               {animateurs.map((animateur) => (
                 <div
                   key={animateur._id}
-                  className={`border rounded-xl p-5 hover:shadow-md transition-all ${
-                    animateur.isActive ? 'border-indigo-200 bg-indigo-50/50' : 'border-gray-200 bg-gray-50 opacity-60'
-                  }`}
+                  className={`border rounded-xl p-5 hover:shadow-md transition-all ${animateur.isActive ? 'border-indigo-200 bg-indigo-50/50' : 'border-gray-200 bg-gray-50 opacity-60'
+                    }`}
                 >
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
@@ -1784,22 +1815,20 @@ export default function DashboardPage() {
           ) : (
             <div className="space-y-4">
               {stageRegistrations.map((registration) => (
-                <div key={registration._id} className={`border rounded-lg p-4 ${
-                  registration.status === 'pending' ? 'bg-orange-50 border-orange-300' : 'bg-gray-50 border-gray-200'
-                }`}>
+                <div key={registration._id} className={`border rounded-lg p-4 ${registration.status === 'pending' ? 'bg-orange-50 border-orange-300' : 'bg-gray-50 border-gray-200'
+                  }`}>
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-[#F25A38] text-white">
                           {registration.stageTitle}
                         </span>
-                        <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold ${
-                          registration.status === 'pending' ? 'bg-orange-500 text-white' :
+                        <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold ${registration.status === 'pending' ? 'bg-orange-500 text-white' :
                           registration.status === 'confirmed' ? 'bg-green-500 text-white' :
-                          'bg-red-500 text-white'
-                        }`}>
-                          {registration.status === 'pending' ? '⏳ En attente' : 
-                           registration.status === 'confirmed' ? '✅ Confirmé' : '❌ Annulé'}
+                            'bg-red-500 text-white'
+                          }`}>
+                          {registration.status === 'pending' ? '⏳ En attente' :
+                            registration.status === 'confirmed' ? '✅ Confirmé' : '❌ Annulé'}
                         </span>
                       </div>
 
@@ -1877,9 +1906,8 @@ export default function DashboardPage() {
               {stageInquiries.map((inquiry) => (
                 <div
                   key={inquiry._id}
-                  className={`border rounded-lg p-4 ${
-                    inquiry.isRead ? 'bg-gray-50 border-gray-200' : 'bg-orange-50 border-orange-300'
-                  }`}
+                  className={`border rounded-lg p-4 ${inquiry.isRead ? 'bg-gray-50 border-gray-200' : 'bg-orange-50 border-orange-300'
+                    }`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
@@ -1893,11 +1921,11 @@ export default function DashboardPage() {
                           </span>
                         )}
                       </div>
-                      
+
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {inquiry.formationTitle}
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
                         <div>
                           <p className="text-sm text-gray-500">Nom</p>
@@ -1916,7 +1944,7 @@ export default function DashboardPage() {
                           </a>
                         </div>
                       </div>
-                      
+
                       <p className="text-xs text-gray-500">
                         Reçu le {new Date(inquiry.createdAt).toLocaleDateString('fr-FR', {
                           day: 'numeric',
@@ -1927,15 +1955,14 @@ export default function DashboardPage() {
                         })}
                       </p>
                     </div>
-                    
+
                     <div className="ml-4 flex flex-col gap-2">
                       <button
                         onClick={() => handleToggleInquiryRead(inquiry._id, inquiry.isRead)}
-                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                          inquiry.isRead
-                            ? 'text-gray-700 bg-gray-200 hover:bg-gray-300'
-                            : 'text-white bg-green-600 hover:bg-green-700'
-                        }`}
+                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${inquiry.isRead
+                          ? 'text-gray-700 bg-gray-200 hover:bg-gray-300'
+                          : 'text-white bg-green-600 hover:bg-green-700'
+                          }`}
                       >
                         {inquiry.isRead ? 'Marquer non lu' : 'Marquer lu'}
                       </button>
