@@ -6,6 +6,7 @@ const WorkshopCard = ({ workshop }) => {
     const workshopDate = new Date(workshop.date);
     const isUpcoming = workshopDate > new Date();
     const [showForm, setShowForm] = useState(false);
+    const [showPaymentInfo, setShowPaymentInfo] = useState(false);
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
@@ -131,17 +132,28 @@ const WorkshopCard = ({ workshop }) => {
                         </span>
                     </div>
 
-                    {/* Inscription Button */}
+                    {/* Inscription Button and Payment Info */}
                     {isUpcoming && !success && (
-                        <button
-                            onClick={() => setShowForm(!showForm)}
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
-                        >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                            {showForm ? 'Fermer' : 'S\'inscrire'}
-                        </button>
+                        <div className="flex flex-wrap gap-3">
+                            <button
+                                onClick={() => setShowForm(!showForm)}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                            >
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                                {showForm ? 'Fermer' : 'S\'inscrire'}
+                            </button>
+                            <button
+                                onClick={() => setShowPaymentInfo(!showPaymentInfo)}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-[#F25A38] text-[#F25A38] font-semibold text-sm hover:bg-[#F25A38] hover:text-white transition-all duration-300 hover:scale-105"
+                            >
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                </svg>
+                                {showPaymentInfo ? 'Fermer' : 'Informations de paiement'}
+                            </button>
+                        </div>
                     )}
 
                     {success && (
@@ -232,6 +244,91 @@ const WorkshopCard = ({ workshop }) => {
                             </button>
                         </div>
                     </form>
+                </div>
+            )}
+
+            {/* Payment Information Dialog */}
+            {showPaymentInfo && isUpcoming && (
+                <div className="relative z-10 mt-6 p-6 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/30 rounded-2xl border-2 border-[#F25A38] shadow-lg animate-slideDown">
+                    <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#F25A38] to-[#F29057] rounded-xl flex items-center justify-center">
+                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-semibold text-gray-900">Informations de paiement</h4>
+                        </div>
+                        <button
+                            onClick={() => setShowPaymentInfo(false)}
+                            className="text-gray-400 hover:text-gray-600 transition-colors"
+                        >
+                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="space-y-4">
+                        <p className="text-sm text-gray-600">
+                            Pour régler votre inscription par virement bancaire, utilisez les coordonnées suivantes :
+                        </p>
+
+                        <div className="bg-white rounded-xl p-5 border border-gray-200 shadow-sm space-y-3">
+                            <div>
+                                <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Bénéficiaire</p>
+                                <p className="text-lg font-semibold text-gray-900">Arts Rencontres Echanges</p>
+                            </div>
+
+                            <div className="border-t border-gray-100 pt-3">
+                                <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">IBAN</p>
+                                <p className="text-base font-mono font-semibold text-gray-900 break-all">
+                                    FR76 1027 8060 5000 0208 3550 116
+                                </p>
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText('FR76102780605000020835501116');
+                                    }}
+                                    className="mt-2 text-xs text-[#F25A38] hover:text-[#F29057] font-medium flex items-center gap-1"
+                                >
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    Copier l'IBAN
+                                </button>
+                            </div>
+
+                            <div className="border-t border-gray-100 pt-3">
+                                <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">BIC</p>
+                                <p className="text-base font-mono font-semibold text-gray-900">CMCIFR2A</p>
+                                <button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText('CMCIFR2A');
+                                    }}
+                                    className="mt-2 text-xs text-[#F25A38] hover:text-[#F29057] font-medium flex items-center gap-1"
+                                >
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    Copier le BIC
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                            <div className="flex gap-3">
+                                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <div className="text-sm text-blue-900">
+                                    <p className="font-semibold mb-1">Note importante</p>
+                                    <p className="text-blue-800">
+                                        N'oubliez pas d'indiquer votre nom et le titre de l'atelier dans le libellé du virement.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )}
 

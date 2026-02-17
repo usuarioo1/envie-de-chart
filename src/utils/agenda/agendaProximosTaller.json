@@ -26,36 +26,6 @@
     ],
     "agenda": [
         {
-            "day": "Mercredi",
-            "title": "Chant prénatal en ligne",
-            "date": "17 décembre",
-            "note": "Dernière avant les fêtes",
-            "mode": "en ligne",
-            "inscription": "Inscription ici",
-            "info": "Un lien vous sera envoyé dans l’heure qui précède l’atelier"
-        },
-        {
-            "day": "Jeudi",
-            "title": "Atelier chant maman-bébé / Envie de chanter avec bébé ?",
-            "date": "18 décembre",
-            "time": "09h30",
-            "location": {
-                "address": "1 rue Crespin du Gast",
-                "postalCode": "75011",
-                "city": "Paris",
-                "metro": "Ménilmontant"
-            },
-            "price": "10€ par enfant",
-            "duration": "1 heure",
-            "contact": {
-                "email": "marielaurepotel@orange.fr",
-                "phone": "01 64 40 94 23"
-            },
-            "links": [
-                "document"
-            ]
-        },
-        {
             "day": "Jeudi",
             "title": "Chant prénatal Paris 18ème",
             "date": "18 décembre",
@@ -76,7 +46,6 @@
                 "phone": "01 64 40 94 23"
             },
             "links": [
-                "document",
                 "réservation"
             ]
         },
@@ -97,7 +66,6 @@
                 "phone": "01 64 40 94 23"
             },
             "links": [
-                "document",
                 "réservation"
             ]
         },
@@ -107,7 +75,6 @@
             "time": "10h",
             "mode": "en ligne",
             "links": [
-                "document",
                 "inscription"
             ],
             "info": "Un lien vous sera envoyé dans l’heure qui précède l’atelier"
@@ -146,7 +113,6 @@
                 "phone": "01 64 40 94 23"
             },
             "links": [
-                "document",
                 "réservation"
             ]
         },
@@ -161,7 +127,6 @@
                 "phone": "01 64 40 94 23"
             },
             "links": [
-                "document",
                 "inscription"
             ]
         },
@@ -181,7 +146,6 @@
                 "phone": "01 64 40 94 23"
             },
             "links": [
-                "programme",
                 "réservation"
             ]
         }

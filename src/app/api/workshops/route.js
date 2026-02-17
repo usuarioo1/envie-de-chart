@@ -41,7 +41,7 @@ export async function POST(request) {
     try {
         await connectDB();
         const body = await request.json();
-        const { title, description, date, userId } = body;
+        const { title, description, date, userId, price } = body;
 
         // Validation
         if (!title || !description || !date || !userId) {
@@ -61,6 +61,7 @@ export async function POST(request) {
             description,
             date: workshopDate,
             dayOfWeek,
+            price: price || 0,
             createdBy: userId,
         });
 
@@ -84,7 +85,7 @@ export async function PUT(request) {
     try {
         await connectDB();
         const body = await request.json();
-        const { id, title, description, date, isActive } = body;
+        const { id, title, description, date, isActive, price } = body;
 
         if (!id) {
             return NextResponse.json(
@@ -101,6 +102,7 @@ export async function PUT(request) {
             const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
             updateData.dayOfWeek = daysOfWeek[updateData.date.getDay()];
         }
+        if (price !== undefined) updateData.price = price;
         if (isActive !== undefined) updateData.isActive = isActive;
         updateData.updatedAt = Date.now();
 
