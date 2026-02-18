@@ -1,185 +1,57 @@
-'use client';
-import { useState, useEffect } from 'react';
-import agendaData from '@/utils/agenda/agenda.json';
-import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
+import UnifiedCalendar from '@/components/UnifiedCalendar';
 
-const formatFormationDate = (item) => {
-    if (item.date) return item.date;
-    if (item.dates) {
-        const { start, end } = item.dates;
-        return end ? `${start} → ${end}` : start;
-    }
-    if (item.year) return `${item.year}`;
-    return 'Dates à confirmer';
+export const metadata = {
+    title: 'Calendrier - Ateliers & Formations | Envie de Chanter',
+    description: 'Découvrez tous nos ateliers de chant et formations disponibles. Inscrivez-vous directement en ligne.',
 };
 
-const formatLocation = (location) => {
-    if (!location) return null;
-    if (typeof location === 'string') return location;
-    const parts = [];
-    if (location.place) parts.push(location.place);
-    if (location.address) parts.push(location.address);
-    const cityLine = [location.postalCode, location.city].filter(Boolean).join(' ');
-    if (cityLine) parts.push(cityLine);
-    if (location.transport) parts.push(location.transport);
-    if (location.metro) {
-        const metro = Array.isArray(location.metro) ? location.metro.join(' / ') : location.metro;
-        parts.push(`Métro ${metro}`);
-    }
-    return parts.join(' · ');
-};
-
-const TimelineCard = ({ eyebrow, title, date, children }) => (
-    <article className="relative rounded-3xl border border-[#F2B988] bg-white/80 p-5">
-        <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.35em] text-[#F29057]">
-            <span>{eyebrow}</span>
-            <span>{date}</span>
-        </div>
-        <h3 className="mt-3 text-xl font-semibold text-slate-900">{title}</h3>
-        <div className="mt-2 text-sm text-slate-600">{children}</div>
-    </article>
-);
-
-export default function AgendaCalendrierPage() {
-    const formations = agendaData.formations;
-    const ateliers = agendaNext.agenda;
-    const [events, setEvents] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetchEvents();
-    }, []);
-
-    const fetchEvents = async () => {
-        try {
-            const response = await fetch('/api/events');
-            const data = await response.json();
-            if (data.success) {
-                setEvents(data.data);
-            }
-        } catch (err) {
-            console.error('Error fetching events:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
-
+export default function CalendrierPage() {
     return (
-        <main className="px-4 py-12">
-            <div className="mx-auto max-w-6xl space-y-10">
-                <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
-                    <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Envie de Chanter</p>
-                    <h1 className="mt-3 text-3xl font-semibold text-slate-900">Calendrier des ateliers et stages</h1>
-                    <p className="mt-2 text-sm text-slate-600">
-                        Synthèse des programmes : retrouvez d&apos;un coup d&apos;œil les formations longues, les stages intensifs et les ateliers hebdomadaires.
+        <main className="min-h-screen bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20">
+            <div className="mx-auto max-w-7xl px-4 py-12">
+                {/* Hero Section */}
+                <div className="mb-12 rounded-3xl border-2 border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-[0_20px_50px_-20px_rgba(242,90,56,0.25)]">
+                    <div className="flex items-center gap-3 mb-4">
+                        <svg className="w-10 h-10 text-[#F25A38]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057] font-semibold">
+                            Envie de Chanter
+                        </p>
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Calendrier des Événements
+                    </h1>
+                    <p className="text-lg text-gray-600 max-w-3xl">
+                        Retrouvez tous nos ateliers de chant et formations en un seul endroit.
+                        Filtrez par type d'événement et inscrivez-vous directement en ligne.
                     </p>
-                    <div className="mt-6 flex flex-wrap gap-3 text-xs text-slate-500">
-                        <span className="rounded-full border border-slate-200 px-3 py-1">Formations</span>
-                        <span className="rounded-full border border-slate-200 px-3 py-1">Ateliers hebdos</span>
-                        <span className="rounded-full border border-slate-200 px-3 py-1">Rendez-vous en ligne</span>
-                    </div>
-                </header>
 
-                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
-                    <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Formations & stages</p>
-                        <h2 className="text-2xl font-semibold text-slate-900">Parcours 2025-2026</h2>
-                    </div>
-                    <div className="grid gap-5 lg:grid-cols-2">
-                        {formations.map((item) => (
-                            <TimelineCard
-                                key={`formation-${item.title}-${formatFormationDate(item)}`}
-                                eyebrow={item.type?.replace(/-/g, ' ') ?? 'Session'}
-                                date={formatFormationDate(item)}
-                                title={item.title}
-                            >
-                                <div className="space-y-2">
-                                    {item.description && <p>{item.description}</p>}
-                                    {item.time && <p>Horaires : {item.time}</p>}
-                                    {formatLocation(item.location) && <p>Lieu : {formatLocation(item.location)}</p>}
-                                    {item.formatrice && <p>Avec {item.formatrice}</p>}
-                                    {item.qualifications?.length && (
-                                        <p className="text-[#F25A38]">{item.qualifications.join(' · ')}</p>
-                                    )}
-                                </div>
-                            </TimelineCard>
-                        ))}
-                    </div>
-                </section>
-
-                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
-                    <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Ateliers hebdomadaires</p>
-                        <h2 className="text-2xl font-semibold text-slate-900">Planning à venir</h2>
-                    </div>
-                    <div className="space-y-4">
-                        {ateliers.map((event, index) => (
-                            <TimelineCard
-                                key={`atelier-${event.title}-${event.date ?? event.day ?? index}`}
-                                eyebrow={event.day ?? 'À confirmer'}
-                                date={event.date ?? event.time ?? ''}
-                                title={event.title}
-                            >
-                                <div className="space-y-2">
-                                    {event.mode && <p>Format : {event.mode}</p>}
-                                    {event.time && !Array.isArray(event.time) && <p>Horaire : {event.time}</p>}
-                                    {Array.isArray(event.time) && <p>Horaires : {event.time.join(' / ')}</p>}
-                                    {event.price && <p>Tarif : {event.price}</p>}
-                                    {event.duration && <p>Durée : {event.duration}</p>}
-                                    {event.note && <p>{event.note}</p>}
-                                    {event.description && <p>{event.description}</p>}
-                                    {formatLocation(event.location) && <p>Lieu : {formatLocation(event.location)}</p>}
-                                    {event.contact && (
-                                        <p>
-                                            Contact : {[event.contact.email, event.contact.phone].filter(Boolean).join(' · ')}
-                                        </p>
-                                    )}
-                                    {event.links?.length && (
-                                        <p className="text-[#F25A38]">{event.links.join(' · ')}</p>
-                                    )}
-                                </div>
-                            </TimelineCard>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Events from Database */}
-                <section className="space-y-6 rounded-3xl border border-[#F2B988] bg-white/80 p-6">
-                    <div className="flex flex-col gap-2">
-                        <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Événements créés par les utilisateurs</p>
-                        <h2 className="text-2xl font-semibold text-slate-900">Événements de la communauté</h2>
-                    </div>
-                    
-                    {loading ? (
-                        <p className="text-center text-gray-500">Chargement des événements...</p>
-                    ) : events.length === 0 ? (
-                        <p className="text-center text-gray-500">Aucun événement créé pour le moment. Créez-en un depuis le tableau de bord !</p>
-                    ) : (
-                        <div className="grid gap-5 lg:grid-cols-2">
-                            {events.map((event) => (
-                                <TimelineCard
-                                    key={event._id}
-                                    eyebrow="Événement communautaire"
-                                    date={new Date(event.date).toLocaleDateString('fr-FR')}
-                                    title={event.title}
-                                >
-                                    <div className="space-y-2">
-                                        <p>{event.description}</p>
-                                        <p>📍 Lieu : {event.location}</p>
-                                        <p>💰 Tarif : {event.price}€</p>
-                                        <p>📅 {new Date(event.date).toLocaleString('fr-FR', { 
-                                            dateStyle: 'long', 
-                                            timeStyle: 'short' 
-                                        })}</p>
-                                        {event.createdBy && (
-                                            <p className="text-[#F25A38]">Créé par : {event.createdBy.name}</p>
-                                        )}
-                                    </div>
-                                </TimelineCard>
-                            ))}
+                    {/* Quick Info Pills */}
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <div className="flex items-center gap-2 rounded-full bg-white/80 border border-[#F2B988]/30 px-4 py-2">
+                            <svg className="w-5 h-5 text-[#F29057]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-sm font-medium text-gray-700">Inscription en ligne</span>
                         </div>
-                    )}
-                </section>
+                        <div className="flex items-center gap-2 rounded-full bg-white/80 border border-[#F2B988]/30 px-4 py-2">
+                            <svg className="w-5 h-5 text-[#F29057]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span className="text-sm font-medium text-gray-700">Mise à jour en temps réel</span>
+                        </div>
+                        <div className="flex items-center gap-2 rounded-full bg-white/80 border border-[#F2B988]/30 px-4 py-2">
+                            <svg className="w-5 h-5 text-[#F29057]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span className="text-sm font-medium text-gray-700">Pour tous niveaux</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Calendar Component */}
+                <UnifiedCalendar />
             </div>
         </main>
     );

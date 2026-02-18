@@ -18,6 +18,7 @@ export default function DashboardPage() {
   const [showEventForm, setShowEventForm] = useState(false);
   const [showWorkshopForm, setShowWorkshopForm] = useState(false);
   const [showAnimateurForm, setShowAnimateurForm] = useState(false);
+  const [showAnimateursList, setShowAnimateursList] = useState(true);
   const [showStageForm, setShowStageForm] = useState(false);
   const [editingWorkshop, setEditingWorkshop] = useState(null);
   const [editingAnimateur, setEditingAnimateur] = useState(null);
@@ -1339,9 +1340,32 @@ export default function DashboardPage() {
         {/* Animateurs Section */}
         <div className="bg-white shadow rounded-lg p-6">
           <div className="flex justify-between items-center mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">Gestion des Animateurs</h2>
-              <p className="text-sm text-gray-600 mt-1">Gérer les animateurs par pays</p>
+            <div className="flex items-center gap-4">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">Gestion des Animateurs</h2>
+                <p className="text-sm text-gray-600 mt-1">Gérer les animateurs par pays</p>
+              </div>
+              <button
+                onClick={() => setShowAnimateursList(!showAnimateursList)}
+                className="px-4 py-2 text-sm font-medium rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors flex items-center gap-2"
+                title={showAnimateursList ? 'Masquer la liste' : 'Afficher la liste'}
+              >
+                {showAnimateursList ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    </svg>
+                    Masquer
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    Afficher
+                  </>
+                )}
+              </button>
             </div>
             <button
               onClick={() => setShowAnimateurForm(!showAnimateurForm)}
@@ -1510,61 +1534,61 @@ export default function DashboardPage() {
           )}
 
           {/* List */}
-          {loadingAnimateurs ? (
-            <p className="text-gray-500 text-center py-8">Chargement...</p>
-          ) : animateurs.length === 0 ? (
-            <div className="text-center py-12 bg-gray-50 rounded-lg">
-              <p className="text-gray-500">Aucun animateur trouvé</p>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {animateurs.map((animateur) => (
-                <div
-                  key={animateur._id}
-                  className={`border rounded-xl p-5 hover:shadow-md transition-all ${animateur.isActive ? 'border-indigo-200 bg-indigo-50/50' : 'border-gray-200 bg-gray-50 opacity-60'
-                    }`}
-                >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+          {showAnimateursList && (
+            loadingAnimateurs ? (
+              <p className="text-gray-500 text-center py-8">Chargement...</p>
+            ) : animateurs.length === 0 ? (
+              <div className="text-center py-12 bg-gray-50 rounded-lg">
+                <p className="text-gray-500">Aucun animateur trouvé</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                {animateurs.map((animateur) => (
+                  <div
+                    key={animateur._id}
+                    className={`border rounded-xl p-4 hover:shadow-md transition-all h-full flex flex-col ${animateur.isActive ? 'border-indigo-200 bg-indigo-50/50' : 'border-gray-200 bg-gray-50 opacity-60'
+                      }`}
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                           {animateur.name.charAt(0)}
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-gray-900">{animateur.name}</h3>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm font-semibold text-gray-900 truncate" title={animateur.name}>{animateur.name}</h3>
                           {!animateur.isActive && (
-                            <span className="inline-block px-2 py-1 text-xs font-medium bg-gray-200 text-gray-600 rounded-full mt-1">
+                            <span className="inline-block px-2 py-0.5 text-xs font-medium bg-gray-200 text-gray-600 rounded-full mt-1">
                               Inactif
                             </span>
                           )}
-                          <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
-                            <p><strong>Pays:</strong> {animateur.country}</p>
-                            {animateur.city && <p><strong>Ville:</strong> {animateur.city}</p>}
-                            {animateur.phone && <p><strong>Tél:</strong> {animateur.phone}</p>}
-                            {animateur.email && <p><strong>Email:</strong> {animateur.email}</p>}
-                            {animateur.region && <p><strong>Région:</strong> {animateur.region}</p>}
-                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="ml-4 flex gap-2">
-                      <button
-                        onClick={() => handleAnimateurEdit(animateur)}
-                        className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-                      >
-                        Modifier
-                      </button>
-                      <button
-                        onClick={() => handleAnimateurDelete(animateur._id)}
-                        className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
-                      >
-                        Supprimer
-                      </button>
+                      <div className="flex-1 space-y-1 text-xs text-gray-600 mb-3">
+                        <p className="truncate" title={animateur.country}><strong>Pays:</strong> {animateur.country}</p>
+                        {animateur.city && <p className="truncate" title={animateur.city}><strong>Ville:</strong> {animateur.city}</p>}
+                        {animateur.phone && <p className="truncate" title={animateur.phone}><strong>Tél:</strong> {animateur.phone}</p>}
+                        {animateur.email && <p className="truncate" title={animateur.email}><strong>Email:</strong> {animateur.email}</p>}
+                        {animateur.region && <p className="truncate" title={animateur.region}><strong>Région:</strong> {animateur.region}</p>}
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleAnimateurEdit(animateur)}
+                          className="flex-1 px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                        >
+                          Modifier
+                        </button>
+                        <button
+                          onClick={() => handleAnimateurDelete(animateur._id)}
+                          className="flex-1 px-3 py-1.5 text-xs font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                        >
+                          Supprimer
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )
           )}
         </div>
 

@@ -10,7 +10,7 @@ const menuSections = [
         items: [
             { label: 'Agenda des stages et formations', href: '/agenda/stages-et-formations' },
             { label: 'Agenda des prochains ateliers', href: '/agenda/prochains-ateliers' },
-            // { label: 'Calendrier des ateliers et stages', href: '/agenda/calendrier' },
+            { label: 'Calendrier des ateliers et stages', href: '/agenda/calendrier' },
         ],
     },
     // {
@@ -62,7 +62,7 @@ const menuSections = [
         items: [
             { label: 'Publications', href: '/medias/publications' },
             { label: 'La Presse en parle', href: '/medias/la-presse-en-parle' },
-            { label:'vidéo', href:'/medias/videos'}
+            { label: 'vidéo', href: '/medias/videos' }
         ],
     },
     {
