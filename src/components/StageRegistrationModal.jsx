@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function StageRegistrationModal({ stage, onClose, onSuccess }) {
+export default function StageRegistrationModal({ stage, onClose, onSuccess, source = 'calendar' }) {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -27,7 +27,8 @@ export default function StageRegistrationModal({ stage, onClose, onSuccess }) {
                     stageId: stage._id,
                     name: formData.name,
                     email: formData.email,
-                    phone: formData.phone
+                    phone: formData.phone,
+                    source
                 })
             });
 

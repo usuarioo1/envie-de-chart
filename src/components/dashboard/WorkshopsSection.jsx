@@ -62,13 +62,14 @@ export default function WorkshopsSection({ userId }) {
         const endpoint = '/api/workshops';
 
         try {
+            const payload = editingWorkshop
+                ? { id: editingWorkshop._id, ...workshopFormData }
+                : { ...workshopFormData, userId };
+
             const response = await fetch(endpoint, {
                 method,
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(editingWorkshop
-                    ? { workshopId: editingWorkshop._id, ...workshopFormData }
-                    : { ...workshopFormData, createdBy: userId }
-                ),
+                body: JSON.stringify(payload),
             });
 
             const data = await response.json();
@@ -104,10 +105,8 @@ export default function WorkshopsSection({ userId }) {
         if (!confirm('Êtes-vous sûr de vouloir supprimer cet atelier ?')) return;
 
         try {
-            const response = await fetch('/api/workshops', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ workshopId }),
+            const response = await fetch(`/api/workshops?id=${workshopId}`, {
+                method: 'DELETE'
             });
 
             const data = await response.json();
@@ -121,10 +120,8 @@ export default function WorkshopsSection({ userId }) {
         if (!confirm('Êtes-vous sûr de vouloir supprimer cette inscription ?')) return;
 
         try {
-            const response = await fetch('/api/workshop-registrations', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ registrationId }),
+            const response = await fetch(`/api/workshop-registrations?id=${registrationId}`, {
+                method: 'DELETE'
             });
 
             const data = await response.json();
@@ -139,7 +136,7 @@ export default function WorkshopsSection({ userId }) {
             const response = await fetch('/api/workshop-registrations', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ registrationId, status: newStatus }),
+                body: JSON.stringify({ id: registrationId, status: newStatus }),
             });
 
             const data = await response.json();
@@ -353,8 +350,8 @@ export default function WorkshopsSection({ userId }) {
                                                     <p>
                                                         <strong>Statut:</strong>{' '}
                                                         <span className={`inline-block px-2 py-1 text-xs font-semibold rounded-full ${registration.status === 'confirmed' ? 'bg-green-100 text-green-800' :
-                                                                registration.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                                                                    'bg-gray-100 text-gray-800'
+                                                            registration.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                                                                'bg-gray-100 text-gray-800'
                                                             }`}>
                                                             {registration.status}
                                                         </span>

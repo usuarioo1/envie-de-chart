@@ -44,7 +44,7 @@ export async function POST(request) {
     try {
         await connectDB();
         const body = await request.json();
-        const { stageId, name, email, phone } = body;
+        const { stageId, name, email, phone, source } = body;
 
         if (!stageId || !name || !email || !phone) {
             return NextResponse.json(
@@ -83,6 +83,7 @@ export async function POST(request) {
             name,
             email,
             phone,
+            source: source || 'calendar',
             status: 'pending'
         });
 

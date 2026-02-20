@@ -7,6 +7,7 @@ export default function ContactFormComponent() {
         name: '',
         email: '',
         subject: '',
+        interest: '',
         message: ''
     });
     const [loading, setLoading] = useState(false);
@@ -46,6 +47,7 @@ export default function ContactFormComponent() {
                 name: '',
                 email: '',
                 subject: '',
+                interest: '',
                 message: ''
             });
 
@@ -123,6 +125,28 @@ export default function ContactFormComponent() {
                         placeholder="Sujet de votre message"
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F25A38] focus:border-transparent"
                     />
+                </div>
+
+                {/* Interest */}
+                <div>
+                    <label htmlFor="interest" className="block text-sm font-medium text-slate-700 mb-2">
+                        En quoi êtes-vous intéressé(e) ?
+                    </label>
+                    <select
+                        id="interest"
+                        name="interest"
+                        value={formData.interest}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F25A38] focus:border-transparent bg-white"
+                    >
+                        <option value="">-- Sélectionnez une option --</option>
+                        <option value="ateliers">Ateliers de chant</option>
+                        <option value="prenatal">Chant prénatal</option>
+                        <option value="stages">Stages et formations</option>
+                        <option value="animateurs">Les animateurs</option>
+                        <option value="general">Informations générales</option>
+                        <option value="autre">Autre</option>
+                    </select>
                 </div>
 
                 {/* Message */}

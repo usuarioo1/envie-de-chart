@@ -135,6 +135,19 @@ export default function ContactMessagesPage() {
                                             <p>
                                                 <strong>Date:</strong> {formatDate(selectedMessage.createdAt)}
                                             </p>
+                                            {selectedMessage.interest && (
+                                                <p>
+                                                    <strong>Intéressé par:</strong>{' '}
+                                                    <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-[#F2B988]/20 text-[#F25A38]">
+                                                        {selectedMessage.interest === 'ateliers' && 'Ateliers de chant'}
+                                                        {selectedMessage.interest === 'prenatal' && 'Chant prénatal'}
+                                                        {selectedMessage.interest === 'stages' && 'Stages et formations'}
+                                                        {selectedMessage.interest === 'animateurs' && 'Les animateurs'}
+                                                        {selectedMessage.interest === 'general' && 'Informations générales'}
+                                                        {selectedMessage.interest === 'autre' && 'Autre'}
+                                                    </span>
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
 

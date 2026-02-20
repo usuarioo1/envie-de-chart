@@ -37,6 +37,11 @@ const StageRegistrationSchema = new mongoose.Schema({
         type: String,
         enum: ['pending', 'confirmed', 'cancelled'],
         default: 'pending'
+    },
+    source: {
+        type: String,
+        required: false,
+        default: 'calendar'
     }
 }, {
     timestamps: true

@@ -77,6 +77,7 @@ export default function StagesPage() {
                                     key={stage._id}
                                     stage={stage}
                                     onUpdate={fetchStages}
+                                    source="stages-et-formations-dynanique"
                                 />
                             ))}
                         </div>

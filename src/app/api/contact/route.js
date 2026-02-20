@@ -6,7 +6,7 @@ export async function POST(request) {
     try {
         await connectDB();
 
-        const { name, email, subject, message } = await request.json();
+        const { name, email, subject, message, interest } = await request.json();
 
         // Validation
         if (!name || !email || !subject || !message) {
@@ -21,6 +21,7 @@ export async function POST(request) {
             name,
             email,
             subject,
+            interest: interest || '',
             message
         });
 

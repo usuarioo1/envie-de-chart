@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-export default function StageInquiryModal({ isOpen, onClose, formationNumber, formationTitle }) {
+export default function StageInquiryModal({ isOpen, onClose, formationNumber, formationTitle, source = 'stages-et-formations' }) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -31,7 +31,8 @@ export default function StageInquiryModal({ isOpen, onClose, formationNumber, fo
                 body: JSON.stringify({
                     ...formData,
                     formationNumber,
-                    formationTitle
+                    formationTitle,
+                    source
                 }),
             });
 
@@ -119,11 +120,10 @@ export default function StageInquiryModal({ isOpen, onClose, formationNumber, fo
                     </div>
 
                     {message && (
-                        <div className={`p-3 rounded-lg text-sm ${
-                            message.includes('✅') 
-                                ? 'bg-green-100 text-green-800' 
+                        <div className={`p-3 rounded-lg text-sm ${message.includes('✅')
+                                ? 'bg-green-100 text-green-800'
                                 : 'bg-red-100 text-red-800'
-                        }`}>
+                            }`}>
                             {message}
                         </div>
                     )}

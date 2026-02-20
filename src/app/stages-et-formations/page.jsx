@@ -388,6 +388,7 @@ export default function StagesEtFormationsPage() {
                 onClose={() => setModalOpen(false)}
                 formationNumber={selectedFormation.number}
                 formationTitle={selectedFormation.title}
+                source="stages-et-formations"
             />
         </div>
     );

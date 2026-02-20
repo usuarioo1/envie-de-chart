@@ -21,6 +21,11 @@ const StageInquirySchema = new mongoose.Schema({
         type: String,
         required: [true, 'Le titre de formation est requis']
     },
+    source: {
+        type: String,
+        required: false,
+        default: 'stages-et-formations'
+    },
     isRead: {
         type: Boolean,
         default: false

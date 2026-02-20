@@ -108,7 +108,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Modular Components */}
-        <WorkshopsSection />
+        <WorkshopsSection userId={user?.id} />
         <AnimateursSection />
         <StagesSection />
         <UsersSection currentUserId={user?.id} />

@@ -3,7 +3,7 @@
 import StageRegistrationModal from './StageRegistrationModal';
 import { useState } from 'react';
 
-export default function StageCard({ stage, onUpdate }) {
+export default function StageCard({ stage, onUpdate, source = 'calendar' }) {
     const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
     return (
@@ -68,6 +68,7 @@ export default function StageCard({ stage, onUpdate }) {
                     stage={stage}
                     onClose={() => setShowRegistrationModal(false)}
                     onSuccess={onUpdate}
+                    source={source}
                 />
             )}
         </>

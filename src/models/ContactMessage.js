@@ -17,6 +17,12 @@ const ContactMessageSchema = new mongoose.Schema({
         required: [true, 'Please provide a subject'],
         maxlength: [200, 'Subject cannot be more than 200 characters']
     },
+    interest: {
+        type: String,
+        required: false,
+        enum: ['', 'ateliers', 'prenatal', 'stages', 'animateurs', 'general', 'autre'],
+        default: ''
+    },
     message: {
         type: String,
         required: [true, 'Please provide a message'],

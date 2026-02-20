@@ -500,8 +500,19 @@ export default function StagesSection() {
                                             <div className="space-y-1 text-sm text-gray-600">
                                                 <p><strong>Email:</strong> {inquiry.email}</p>
                                                 <p><strong>Téléphone:</strong> {inquiry.phone}</p>
-                                                {stage && <p><strong>Stage:</strong> {stage.title}</p>}
-                                                <p><strong>Message:</strong> {inquiry.message}</p>
+                                                <p><strong>Formation N°:</strong> {inquiry.formationNumber} - {inquiry.formationTitle}</p>
+                                                {inquiry.source && (
+                                                    <p>
+                                                        <strong>Provenance:</strong>{' '}
+                                                        <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-[#F2B988]/20 text-[#F25A38]">
+                                                            {inquiry.source === 'stages-et-formations' && 'Stages et Formations'}
+                                                            {inquiry.source === 'stages-et-formations-dynanique' && 'Stages et Formations (Dynamique)'}
+                                                            {inquiry.source === 'calendar' && 'Calendrier'}
+                                                            {inquiry.source === 'prochains-ateliers' && 'Prochains Ateliers'}
+                                                            {!['stages-et-formations', 'stages-et-formations-dynanique', 'calendar', 'prochains-ateliers'].includes(inquiry.source) && inquiry.source}
+                                                        </span>
+                                                    </p>
+                                                )}
                                                 <p><strong>Date:</strong> {new Date(inquiry.createdAt).toLocaleDateString('fr-FR')}</p>
                                             </div>
                                         </div>
@@ -553,12 +564,24 @@ export default function StagesSection() {
                                                 <p><strong>Email:</strong> {registration.email}</p>
                                                 <p><strong>Téléphone:</strong> {registration.phone}</p>
                                                 {stage && <p><strong>Stage:</strong> {stage.title}</p>}
+                                                {registration.source && (
+                                                    <p>
+                                                        <strong>Provenance:</strong>{' '}
+                                                        <span className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-[#F2B988]/20 text-[#F25A38]">
+                                                            {registration.source === 'stages-et-formations' && 'Stages et Formations'}
+                                                            {registration.source === 'stages-et-formations-dynanique' && 'Stages et Formations (Dynamique)'}
+                                                            {registration.source === 'calendar' && 'Calendrier'}
+                                                            {registration.source === 'prochains-ateliers' && 'Prochains Ateliers'}
+                                                            {!['stages-et-formations', 'stages-et-formations-dynanique', 'calendar', 'prochains-ateliers'].includes(registration.source) && registration.source}
+                                                        </span>
+                                                    </p>
+                                                )}
                                                 <p><strong>Date d'inscription:</strong> {new Date(registration.createdAt).toLocaleDateString('fr-FR')}</p>
                                                 <p>
                                                     <strong>Statut:</strong>{' '}
                                                     <span className={`inline-block px-2 py-1 text-xs font-semibold rounded-full ${registration.status === 'confirmed' ? 'bg-green-100 text-green-800' :
-                                                            registration.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                                                                'bg-gray-100 text-gray-800'
+                                                        registration.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                                                            'bg-gray-100 text-gray-800'
                                                         }`}>
                                                         {registration.status}
                                                     </span>
