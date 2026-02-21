@@ -88,7 +88,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(1, 'NOUS SOMMES TOUS CHANTEURS - MON CORPS EST MON INSTRUMENT DE MUSIQUE')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(2, '2ème degré de psychophonie')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(3, 'Formation chant prénatal')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -196,7 +196,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(4, 'Formation musique et petite enfance')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -260,7 +260,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(5, 'Pédagogie de la psychophonie')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -300,7 +300,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(6, 'Accompagnement de chansons au djembé')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -346,7 +346,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(8, 'Formation avancée en psychophonie')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>
@@ -377,7 +377,7 @@ export default function StagesEtFormationsPage() {
                             onClick={() => openModal(10, 'Les clochettes Montessori : les jouer et les enseigner')}
                             className="px-6 py-3 bg-[#F25A38] text-white font-semibold rounded-full hover:bg-[#732514] transition-colors shadow-md text-lg"
                         >
-                            Soliciter plus d'information
+                            Plus d’information
                         </button>
                     </div>
                 </div>

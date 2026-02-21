@@ -52,9 +52,7 @@ export default function ChantCollectifPage() {
                                     <strong>Métro :</strong> {atelier.location.metro}
                                 </p>
                             )}
-                            <p className="mb-2 text-slate-700">
-                                <strong>Prochaine séance :</strong> {atelier.nextSession}
-                            </p>
+                            
                             {atelier.pricing && (
                                 <div className="mb-2 text-slate-700">
                                     <strong>Tarifs :</strong>

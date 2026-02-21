@@ -23,14 +23,7 @@ export default function ChantMamanBebePage() {
                             <strong>Contact :</strong> {chantMamaData.formation.contact.email} -{' '}
                             {chantMamaData.formation.contact.phone}
                         </p>
-                        <div className="mt-4">
-                            <p className="font-semibold mb-2 text-slate-900">Documents :</p>
-                            <ul className="list-disc list-inside ml-4 text-slate-700">
-                                {chantMamaData.formation.documents.map((doc, index) => (
-                                    <li key={index}>{doc}</li>
-                                ))}
-                            </ul>
-                        </div>
+                        
                     </div>
                 )}
 
@@ -40,7 +33,7 @@ export default function ChantMamanBebePage() {
                         <p className="mb-2 text-slate-700">
                             <strong>Date :</strong> {chantMamaData.rencontre.date}
                         </p>
-                        <p className="text-slate-700">{chantMamaData.rencontre.document}</p>
+                        
                     </div>
                 )}
 
@@ -71,9 +64,7 @@ export default function ChantMamanBebePage() {
                                     {atelier.duration && ` pour l'atelier d'${atelier.duration}`}
                                 </p>
                             )}
-                            {atelier.registration && (
-                                <p className="mb-2 text-[#F25A38]">{atelier.registration}</p>
-                            )}
+                            
                             {atelier.contact && (
                                 <p className="mb-2 text-slate-700">
                                     <strong>Contact :</strong> {atelier.contact.name} - {atelier.contact.phone} -{' '}

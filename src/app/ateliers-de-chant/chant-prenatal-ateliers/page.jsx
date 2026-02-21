@@ -58,9 +58,7 @@ export default function ChantPrenatalAteliersPage() {
                             <p className="mb-2 text-slate-700">
                                 <strong>Horaire :</strong> {atelier.schedule}
                             </p>
-                            <p className="mb-2 text-slate-700">
-                                <strong>Prochaine séance :</strong> {atelier.nextSession}
-                            </p>
+                           
                             {atelier.location && (
                                 <div className="mb-2 text-slate-700">
                                     {atelier.location.venue && <p><strong>Lieu :</strong> {atelier.location.venue}</p>}
@@ -98,9 +96,7 @@ export default function ChantPrenatalAteliersPage() {
                 {chantPrenatalAteliersData.introduction && (
                     <div className="mb-8 p-6 border-2 border-[#F29057] rounded-3xl bg-white/80 shadow-sm">
                         <h3 className="text-xl font-semibold mb-3 text-slate-900">{chantPrenatalAteliersData.introduction.title}</h3>
-                        <p className="mb-2 text-slate-700">
-                            <strong>Date :</strong> {chantPrenatalAteliersData.introduction.date}
-                        </p>
+                        
                         <p className="mb-2 text-slate-700">
                             <strong>Horaire :</strong> {chantPrenatalAteliersData.introduction.time}
                         </p>
@@ -157,20 +153,9 @@ export default function ChantPrenatalAteliersPage() {
                     </div>
                 )}
 
-                {chantPrenatalAteliersData.publications && (
-                    <div className="mb-8 p-6 bg-[#ABA0F2]/10 rounded-3xl border border-[#F2B988]">
-                        <p className="font-semibold text-slate-900">{chantPrenatalAteliersData.publications.title}</p>
-                    </div>
-                )}
+                
 
-                {chantPrenatalAteliersData.notes && chantPrenatalAteliersData.notes.length > 0 && (
-                    <div className="mb-8 p-6 bg-[#F2B988]/30 rounded-3xl border border-[#F29057]">
-                        <h4 className="font-semibold mb-2 text-slate-900">Notes importantes :</h4>
-                        {chantPrenatalAteliersData.notes.map((note, index) => (
-                            <p key={index} className="mb-1 text-[#732514]">• {note}</p>
-                        ))}
-                    </div>
-                )}
+                
             </div>
         </div>
     );
