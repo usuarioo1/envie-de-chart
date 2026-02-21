@@ -140,11 +140,12 @@ export default function ContactFormComponent() {
                         className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F25A38] focus:border-transparent bg-white"
                     >
                         <option value="">-- Sélectionnez une option --</option>
-                        <option value="ateliers">Ateliers de chant</option>
-                        <option value="prenatal">Chant prénatal</option>
-                        <option value="stages">Stages et formations</option>
-                        <option value="animateurs">Les animateurs</option>
-                        <option value="general">Informations générales</option>
+                        <option value="ateliers">Atelier de chant prénatal en ligne</option>
+                        <option value="prenatal">Atelier de chant prénatal Paris</option>
+                        <option value="musique">Atelier de musique pour les enfants</option>
+                        <option value="animateurs">Atelier collectif de chant</option>
+                        <option value="stage">Stage Envie de chanter</option>
+                        <option value="formation">Formation chant prénatal</option>
                         <option value="autre">Autre</option>
                     </select>
                 </div>
