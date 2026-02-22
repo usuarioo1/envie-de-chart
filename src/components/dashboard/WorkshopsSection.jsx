@@ -101,6 +101,18 @@ export default function WorkshopsSection({ userId }) {
         setShowWorkshopForm(false);
     };
 
+    const handleWorkshopDuplicate = (workshop) => {
+        // Copy the workshop data but exclude the ID (to create a new one)
+        setEditingWorkshop(null); // Important: no editingWorkshop means it will create new
+        setWorkshopFormData({
+            title: `${workshop.title} (copie)`,
+            description: workshop.description,
+            date: new Date(workshop.date).toISOString().slice(0, 16),
+            price: workshop.price
+        });
+        setShowWorkshopForm(true);
+    };
+
     const handleWorkshopDelete = async (workshopId) => {
         if (!confirm('Êtes-vous sûr de vouloir supprimer cet atelier ?')) return;
 
@@ -177,6 +189,11 @@ export default function WorkshopsSection({ userId }) {
                         {editingWorkshop && (
                             <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                                 <p className="text-sm text-blue-800 font-medium">✏️ Mode édition</p>
+                            </div>
+                        )}
+                        {!editingWorkshop && workshopFormData.title && workshopFormData.title.includes('(copie)') && (
+                            <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                                <p className="text-sm text-green-800 font-medium">📋 Duplication d'atelier - Modifiez les données avant de créer</p>
                             </div>
                         )}
 
@@ -300,6 +317,13 @@ export default function WorkshopsSection({ userId }) {
                                                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
                                             >
                                                 Modifier
+                                            </button>
+                                            <button
+                                                onClick={() => handleWorkshopDuplicate(workshop)}
+                                                className="px-4 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors"
+                                                title="Dupliquer cet atelier"
+                                            >
+                                                Dupliquer
                                             </button>
                                             <button
                                                 onClick={() => handleWorkshopDelete(workshop._id)}
