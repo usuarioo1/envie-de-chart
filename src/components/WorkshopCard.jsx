@@ -128,7 +128,7 @@ const WorkshopCard = ({ workshop }) => {
                             {workshopDate.toLocaleTimeString('fr-FR', {
                                 hour: '2-digit',
                                 minute: '2-digit'
-                            })}
+                            })} <span className="text-xs opacity-75">(heure de Paris)</span>
                         </span>
                     </div>
 
