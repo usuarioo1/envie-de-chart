@@ -51,15 +51,24 @@ export async function POST(request) {
             );
         }
 
-        // Calculate day of week
-        const workshopDate = new Date(date);
-        const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-        const dayOfWeek = daysOfWeek[workshopDate.getDay()];
+        // Calculate day of week without timezone conversion
+        // Parse the date components directly from the datetime-local string
+        const match = date.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+        let dayOfWeek = 'Lundi'; // default
+        
+        if (match) {
+            const [, year, month, day, hour, minute] = match;
+            // Create date using local components (no UTC conversion)
+            const localDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hour), parseInt(minute));
+            const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+            dayOfWeek = daysOfWeek[localDate.getDay()];
+        }
 
+        // Store date as string to preserve exact time without timezone conversion
         const workshop = await Workshop.create({
             title,
             description,
-            date: workshopDate,
+            date: date, // Store as-is from datetime-local input
             dayOfWeek,
             price: price || 0,
             createdBy: userId,
@@ -98,9 +107,17 @@ export async function PUT(request) {
         if (title !== undefined) updateData.title = title;
         if (description !== undefined) updateData.description = description;
         if (date !== undefined) {
-            updateData.date = new Date(date);
-            const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-            updateData.dayOfWeek = daysOfWeek[updateData.date.getDay()];
+            // Store date as string to preserve exact time without timezone conversion
+            updateData.date = date;
+            
+            // Calculate day of week without timezone conversion
+            const match = date.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+            if (match) {
+                const [, year, month, day, hour, minute] = match;
+                const localDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hour), parseInt(minute));
+                const daysOfWeek = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+                updateData.dayOfWeek = daysOfWeek[localDate.getDay()];
+            }
         }
         if (price !== undefined) updateData.price = price;
         if (isActive !== undefined) updateData.isActive = isActive;

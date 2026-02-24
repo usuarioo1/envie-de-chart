@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { fromStorageFormat, createDisplayDate } from '@/utils/dateUtils';
 
 export default function WorkshopsSection({ userId }) {
     const [workshops, setWorkshops] = useState([]);
@@ -89,7 +90,7 @@ export default function WorkshopsSection({ userId }) {
         setWorkshopFormData({
             title: workshop.title,
             description: workshop.description,
-            date: new Date(workshop.date).toISOString().slice(0, 16),
+            date: fromStorageFormat(workshop.date),
             price: workshop.price
         });
         setShowWorkshopForm(true);
@@ -107,7 +108,7 @@ export default function WorkshopsSection({ userId }) {
         setWorkshopFormData({
             title: `${workshop.title} (copie)`,
             description: workshop.description,
-            date: new Date(workshop.date).toISOString().slice(0, 16),
+            date: fromStorageFormat(workshop.date),
             price: workshop.price
         });
         setShowWorkshopForm(true);
@@ -287,7 +288,7 @@ export default function WorkshopsSection({ userId }) {
                 ) : (
                     <div className="space-y-4">
                         {workshops.map((workshop) => {
-                            const workshopDate = new Date(workshop.date);
+                            const workshopDate = createDisplayDate(workshop.date);
                             const isUpcoming = workshopDate > new Date();
 
                             return (
@@ -306,7 +307,7 @@ export default function WorkshopsSection({ userId }) {
                                                 <p className="text-sm text-gray-600 mt-1">{workshop.description}</p>
                                                 <div className="mt-3 flex flex-wrap gap-3 text-sm text-gray-600">
                                                     <span>📅 {workshopDate.toLocaleDateString('fr-FR')}</span>
-                                                    <span>🕐 {workshopDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })} <span className="text-xs opacity-75">(heure de Paris)</span></span>
+                                                    <span>🕐 {workshopDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })} <span className="text-xs opacity-75">(hora de Paris)</span></span>
                                                     {workshop.price && <span className="font-semibold text-[#F25A38]">💰 {workshop.price.toFixed(2)} €</span>}
                                                 </div>
                                             </div>

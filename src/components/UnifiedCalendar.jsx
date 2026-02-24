@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import WorkshopCard from '@/components/WorkshopCard';
 import StageCard from '@/components/StageCard';
+import { createDisplayDate } from '@/utils/dateUtils';
 
 const UnifiedCalendar = () => {
     const [events, setEvents] = useState([]);
@@ -40,11 +41,11 @@ const UnifiedCalendar = () => {
             if (workshopsData.success) {
                 const now = new Date();
                 const upcomingWorkshops = workshopsData.data
-                    .filter(workshop => new Date(workshop.date) >= now)
+                    .filter(workshop => createDisplayDate(workshop.date) >= now)
                     .map(workshop => ({
                         ...workshop,
                         type: 'workshop',
-                        startDate: new Date(workshop.date)
+                        startDate: createDisplayDate(workshop.date)
                     }));
                 allEvents.push(...upcomingWorkshops);
             }

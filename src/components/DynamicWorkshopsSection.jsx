@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import WorkshopCard from '@/components/WorkshopCard';
+import { createDisplayDate } from '@/utils/dateUtils';
 
 const DynamicWorkshopsSection = () => {
     const [workshops, setWorkshops] = useState([]);
@@ -21,7 +22,7 @@ const DynamicWorkshopsSection = () => {
                 // Filter only upcoming workshops
                 const now = new Date();
                 const upcomingWorkshops = data.data.filter(
-                    workshop => new Date(workshop.date) >= now
+                    workshop => createDisplayDate(workshop.date) >= now
                 );
                 setWorkshops(upcomingWorkshops);
             } else {
