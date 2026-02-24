@@ -307,7 +307,7 @@ export default function WorkshopsSection({ userId }) {
                                                 <p className="text-sm text-gray-600 mt-1">{workshop.description}</p>
                                                 <div className="mt-3 flex flex-wrap gap-3 text-sm text-gray-600">
                                                     <span>📅 {workshopDate.toLocaleDateString('fr-FR')}</span>
-                                                    <span>🕐 {workshopDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })} <span className="text-xs opacity-75">(hora de Paris)</span></span>
+                                                    <span>🕐 {workshopDate.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })} <span className="text-xs opacity-75">(heure de Paris)</span></span>
                                                     {workshop.price && <span className="font-semibold text-[#F25A38]">💰 {workshop.price.toFixed(2)} €</span>}
                                                 </div>
                                             </div>
