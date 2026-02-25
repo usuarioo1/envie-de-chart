@@ -285,12 +285,6 @@ export default function Navbar() {
                                             >
                                                 Login
                                             </Link>
-                                            <Link
-                                                href="/register"
-                                                className="px-3 py-2 text-sm font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
-                                            >
-                                                Register
-                                            </Link>
                                         </>
                                     )}
                                 </>
@@ -438,12 +432,6 @@ export default function Navbar() {
                                                 className="block px-3 py-2 text-base font-medium text-[#732514] hover:text-[#F25A38] hover:bg-[#F2B988]/20 rounded-md transition"
                                             >
                                                 Login
-                                            </Link>
-                                            <Link
-                                                href="/register"
-                                                className="block px-3 py-2 text-base font-medium text-white bg-[#F25A38] hover:bg-[#732514] rounded-md transition"
-                                            >
-                                                Register
                                             </Link>
                                         </>
                                     )}
