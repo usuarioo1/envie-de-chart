@@ -12,23 +12,7 @@
         }
     ],
     "formations": [
-        {
-            "title": "Introduction au Chant prénatal",
-            "type": "formation-en-ligne",
-            "date": "2026-01-17",
-            "time": "16h–18h30",
-            "location": "En ligne",
-            "description": "L’occasion de découvrir le chant prénatal : pour les professionnels, les futurs parents et toute personne intéressée",
-            "formatrice": "Marie-Laure Potel",
-            "contact": {
-                "email": "marielaurepotel@orange.fr",
-                "phone": "01 64 40 94 23"
-            },
-            "links": [
-                "document",
-                "inscription"
-            ]
-        },
+       
         {
             "title": "Formation Djembé et chansons",
             "type": "stage",

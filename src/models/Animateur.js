@@ -28,6 +28,10 @@ const AnimateurSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  departement: {
+    type: String,
+    trim: true
+  },
   isActive: {
     type: Boolean,
     default: true

@@ -1,6 +1,7 @@
 import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
 import DynamicWorkshopsSection from '@/components/DynamicWorkshopsSection';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 
 const formatLocation = (location) => {
     if (!location) return null;
@@ -77,7 +78,21 @@ export default function AgendaProchainsAteliersPage() {
                         <ContactBlock contact={contactGeneral.contact} />
                     </div>
                 </header>
-
+                        
+                        <div className="flex justify-center">
+                    <Link 
+                        href="/agenda/calendrier"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white font-semibold text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Voir toutes les dates au calendrier</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </Link>
+                </div>
                 {/* Dynamic Workshops from Database */}
                 <DynamicWorkshopsSection />
 
@@ -128,6 +143,9 @@ export default function AgendaProchainsAteliersPage() {
                         ))}
                     </div>
                 </section>
+
+                
+                
 
                 <section className="rounded-3xl border border-rose-100 bg-white/80 p-6">
                     <div className="flex flex-col gap-2">

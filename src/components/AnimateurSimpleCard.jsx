@@ -16,13 +16,13 @@ export default function AnimateurSimpleCard({ animateur }) {
                         <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#F25A38] transition-colors">
                             {animateur.name}
                         </h4>
-                        {(animateur.city || animateur.region) && (
+                        {(animateur.city || animateur.region || animateur.departement) && (
                             <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                 </svg>
                                 <span>
-                                    {[animateur.city, animateur.region].filter(Boolean).join(', ')}
+                                    {[animateur.departement, animateur.city, animateur.region].filter(Boolean).join(', ')}
                                 </span>
                             </div>
                         )}
