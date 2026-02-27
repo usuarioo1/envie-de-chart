@@ -71,9 +71,9 @@ const WorkshopCard = ({ workshop }) => {
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#F2B988]/0 via-transparent to-[#ABA0F2]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="relative z-10 flex gap-6">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6">
                 {/* Date Badge */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 mx-auto md:mx-0">
                     <div className="w-24 h-24 bg-gradient-to-br from-[#F25A38] to-[#F29057] rounded-2xl flex flex-col items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-shadow">
                         <span className="text-xs font-semibold uppercase tracking-widest opacity-90">
                             {workshop.dayOfWeek}
@@ -86,7 +86,7 @@ const WorkshopCard = ({ workshop }) => {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 text-center md:text-left">
                     {/* Title */}
                     <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-[#F25A38] transition-colors">
                         {workshop.title}
@@ -135,10 +135,10 @@ const WorkshopCard = ({ workshop }) => {
 
                     {/* Inscription Button and Payment Info */}
                     {isUpcoming && !success && (
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center md:justify-start">
                             <button
                                 onClick={() => setShowForm(!showForm)}
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
                             >
                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -147,7 +147,7 @@ const WorkshopCard = ({ workshop }) => {
                             </button>
                             <button
                                 onClick={() => setShowPaymentInfo(!showPaymentInfo)}
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-[#F25A38] text-[#F25A38] font-semibold text-sm hover:bg-[#F25A38] hover:text-white transition-all duration-300 hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-[#F25A38] text-[#F25A38] font-semibold text-sm hover:bg-[#F25A38] hover:text-white transition-all duration-300 hover:scale-105"
                             >
                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -158,7 +158,7 @@ const WorkshopCard = ({ workshop }) => {
                     )}
 
                     {success && (
-                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500 text-white font-semibold text-sm">
+                        <div className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-green-500 text-white font-semibold text-sm mx-auto md:mx-0">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
