@@ -10,8 +10,8 @@ export default function StageCard({ stage, onUpdate, source = 'calendar' }) {
         <>
             <article className="rounded-2xl border border-slate-100 bg-white/70 p-5">
                 {/* Header */}
-                <div className="flex items-start justify-between gap-3">
-                    <div className="flex-1">
+                <div className="flex flex-col items-start gap-3">
+                    <div className="w-full text-center md:text-left">
                         <h3 className="text-xl font-semibold text-slate-900">{stage.title}</h3>
                         {stage.country && (
                             <p className="mt-1 text-xs uppercase tracking-[0.25em] text-rose-400">{stage.country}</p>
@@ -20,7 +20,7 @@ export default function StageCard({ stage, onUpdate, source = 'calendar' }) {
                 </div>
 
                 {/* Meta info */}
-                <div className="mt-4 space-y-2 text-sm text-slate-600">
+                <div className="mt-4 space-y-2 text-sm text-slate-600 text-center md:text-left">
                     {stage.date && (
                         <div className="flex items-center gap-2">
                             <span className="font-medium text-slate-700">📅 Date :</span>
@@ -43,11 +43,11 @@ export default function StageCard({ stage, onUpdate, source = 'calendar' }) {
 
                 {/* Description */}
                 {stage.description && (
-                    <p className="mt-3 text-sm text-slate-600">{stage.description}</p>
+                    <p className="mt-3 text-sm text-slate-600 text-center md:text-left">{stage.description}</p>
                 )}
 
                 {/* Contact */}
-                <div className="mt-4 rounded-lg bg-[#F2B988]/10 p-3 text-sm text-slate-700">
+                <div className="mt-4 rounded-lg bg-[#F2B988]/10 p-3 text-sm text-slate-700 text-center md:text-left">
                     <p className="font-medium text-slate-900">📞 Contact</p>
                     {stage.contact?.name && <p className="mt-1">{stage.contact.name}</p>}
                     {stage.email && <p>{stage.email}</p>}

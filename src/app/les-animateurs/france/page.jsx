@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import AnimateurSimpleCard from '@/components/AnimateurSimpleCard';
 
 export default function FrancePage() {
@@ -10,11 +10,38 @@ export default function FrancePage() {
         fetch('/api/animateurs?country=france')
             .then(res => res.json())
             .then(data => {
-                if (data.success) setAnimateurs(data.data);
+                if (data.success) {
+                    // Ordenar por departamento
+                    const sorted = [...data.data].sort((a, b) => {
+                        // Si ambos tienen departamento, ordenar alfabéticamente
+                        if (a.departement && b.departement) {
+                            return a.departement.localeCompare(b.departement);
+                        }
+                        // Los que tienen departamento van primero
+                        if (a.departement && !b.departement) return -1;
+                        if (!a.departement && b.departement) return 1;
+                        // Si ninguno tiene departamento, mantener orden original
+                        return 0;
+                    });
+                    setAnimateurs(sorted);
+                }
                 setLoading(false);
             })
             .catch(() => setLoading(false));
     }, []);
+
+    // Agrupar animadores por departamento
+    const groupedAnimateurs = useMemo(() => {
+        const groups = {};
+        animateurs.forEach(animateur => {
+            const dept = animateur.departement || 'Autres';
+            if (!groups[dept]) {
+                groups[dept] = [];
+            }
+            groups[dept].push(animateur);
+        });
+        return groups;
+    }, [animateurs]);
 
     return (
         <div className="bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
@@ -37,6 +64,7 @@ export default function FrancePage() {
                         <p className="text-gray-600">Aucun animateur disponible pour le moment.</p>
                     </div>
                 ) : (
+<<<<<<< HEAD
                     (() => {
                         // Group animateurs by region
                         const groupedByRegion = animateurs.reduce((acc, animateur) => {
@@ -78,6 +106,36 @@ export default function FrancePage() {
                             </div>
                         );
                     })()
+=======
+                    <div className="space-y-8">
+                        {Object.entries(groupedAnimateurs).map(([departement, animateursGroup]) => (
+                            <div key={departement} className="space-y-4">
+                                {/* Encabezado del departamento */}
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-2 bg-gradient-to-r from-[#F25A38] to-[#F29057] text-white px-4 py-2 rounded-lg shadow-md">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                        </svg>
+                                        <h3 className="text-lg font-bold">
+                                            {departement === 'Autres' ? 'Autres' : `Département ${departement}`}
+                                        </h3>
+                                    </div>
+                                    <div className="flex-1 h-0.5 bg-gradient-to-r from-[#F2B988]/50 to-transparent rounded-full"></div>
+                                    <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                                        {animateursGroup.length} {animateursGroup.length === 1 ? 'animateur' : 'animateurs'}
+                                    </span>
+                                </div>
+                                
+                                {/* Grid de tarjetas del departamento */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {animateursGroup.map(a => (
+                                        <AnimateurSimpleCard key={a._id} animateur={a} />
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+>>>>>>> f5d3b23bf24f7319f3798077e5549765482621ac
                 )}
             </div>
         </div>
