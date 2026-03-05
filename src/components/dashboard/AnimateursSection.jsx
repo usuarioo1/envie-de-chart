@@ -332,7 +332,89 @@ export default function AnimateursSection() {
                     <div className="text-center py-12 bg-gray-50 rounded-lg">
                         <p className="text-gray-500">Aucun animateur trouvé</p>
                     </div>
+                ) : selectedCountry === 'france' ? (
+                    // Grouped by region for France
+                    (() => {
+                        // Group animateurs by region
+                        const groupedByRegion = animateurs.reduce((acc, animateur) => {
+                            const region = animateur.region || 'Sans région';
+                            if (!acc[region]) {
+                                acc[region] = [];
+                            }
+                            acc[region].push(animateur);
+                            return acc;
+                        }, {});
+
+                        // Sort regions alphabetically, but put "Sans région" at the end
+                        const sortedRegions = Object.keys(groupedByRegion).sort((a, b) => {
+                            if (a === 'Sans région') return 1;
+                            if (b === 'Sans région') return -1;
+                            return a.localeCompare(b, 'fr');
+                        });
+
+                        return (
+                            <div className="space-y-8">
+                                {sortedRegions.map((region) => (
+                                    <div key={region}>
+                                        <h3 className="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-indigo-300">
+                                            {region}
+                                            <span className="ml-2 text-sm font-normal text-gray-600">
+                                                ({groupedByRegion[region].length} animateur{groupedByRegion[region].length > 1 ? 's' : ''})
+                                            </span>
+                                        </h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                                            {groupedByRegion[region].map((animateur) => (
+                                                <div
+                                                    key={animateur._id}
+                                                    className={`border rounded-xl p-4 hover:shadow-md transition-all h-full flex flex-col ${animateur.isActive ? 'border-indigo-200 bg-indigo-50/50' : 'border-gray-200 bg-gray-50 opacity-60'
+                                                        }`}
+                                                >
+                                                    <div className="flex flex-col h-full">
+                                                        <div className="flex items-start gap-3 mb-3">
+                                                            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shrink-0">
+                                                                {animateur.name.charAt(0)}
+                                                            </div>
+                                                            <div className="flex-1 min-w-0">
+                                                                <h3 className="text-sm font-semibold text-gray-900 truncate" title={animateur.name}>{animateur.name}</h3>
+                                                                {!animateur.isActive && (
+                                                                    <span className="inline-block px-2 py-0.5 text-xs font-medium bg-gray-200 text-gray-600 rounded-full mt-1">
+                                                                        Inactif
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                        <div className="flex-1 space-y-1 text-xs text-gray-600 mb-3">
+                                                            <p className="truncate" title={animateur.country}><strong>Pays:</strong> {animateur.country}</p>
+                                                            {animateur.city && <p className="truncate" title={animateur.city}><strong>Ville:</strong> {animateur.city}</p>}
+                                                            {animateur.phone && <p className="truncate" title={animateur.phone}><strong>Tél:</strong> {animateur.phone}</p>}
+                                                            {animateur.email && <p className="truncate" title={animateur.email}><strong>Email:</strong> {animateur.email}</p>}
+                                                            {animateur.region && <p className="truncate" title={animateur.region}><strong>Région:</strong> {animateur.region}</p>}
+                                                        </div>
+                                                        <div className="flex gap-2">
+                                                            <button
+                                                                onClick={() => handleAnimateurEdit(animateur)}
+                                                                className="flex-1 px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                                                            >
+                                                                Modifier
+                                                            </button>
+                                                            <button
+                                                                onClick={() => handleAnimateurDelete(animateur._id)}
+                                                                className="flex-1 px-3 py-1.5 text-xs font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                                                            >
+                                                                Supprimer
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        );
+                    })()
                 ) : (
+                    // Regular grid for other countries
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
                         {animateurs.map((animateur) => (
                             <div

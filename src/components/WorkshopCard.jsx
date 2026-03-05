@@ -182,7 +182,7 @@ const WorkshopCard = ({ workshop }) => {
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                                Nom complet <span className="text-red-500">*</span>
+                                Nom et prénom <span className="text-red-500">*</span>
                             </label>
                             <input
                                 type="text"
@@ -192,7 +192,7 @@ const WorkshopCard = ({ workshop }) => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F25A38] focus:border-transparent transition-all"
-                                placeholder="Votre nom"
+                                placeholder="Votre nom et prénom"
                             />
                         </div>
 
