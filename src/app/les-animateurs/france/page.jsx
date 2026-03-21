@@ -64,49 +64,6 @@ export default function FrancePage() {
                         <p className="text-gray-600">Aucun animateur disponible pour le moment.</p>
                     </div>
                 ) : (
-<<<<<<< HEAD
-                    (() => {
-                        // Group animateurs by region
-                        const groupedByRegion = animateurs.reduce((acc, animateur) => {
-                            const region = animateur.region || 'Sans région';
-                            if (!acc[region]) {
-                                acc[region] = [];
-                            }
-                            acc[region].push(animateur);
-                            return acc;
-                        }, {});
-
-                        // Sort regions alphabetically, but put "Sans région" at the end
-                        const sortedRegions = Object.keys(groupedByRegion).sort((a, b) => {
-                            if (a === 'Sans région') return 1;
-                            if (b === 'Sans région') return -1;
-                            return a.localeCompare(b, 'fr');
-                        });
-
-                        return (
-                            <div className="space-y-12">
-                                {sortedRegions.map((region) => (
-                                    <div key={region}>
-                                        <div className="mb-6">
-                                            <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                                                {region}
-                                                <span className="ml-3 text-lg font-normal text-slate-600">
-                                                    ({groupedByRegion[region].length} animateur{groupedByRegion[region].length > 1 ? 's' : ''})
-                                                </span>
-                                            </h3>
-                                            <div className="h-1 w-20 bg-gradient-to-r from-[#F25A38] to-[#F2B988] rounded-full"></div>
-                                        </div>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                            {groupedByRegion[region].map(a => (
-                                                <AnimateurSimpleCard key={a._id} animateur={a} />
-                                            ))}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        );
-                    })()
-=======
                     <div className="space-y-8">
                         {Object.entries(groupedAnimateurs).map(([departement, animateursGroup]) => (
                             <div key={departement} className="space-y-4">
@@ -135,7 +92,6 @@ export default function FrancePage() {
                             </div>
                         ))}
                     </div>
->>>>>>> f5d3b23bf24f7319f3798077e5549765482621ac
                 )}
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import ContactMessage from '@/models/ContactMessage';
+import { sendContactEmail } from '@/lib/brevo';
 
 export async function POST(request) {
     try {
@@ -24,6 +25,9 @@ export async function POST(request) {
             interest: interest || '',
             message
         });
+
+        sendContactEmail({ name, email, subject, message, interest })
+            .catch(err => console.error('Brevo email error (contact):', err));
 
         return NextResponse.json(
             {

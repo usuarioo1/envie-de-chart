@@ -5,7 +5,6 @@ import Image from 'next/image';
 import liensData from '@/utils/contact/liens.json';
 import qualopi from '@/assets/qualiopi.png';
 import qualopiCertificated from '@/assets/Qualiopi-certificated.jpg';
-import ContactForm from '@/components/ContactForm';
 
 
 export default function LiensPage() {
@@ -144,8 +143,6 @@ export default function LiensPage() {
                             </div>
                         </div>
 
-                        {/* Contact Form */}
-                        <ContactForm />
                     </div>
                 </div>
             </div>

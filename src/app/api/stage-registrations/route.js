@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import StageRegistration from '@/models/StageRegistration';
 import Stage from '@/models/Stage';
+import { sendStageRegistrationEmail } from '@/lib/brevo';
 
 export async function GET(request) {
     try {
@@ -86,6 +87,14 @@ export async function POST(request) {
             source: source || 'calendar',
             status: 'pending'
         });
+
+        sendStageRegistrationEmail({
+            name,
+            email,
+            phone,
+            stageTitle: stage.title,
+            stageDate: stage.date
+        }).catch(err => console.error('Brevo email error (stage-registration):', err));
 
         return NextResponse.json(
             { success: true, data: registration, message: 'Inscription réussie!' },

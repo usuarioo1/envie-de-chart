@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import WorkshopRegistration from '@/models/WorkshopRegistration';
 import Workshop from '@/models/Workshop';
+import { sendWorkshopRegistrationEmail } from '@/lib/brevo';
 
 // GET - Fetch all registrations or registrations for a specific workshop
 export async function GET(request) {
@@ -91,6 +92,14 @@ export async function POST(request) {
             phone,
             status: 'pending'
         });
+
+        sendWorkshopRegistrationEmail({
+            name,
+            email,
+            phone,
+            workshopTitle: workshop.title,
+            workshopDate: workshop.date
+        }).catch(err => console.error('Brevo email error (workshop-registration):', err));
 
         return NextResponse.json(
             { success: true, data: registration, message: 'Inscription réussie!' },

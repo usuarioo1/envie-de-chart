@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import StageInquiry from '@/models/StageInquiry';
+import { sendStageInquiryEmail } from '@/lib/brevo';
 
 export async function GET() {
     try {
@@ -21,7 +22,15 @@ export async function POST(request) {
         const body = await request.json();
         
         const inquiry = await StageInquiry.create(body);
-        
+
+        sendStageInquiryEmail({
+            name: body.name,
+            email: body.email,
+            phone: body.phone,
+            formationTitle: body.formationTitle,
+            formationNumber: body.formationNumber
+        }).catch(err => console.error('Brevo email error (stage-inquiry):', err));
+
         return NextResponse.json({ success: true, data: inquiry }, { status: 201 });
     } catch (error) {
         return NextResponse.json(
