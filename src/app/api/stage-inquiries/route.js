@@ -23,13 +23,17 @@ export async function POST(request) {
         
         const inquiry = await StageInquiry.create(body);
 
-        sendStageInquiryEmail({
-            name: body.name,
-            email: body.email,
-            phone: body.phone,
-            formationTitle: body.formationTitle,
-            formationNumber: body.formationNumber
-        }).catch(err => console.error('Brevo email error (stage-inquiry):', err));
+        try {
+            await sendStageInquiryEmail({
+                name: body.name,
+                email: body.email,
+                phone: body.phone,
+                formationTitle: body.formationTitle,
+                formationNumber: body.formationNumber
+            });
+        } catch (err) {
+            console.error('Brevo email error (stage-inquiry):', err);
+        }
 
         return NextResponse.json({ success: true, data: inquiry }, { status: 201 });
     } catch (error) {

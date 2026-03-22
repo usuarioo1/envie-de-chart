@@ -88,13 +88,17 @@ export async function POST(request) {
             status: 'pending'
         });
 
-        sendStageRegistrationEmail({
-            name,
-            email,
-            phone,
-            stageTitle: stage.title,
-            stageDate: stage.date
-        }).catch(err => console.error('Brevo email error (stage-registration):', err));
+        try {
+            await sendStageRegistrationEmail({
+                name,
+                email,
+                phone,
+                stageTitle: stage.title,
+                stageDate: stage.date
+            });
+        } catch (err) {
+            console.error('Brevo email error (stage-registration):', err);
+        }
 
         return NextResponse.json(
             { success: true, data: registration, message: 'Inscription réussie!' },

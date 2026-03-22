@@ -93,13 +93,17 @@ export async function POST(request) {
             status: 'pending'
         });
 
-        sendWorkshopRegistrationEmail({
-            name,
-            email,
-            phone,
-            workshopTitle: workshop.title,
-            workshopDate: workshop.date
-        }).catch(err => console.error('Brevo email error (workshop-registration):', err));
+        try {
+            await sendWorkshopRegistrationEmail({
+                name,
+                email,
+                phone,
+                workshopTitle: workshop.title,
+                workshopDate: workshop.date
+            });
+        } catch (err) {
+            console.error('Brevo email error (workshop-registration):', err);
+        }
 
         return NextResponse.json(
             { success: true, data: registration, message: 'Inscription réussie!' },
