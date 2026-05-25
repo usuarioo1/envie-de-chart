@@ -94,7 +94,14 @@ export default function WorkshopsSection({ userId }) {
 
             const data = await response.json();
             if (data.success) {
-                fetchWorkshops();
+                const savedWorkshop = data.data;
+                setWorkshops(prev => {
+                    const next = editingWorkshop
+                        ? prev.map(workshop => workshop._id === savedWorkshop._id ? savedWorkshop : workshop)
+                        : [...prev, savedWorkshop];
+
+                    return [...next].sort((a, b) => createDisplayDate(a.date) - createDisplayDate(b.date));
+                });
                 setWorkshopFormData({ title: '', description: '', date: '', price: '' });
                 setShowWorkshopForm(false);
                 setEditingWorkshop(null);
@@ -142,7 +149,10 @@ export default function WorkshopsSection({ userId }) {
             });
 
             const data = await response.json();
-            if (data.success) fetchWorkshops();
+            if (data.success) {
+                setWorkshops(prev => prev.filter(workshop => workshop._id !== workshopId));
+                setRegistrations(prev => prev.filter(registration => registration.workshopId !== workshopId));
+            }
         } catch (err) {
             console.error('Error deleting workshop:', err);
         }
@@ -157,7 +167,9 @@ export default function WorkshopsSection({ userId }) {
             });
 
             const data = await response.json();
-            if (data.success) fetchRegistrations();
+            if (data.success) {
+                setRegistrations(prev => prev.filter(registration => registration._id !== registrationId));
+            }
         } catch (err) {
             console.error('Error deleting registration:', err);
         }
@@ -172,7 +184,11 @@ export default function WorkshopsSection({ userId }) {
             });
 
             const data = await response.json();
-            if (data.success) fetchRegistrations();
+            if (data.success && data.data) {
+                setRegistrations(prev => prev.map(registration =>
+                    registration._id === registrationId ? data.data : registration
+                ));
+            }
         } catch (err) {
             console.error('Error updating registration status:', err);
         }

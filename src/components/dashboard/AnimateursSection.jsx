@@ -67,7 +67,28 @@ export default function AnimateursSection() {
 
             const data = await response.json();
 
-            if (data.success) {
+            if (data.success && data.data) {
+                const savedAnimateur = data.data;
+                const matchesCurrentFilter = selectedCountry === 'all' || savedAnimateur.country === selectedCountry;
+
+                setAnimateurs(prev => {
+                    const exists = prev.some(animateur => animateur._id === savedAnimateur._id);
+
+                    if (!matchesCurrentFilter) {
+                        return prev.filter(animateur => animateur._id !== savedAnimateur._id);
+                    }
+
+                    const next = exists
+                        ? prev.map(animateur => animateur._id === savedAnimateur._id ? savedAnimateur : animateur)
+                        : [...prev, savedAnimateur];
+
+                    return [...next].sort((a, b) => {
+                        const byCountry = (a.country || '').localeCompare(b.country || '');
+                        if (byCountry !== 0) return byCountry;
+                        return (a.name || '').localeCompare(b.name || '');
+                    });
+                });
+
                 setAnimateurFormData({
                     name: '',
                     country: '',
@@ -80,7 +101,6 @@ export default function AnimateursSection() {
                 });
                 setShowAnimateurForm(false);
                 setEditingAnimateur(null);
-                fetchAnimateurs();
             }
         } catch (err) {
             console.error('Error submitting animateur:', err);
@@ -126,7 +146,9 @@ export default function AnimateursSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchAnimateurs();
+            if (data.success) {
+                setAnimateurs(prev => prev.filter(animateur => animateur._id !== animateurId));
+            }
         } catch (err) {
             console.error('Error deleting animateur:', err);
         }

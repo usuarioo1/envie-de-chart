@@ -2,6 +2,10 @@ import connectDB from '@/lib/mongodb';
 import Animateur from '@/models/Animateur';
 import { NextResponse } from 'next/server';
 
+const PUBLIC_CACHE_HEADERS = {
+  'Cache-Control': 'public, s-maxage=120, stale-while-revalidate=600'
+};
+
 // GET - Obtener animateurs (con filtro opcional por país)
 export async function GET(request) {
   try {
@@ -12,12 +16,17 @@ export async function GET(request) {
     
     const filter = country ? { country, isActive: true } : { isActive: true };
     
-    const animateurs = await Animateur.find(filter).sort({ country: 1, name: 1 });
+    const animateurs = await Animateur.find(filter)
+      .sort({ country: 1, name: 1 })
+      .lean();
     
-    return NextResponse.json({ 
-      success: true, 
-      data: animateurs 
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        data: animateurs
+      },
+      { headers: PUBLIC_CACHE_HEADERS }
+    );
   } catch (error) {
     console.error('Error fetching animateurs:', error);
     return NextResponse.json(

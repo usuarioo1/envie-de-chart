@@ -54,7 +54,7 @@ export default function DashboardPage() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-6">
               {/* Logo */}
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <Image
                   src="/assets/icon/icono.png"
                   alt="Envie de Chanter Logo"

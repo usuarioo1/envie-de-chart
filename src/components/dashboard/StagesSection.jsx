@@ -103,7 +103,14 @@ export default function StagesSection() {
 
             const data = await response.json();
 
-            if (data.success) {
+            if (data.success && data.data) {
+                const savedStage = data.data;
+                setStages(prev => {
+                    if (isEditing) {
+                        return prev.map(stage => stage._id === savedStage._id ? savedStage : stage);
+                    }
+                    return [savedStage, ...prev];
+                });
                 setStageFormData({
                     title: '',
                     date: '',
@@ -117,7 +124,6 @@ export default function StagesSection() {
                 });
                 setShowStageForm(false);
                 setEditingStage(null);
-                fetchStages();
             }
         } catch (err) {
             console.error('Error submitting stage:', err);
@@ -165,7 +171,10 @@ export default function StagesSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchStages();
+            if (data.success) {
+                setStages(prev => prev.filter(stage => stage._id !== stageId));
+                setStageRegistrations(prev => prev.filter(registration => registration.stageId !== stageId));
+            }
         } catch (err) {
             console.error('Error deleting stage:', err);
         }
@@ -180,7 +189,9 @@ export default function StagesSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchStageRegistrations();
+            if (data.success) {
+                setStageRegistrations(prev => prev.filter(registration => registration._id !== registrationId));
+            }
         } catch (err) {
             console.error('Error deleting registration:', err);
         }
@@ -195,7 +206,11 @@ export default function StagesSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchStageRegistrations();
+            if (data.success && data.data) {
+                setStageRegistrations(prev => prev.map(registration =>
+                    registration._id === registrationId ? data.data : registration
+                ));
+            }
         } catch (err) {
             console.error('Error updating registration status:', err);
         }
@@ -210,7 +225,11 @@ export default function StagesSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchStageInquiries();
+            if (data.success && data.data) {
+                setStageInquiries(prev => prev.map(inquiry =>
+                    inquiry._id === inquiryId ? data.data : inquiry
+                ));
+            }
         } catch (err) {
             console.error('Error updating inquiry:', err);
         }
@@ -225,7 +244,9 @@ export default function StagesSection() {
             });
 
             const data = await response.json();
-            if (data.success) fetchStageInquiries();
+            if (data.success) {
+                setStageInquiries(prev => prev.filter(inquiry => inquiry._id !== inquiryId));
+            }
         } catch (err) {
             console.error('Error deleting inquiry:', err);
         }

@@ -3,6 +3,10 @@ import connectDB from '@/lib/mongodb';
 import Workshop from '@/models/Workshop';
 import User from '@/models/User'; // Needed for populate to work
 
+const PUBLIC_CACHE_HEADERS = {
+    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
+};
+
 // GET - Fetch all workshops or a specific workshop by ID
 export async function GET(request) {
     try {
@@ -11,22 +15,31 @@ export async function GET(request) {
         const id = searchParams.get('id');
 
         if (id) {
-            const workshop = await Workshop.findById(id).populate('createdBy', 'name email');
+            const workshop = await Workshop.findById(id)
+                .populate('createdBy', 'name email')
+                .lean();
             if (!workshop) {
                 return NextResponse.json(
                     { success: false, error: 'Atelier non trouvé' },
                     { status: 404 }
                 );
             }
-            return NextResponse.json({ success: true, data: workshop });
+            return NextResponse.json(
+                { success: true, data: workshop },
+                { headers: PUBLIC_CACHE_HEADERS }
+            );
         }
 
         // Fetch all active workshops, sorted by date (upcoming first)
         const workshops = await Workshop.find({ isActive: true })
             .populate('createdBy', 'name email')
-            .sort({ date: 1 });
+            .sort({ date: 1 })
+            .lean();
 
-        return NextResponse.json({ success: true, data: workshops });
+        return NextResponse.json(
+            { success: true, data: workshops },
+            { headers: PUBLIC_CACHE_HEADERS }
+        );
     } catch (error) {
         console.error('Error fetching workshops:', error);
         return NextResponse.json(

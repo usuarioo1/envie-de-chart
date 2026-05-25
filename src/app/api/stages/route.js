@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Stage from '@/models/Stage';
 
+const PUBLIC_CACHE_HEADERS = {
+    'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
+};
+
 export async function GET(request) {
     try {
         await connectDB();
@@ -10,14 +14,17 @@ export async function GET(request) {
         const status = searchParams.get('status');
 
         if (id) {
-            const stage = await Stage.findById(id);
+            const stage = await Stage.findById(id).lean();
             if (!stage) {
                 return NextResponse.json(
                     { success: false, error: 'Stage non trouvé' },
                     { status: 404 }
                 );
             }
-            return NextResponse.json({ success: true, data: stage });
+            return NextResponse.json(
+                { success: true, data: stage },
+                { headers: PUBLIC_CACHE_HEADERS }
+            );
         }
 
         let query = {};
@@ -25,8 +32,13 @@ export async function GET(request) {
             query.status = status;
         }
 
-        const stages = await Stage.find(query).sort({ date: 1, createdAt: -1 });
-        return NextResponse.json({ success: true, data: stages });
+        const stages = await Stage.find(query)
+            .sort({ date: 1, createdAt: -1 })
+            .lean();
+        return NextResponse.json(
+            { success: true, data: stages },
+            { headers: PUBLIC_CACHE_HEADERS }
+        );
     } catch (error) {
         console.error('Error fetching stages:', error);
         return NextResponse.json(

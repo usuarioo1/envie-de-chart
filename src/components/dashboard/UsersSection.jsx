@@ -36,8 +36,10 @@ export default function UsersSection({ currentUserId }) {
 
             const data = await response.json();
 
-            if (data.success) {
-                fetchUsers();
+            if (data.success && data.data) {
+                setUsers(prev => prev.map(user =>
+                    user._id === userId ? { ...user, role: data.data.role } : user
+                ));
             }
         } catch (err) {
             console.error('Error updating role:', err);
@@ -89,7 +91,7 @@ export default function UsersSection({ currentUserId }) {
                                 <tr key={u._id} className="hover:bg-gray-50 transition-colors">
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="flex-shrink-0 h-10 w-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-md">
+                                            <div className="shrink-0 h-10 w-10 bg-linear-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-md">
                                                 <span className="text-white font-medium text-sm">
                                                     {u.name.charAt(0).toUpperCase()}
                                                 </span>
