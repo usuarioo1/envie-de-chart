@@ -2,6 +2,25 @@
 import { useState, useEffect } from 'react';
 import { fromStorageFormat, createDisplayDate } from '@/utils/dateUtils';
 
+function formatWorkshopDateForCard(dateInput) {
+    if (!dateInput) return 'Non précisée';
+
+    const isoString = dateInput instanceof Date
+        ? dateInput.toISOString()
+        : String(dateInput);
+
+    const match = isoString.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if (!match) return String(dateInput);
+
+    const [, year, month, day, hour, minute] = match;
+    const monthNames = [
+        'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+        'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
+    ];
+
+    return `${parseInt(day, 10)} ${monthNames[parseInt(month, 10) - 1]} ${year} à ${hour}:${minute}`;
+}
+
 export default function WorkshopsSection({ userId }) {
     const [workshops, setWorkshops] = useState([]);
     const [registrations, setRegistrations] = useState([]);
@@ -357,7 +376,18 @@ export default function WorkshopsSection({ userId }) {
                 ) : (
                     <div className="space-y-4">
                         {registrations.map((registration) => {
+                            const registrationDate = new Date(registration.createdAt);
+                            const registrationDateInParis = registrationDate.toLocaleDateString('fr-FR', {
+                                timeZone: 'Europe/Paris'
+                            });
+                            const registrationTimeInParis = registrationDate.toLocaleTimeString('fr-FR', {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                timeZone: 'Europe/Paris'
+                            });
                             const workshop = workshops.find(w => w._id === registration.workshopId);
+                            const workshopTitle = registration.workshopTitle || workshop?.title || 'Atelier non disponible';
+                            const workshopDateText = formatWorkshopDateForCard(registration.workshopDate || workshop?.date);
                             return (
                                 <div key={registration._id} className="border border-gray-200 rounded-xl p-5 hover:shadow-md transition-all">
                                     <div className="flex justify-between items-start">
@@ -370,8 +400,15 @@ export default function WorkshopsSection({ userId }) {
                                                 <div className="mt-2 space-y-1 text-sm text-gray-600">
                                                     <p><strong>Email:</strong> {registration.email}</p>
                                                     <p><strong>Téléphone:</strong> {registration.phone}</p>
-                                                    {workshop && <p><strong>Atelier:</strong> {workshop.title}</p>}
-                                                    <p><strong>Date d'inscription:</strong> {new Date(registration.createdAt).toLocaleDateString('fr-FR')}</p>
+                                                    <p><strong>Atelier:</strong> {workshopTitle}</p>
+                                                    <p>
+                                                        <strong>Date et heure de l'atelier:</strong>{' '}
+                                                        {workshopDateText} <span className="text-xs opacity-75">(heure de Paris)</span>
+                                                    </p>
+                                                    <p>
+                                                        <strong>Date d'inscription:</strong>{' '}
+                                                        {registrationDateInParis} à {registrationTimeInParis} <span className="text-xs opacity-75">(heure de Paris)</span>
+                                                    </p>
                                                     <p>
                                                         <strong>Statut:</strong>{' '}
                                                         <span className={`inline-block px-2 py-1 text-xs font-semibold rounded-full ${registration.status === 'confirmed' ? 'bg-green-100 text-green-800' :
