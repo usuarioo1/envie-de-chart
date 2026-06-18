@@ -1,4 +1,6 @@
 import formatorsData from '@/utils/les formateurs/formateus.json';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbJsonLd, peopleJsonLd } from '@/lib/structuredData';
 
 const introHeading = formatorsData.intro;
 const profiles = formatorsData.profiles.map((profile) => ({
@@ -9,11 +11,20 @@ const profiles = formatorsData.profiles.map((profile) => ({
 export const metadata = {
     title: 'Les formateurs',
     description: 'Portraits des formatrices et formateurs associés au chant prénatal et à la psychophonie.',
+    alternates: {
+        canonical: '/chant-prenatal/les-formateurs',
+    },
 };
 
 export default function LesFormateursPage() {
     return (
         <main className="px-4 py-12">
+            <JsonLd data={breadcrumbJsonLd([
+                { name: 'Accueil', path: '/' },
+                { name: 'Chant prénatal', path: '/chant-prenatal/le-chant-prenatal-psychophonie' },
+                { name: 'Les formateurs', path: '/chant-prenatal/les-formateurs' },
+            ])} />
+            <JsonLd data={peopleJsonLd(profiles.map((profile) => ({ name: profile.title })))} />
             <div className="mx-auto max-w-5xl space-y-10">
                 <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
                     <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">Le Chant Prénatal</p>

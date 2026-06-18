@@ -47,10 +47,7 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (data.success) {
-        // Store user data in localStorage
-        localStorage.setItem('user', JSON.stringify(data.user));
-        // Redirect to dashboard
-        router.push('/dashboard');
+        router.push('/users');
       } else {
         setError(data.error || 'Registration failed');
       }

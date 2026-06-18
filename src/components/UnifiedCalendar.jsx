@@ -1,27 +1,51 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import WorkshopCard from '@/components/WorkshopCard';
 import StageCard from '@/components/StageCard';
 import { createDisplayDate } from '@/utils/dateUtils';
 
-const UnifiedCalendar = () => {
-    const [events, setEvents] = useState([]);
-    const [loading, setLoading] = useState(true);
+function parseStageDate(dateString) {
+    if (!dateString) return new Date();
+
+    const dateMatch = dateString.match(/(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})/);
+    if (dateMatch) {
+        const [, day, month, year] = dateMatch;
+        return new Date(year, month - 1, day);
+    }
+
+    const parsedDate = new Date(dateString);
+    return isNaN(parsedDate) ? new Date() : parsedDate;
+}
+
+function buildEvents(workshops, stages) {
+    const now = new Date();
+    return [
+        ...workshops
+            .filter(workshop => createDisplayDate(workshop.date) >= now)
+            .map(workshop => ({
+                ...workshop,
+                type: 'workshop',
+                startDate: createDisplayDate(workshop.date)
+            })),
+        ...stages.map(stage => ({
+            ...stage,
+            type: 'stage',
+            startDate: parseStageDate(stage.date)
+        }))
+    ].sort((a, b) => a.startDate - b.startDate);
+}
+
+const UnifiedCalendar = ({ initialWorkshops = null, initialStages = null }) => {
+    const hasInitialData = initialWorkshops !== null && initialStages !== null;
+    const [events, setEvents] = useState(() => buildEvents(initialWorkshops || [], initialStages || []));
+    const [loading, setLoading] = useState(!hasInitialData);
     const [error, setError] = useState(null);
     const [filter, setFilter] = useState('all'); // 'all', 'workshops', 'stages'
     const [viewMode, setViewMode] = useState('calendar'); // 'calendar', 'list'
     const [selectedDayKey, setSelectedDayKey] = useState(null);
 
-    useEffect(() => {
-        fetchAllEvents();
-    }, []);
-
-    useEffect(() => {
-        setSelectedDayKey(null);
-    }, [filter]);
-
-    const fetchAllEvents = async () => {
+    const fetchAllEvents = useCallback(async () => {
         try {
             setLoading(true);
 
@@ -70,24 +94,16 @@ const UnifiedCalendar = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, []);
 
-    // Parse stage date string to Date object
-    const parseStageDate = (dateString) => {
-        // Handle various date formats from stages
-        if (!dateString) return new Date();
+    useEffect(() => {
+        if (hasInitialData) return;
+        fetchAllEvents();
+    }, [fetchAllEvents, hasInitialData]);
 
-        // Try to extract a date from the string
-        const dateMatch = dateString.match(/(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})/);
-        if (dateMatch) {
-            const [, day, month, year] = dateMatch;
-            return new Date(year, month - 1, day);
-        }
-
-        // Try other formats
-        const parsedDate = new Date(dateString);
-        return isNaN(parsedDate) ? new Date() : parsedDate;
-    };
+    useEffect(() => {
+        setSelectedDayKey(null);
+    }, [filter]);
 
     const getDayKey = (date) => {
         const year = date.getFullYear();
@@ -205,7 +221,7 @@ const UnifiedCalendar = () => {
             {/* Header and Filters */}
             <div className="space-y-6">
                 <div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">Calendrier</h1>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-2">Calendrier</h2>
                     <p className="text-lg text-gray-600">
                         {filteredEvents.length} événement{filteredEvents.length > 1 ? 's' : ''} à venir
                     </p>

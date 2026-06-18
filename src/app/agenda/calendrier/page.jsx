@@ -1,13 +1,27 @@
 import UnifiedCalendar from '@/components/UnifiedCalendar';
+import JsonLd from '@/components/JsonLd';
+import { getPublicStages, getPublicWorkshops } from '@/lib/publicData';
+import { breadcrumbJsonLd, eventsJsonLd } from '@/lib/structuredData';
 
 export const metadata = {
-    title: 'Calendrier - Ateliers & Formations | Envie de Chanter',
+    title: 'Calendrier - Ateliers & Formations',
     description: 'Découvrez tous nos ateliers de chant et formations disponibles. Inscrivez-vous directement en ligne.',
 };
 
-export default function CalendrierPage() {
+export default async function CalendrierPage() {
+    const [workshops, stages] = await Promise.all([
+        getPublicWorkshops(),
+        getPublicStages(),
+    ]);
+
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20">
+            <JsonLd data={breadcrumbJsonLd([
+                { name: 'Accueil', path: '/' },
+                { name: 'Agenda', path: '/agenda/calendrier' },
+                { name: 'Calendrier', path: '/agenda/calendrier' },
+            ])} />
+            <JsonLd data={eventsJsonLd(workshops, stages)} />
             <div className="mx-auto max-w-7xl px-4 py-12">
                 {/* Hero Section */}
                 <div className="mb-12 rounded-3xl border-2 border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-[0_20px_50px_-20px_rgba(242,90,56,0.25)]">
@@ -24,7 +38,7 @@ export default function CalendrierPage() {
                     </h1>
                     <p className="text-lg text-gray-600 max-w-3xl">
                         Retrouvez tous nos ateliers de chant et formations en un seul endroit.
-                        Filtrez par type d'événement et inscrivez-vous directement en ligne.
+                        Filtrez par type d&apos;événement et inscrivez-vous directement en ligne.
                     </p>
 
                     {/* Quick Info Pills */}
@@ -51,7 +65,7 @@ export default function CalendrierPage() {
                 </div>
 
                 {/* Calendar Component */}
-                <UnifiedCalendar />
+                <UnifiedCalendar initialWorkshops={workshops} initialStages={stages} />
             </div>
         </main>
     );

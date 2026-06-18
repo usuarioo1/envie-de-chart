@@ -1,6 +1,7 @@
 import connectDB from '@/lib/mongodb';
 import Animateur from '@/models/Animateur';
 import { NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/auth';
 
 const PUBLIC_CACHE_HEADERS = {
   'Cache-Control': 'public, s-maxage=120, stale-while-revalidate=600'
@@ -39,6 +40,9 @@ export async function GET(request) {
 // POST - Crear nuevo animateur
 export async function POST(request) {
   try {
+    const { response } = await requireAdmin(request);
+    if (response) return response;
+
     await connectDB();
     
     const body = await request.json();
@@ -68,6 +72,9 @@ export async function POST(request) {
 // PUT - Actualizar animateur
 export async function PUT(request) {
   try {
+    const { response } = await requireAdmin(request);
+    if (response) return response;
+
     await connectDB();
     
     const body = await request.json();
@@ -106,6 +113,9 @@ export async function PUT(request) {
 // DELETE - Eliminar animateur
 export async function DELETE(request) {
   try {
+    const { response } = await requireAdmin(request);
+    if (response) return response;
+
     await connectDB();
     
     const { searchParams } = new URL(request.url);

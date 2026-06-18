@@ -4,14 +4,16 @@ import { useState, useEffect } from 'react';
 import WorkshopCard from '@/components/WorkshopCard';
 import { createDisplayDate } from '@/utils/dateUtils';
 
-const DynamicWorkshopsSection = () => {
-    const [workshops, setWorkshops] = useState([]);
-    const [loading, setLoading] = useState(true);
+const DynamicWorkshopsSection = ({ initialWorkshops = null }) => {
+    const hasInitialData = initialWorkshops !== null;
+    const [workshops, setWorkshops] = useState(initialWorkshops || []);
+    const [loading, setLoading] = useState(!hasInitialData);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (hasInitialData) return;
         fetchWorkshops();
-    }, []);
+    }, [hasInitialData]);
 
     const fetchWorkshops = async () => {
         try {

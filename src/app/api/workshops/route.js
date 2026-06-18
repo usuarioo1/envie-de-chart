@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Workshop from '@/models/Workshop';
 import User from '@/models/User'; // Needed for populate to work
+import { getAdminUserFromRequest, requireAdmin } from '@/lib/auth';
 
 const PUBLIC_CACHE_HEADERS = {
     'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
@@ -13,10 +14,12 @@ export async function GET(request) {
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');
+        const admin = await getAdminUserFromRequest(request);
+        const creatorFields = admin ? 'name email' : 'name';
 
         if (id) {
             const workshop = await Workshop.findById(id)
-                .populate('createdBy', 'name email')
+                .populate('createdBy', creatorFields)
                 .lean();
             if (!workshop) {
                 return NextResponse.json(
@@ -32,7 +35,7 @@ export async function GET(request) {
 
         // Fetch all active workshops, sorted by date (upcoming first)
         const workshops = await Workshop.find({ isActive: true })
-            .populate('createdBy', 'name email')
+            .populate('createdBy', creatorFields)
             .sort({ date: 1 })
             .lean();
 
@@ -52,12 +55,15 @@ export async function GET(request) {
 // POST - Create a new workshop
 export async function POST(request) {
     try {
+        const { user, response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
-        const { title, description, date, userId, price } = body;
+        const { title, description, date, price } = body;
 
         // Validation
-        if (!title || !description || !date || !userId) {
+        if (!title || !description || !date) {
             return NextResponse.json(
                 { success: false, error: 'Tous les champs sont requis' },
                 { status: 400 }
@@ -84,7 +90,7 @@ export async function POST(request) {
             date: date, // Store as-is from datetime-local input
             dayOfWeek,
             price: price || 0,
-            createdBy: userId,
+            createdBy: user.id,
         });
 
         const populatedWorkshop = await Workshop.findById(workshop._id).populate('createdBy', 'name email');
@@ -105,6 +111,9 @@ export async function POST(request) {
 // PUT - Update a workshop
 export async function PUT(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { id, title, description, date, isActive, price } = body;
@@ -162,6 +171,9 @@ export async function PUT(request) {
 // DELETE - Delete a workshop (soft delete by setting isActive to false)
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');

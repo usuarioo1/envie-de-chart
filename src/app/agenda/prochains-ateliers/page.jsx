@@ -2,6 +2,9 @@ import agendaNext from '@/utils/agenda/agendaProximosTaller.json';
 import DynamicWorkshopsSection from '@/components/DynamicWorkshopsSection';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { getPublicWorkshops } from '@/lib/publicData';
+import { breadcrumbJsonLd, eventsJsonLd } from '@/lib/structuredData';
 
 const formatLocation = (location) => {
     if (!location) return null;
@@ -34,13 +37,23 @@ const Pill = ({ children }) => (
 export const metadata = {
     title: agendaNext.meta.title,
     description: agendaNext.meta.organisation,
+    alternates: {
+        canonical: '/agenda/prochains-ateliers',
+    },
 };
 
-export default function AgendaProchainsAteliersPage() {
+export default async function AgendaProchainsAteliersPage() {
     const { meta, media, contactGeneral, cours, agenda } = agendaNext;
+    const workshops = await getPublicWorkshops();
 
     return (
         <main className="px-4 py-12">
+            <JsonLd data={breadcrumbJsonLd([
+                { name: 'Accueil', path: '/' },
+                { name: 'Agenda', path: '/agenda/calendrier' },
+                { name: 'Prochains ateliers', path: '/agenda/prochains-ateliers' },
+            ])} />
+            <JsonLd data={eventsJsonLd(workshops, [])} />
             <div className="mx-auto max-w-6xl space-y-10">
                 <header className="rounded-3xl border border-[#F2B988] bg-gradient-to-br from-white via-[#F2B988]/20 to-[#ABA0F2]/10 p-8 shadow-sm">
                     <p className="text-xs uppercase tracking-[0.35em] text-[#F29057]">{meta.organisation}</p>
@@ -94,7 +107,7 @@ export default function AgendaProchainsAteliersPage() {
                     </Link>
                 </div>
                 {/* Dynamic Workshops from Database */}
-                <DynamicWorkshopsSection />
+                <DynamicWorkshopsSection initialWorkshops={workshops} />
 
                 {media?.length ? (
                     <section className="rounded-3xl border border-[#F2B988] bg-white/80 p-6">

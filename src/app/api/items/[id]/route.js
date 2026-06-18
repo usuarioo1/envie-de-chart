@@ -1,10 +1,14 @@
 import connectDB from '@/lib/mongodb';
 import Item from '@/models/Item';
 import { NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/auth';
 
 // GET - Obtener un item por ID
 export async function GET(request, { params }) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { id } = params;
 
@@ -33,6 +37,9 @@ export async function GET(request, { params }) {
 // PUT - Actualizar un item por ID
 export async function PUT(request, { params }) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { id } = params;
         const body = await request.json();
@@ -69,6 +76,9 @@ export async function PUT(request, { params }) {
 // DELETE - Eliminar un item por ID
 export async function DELETE(request, { params }) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { id } = params;
 

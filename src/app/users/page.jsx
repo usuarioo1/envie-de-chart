@@ -13,23 +13,25 @@ export default function UsersPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Check if user is logged in
-    const userData = localStorage.getItem('user');
-    if (!userData) {
-      router.push('/login');
-      return;
-    }
-    
-    const parsedUser = JSON.parse(userData);
-    
-    // Check if user is admin
-    if (parsedUser.role !== 'admin') {
-      router.push('/');
-      return;
-    }
-    
-    setUser(parsedUser);
-    fetchUsers();
+    const loadSession = async () => {
+      try {
+        const response = await fetch('/api/auth/session', { cache: 'no-store' });
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+          router.replace('/login');
+          return;
+        }
+
+        setUser(data.user);
+        await fetchUsers();
+      } catch {
+        router.replace('/login');
+        setLoading(false);
+      }
+    };
+
+    loadSession();
   }, [router]);
 
   const fetchUsers = async () => {

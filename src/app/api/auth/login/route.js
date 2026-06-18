@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import bcrypt from 'bcryptjs';
+import { setSessionCookie } from '@/lib/auth';
 
 export async function POST(req) {
   try {
@@ -24,15 +26,30 @@ export async function POST(req) {
       );
     }
 
-    // Check password (in production, use bcrypt to hash passwords)
-    if (user.password !== password) {
+    const passwordIsHashed = user.password.startsWith('$2');
+    const passwordMatches = passwordIsHashed
+      ? await bcrypt.compare(password, user.password)
+      : user.password === password;
+
+    if (!passwordMatches) {
       return NextResponse.json(
         { success: false, error: 'Invalid credentials' },
         { status: 401 }
       );
     }
 
-    // Return user data (without password)
+    if (user.role !== 'admin') {
+      return NextResponse.json(
+        { success: false, error: 'Administrator access required' },
+        { status: 403 }
+      );
+    }
+
+    if (!passwordIsHashed) {
+      user.password = await bcrypt.hash(password, 12);
+      await user.save();
+    }
+
     const userData = {
       id: user._id,
       name: user.name,
@@ -40,7 +57,9 @@ export async function POST(req) {
       role: user.role
     };
 
-    return NextResponse.json({ success: true, user: userData });
+    const response = NextResponse.json({ success: true, user: userData });
+    setSessionCookie(response, user);
+    return response;
   } catch (error) {
     return NextResponse.json(
       { success: false, error: error.message },

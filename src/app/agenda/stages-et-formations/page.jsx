@@ -1,6 +1,9 @@
 import agendaData from '@/utils/agenda/agenda.json';
 import DynamicStagesSection from '@/components/DynamicStagesSection';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { getPublicStages } from '@/lib/publicData';
+import { breadcrumbJsonLd, eventsJsonLd } from '@/lib/structuredData';
 
 const formatDateLabel = (session) => {
     if (session.date) return session.date;
@@ -48,13 +51,23 @@ const SectionCard = ({ eyebrow, title, children }) => (
 export const metadata = {
     title: agendaData.meta.title,
     description: `${agendaData.meta.organisation} · ${agendaData.meta.periode}`,
+    alternates: {
+        canonical: '/agenda/stages-et-formations',
+    },
 };
 
-export default function AgendaStagesEtFormationsPage() {
+export default async function AgendaStagesEtFormationsPage() {
     const { meta, media, documents, formations, international, modules } = agendaData;
+    const stages = await getPublicStages();
 
     return (
         <main className="px-4 py-12 bg-gradient-to-b from-[#ABA0F2]/10 via-white to-[#F2B988]/20 min-h-screen">
+            <JsonLd data={breadcrumbJsonLd([
+                { name: 'Accueil', path: '/' },
+                { name: 'Agenda', path: '/agenda/calendrier' },
+                { name: 'Stages et formations', path: '/agenda/stages-et-formations' },
+            ])} />
+            <JsonLd data={eventsJsonLd([], stages)} />
             <div className="mx-auto max-w-6xl">
                 {/* Contenedor unificado */}
                 <div className="rounded-3xl border-2 border-[#F2B988] bg-white/80 shadow-[0_20px_50px_-20px_rgba(242,90,56,0.25)] overflow-hidden">
@@ -91,7 +104,7 @@ export default function AgendaStagesEtFormationsPage() {
                         </div>
 
                         {/* Dynamic Stages from Database */}
-                        <DynamicStagesSection />
+                        <DynamicStagesSection initialStages={stages} />
 
                         {media?.length ? (
                             <SectionCard eyebrow="À diffuser" title="Sélection média">
@@ -118,75 +131,7 @@ export default function AgendaStagesEtFormationsPage() {
                             </SectionCard>
                         ) : null}
 
-                        <SectionCard eyebrow="Programme principal" title="Formations & stages">
-                            <div className="grid gap-5 lg:grid-cols-2">
-                                {formations.map((item, index) => {
-                                    const dateLabel = formatDateLabel(item);
-                                    const locationLabel = formatLocation(item.location);
-                                    const key = `${item.title}-${dateLabel ?? 'na'}-${index}`;
-
-                                    return (
-                                        <article key={key} className="rounded-2xl border border-slate-100 bg-white/70 p-5">
-                                            <div className="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-widest text-rose-400">
-                                                <span>{item.type?.replace(/-/g, ' ') ?? 'session'}</span>
-                                                <span>{dateLabel}</span>
-                                            </div>
-                                            <h3 className="mt-3 text-xl font-semibold text-slate-900">{item.title}</h3>
-                                            {item.description && <p className="mt-2 text-sm text-slate-600">{item.description}</p>}
-                                            <dl className="mt-4 space-y-2 text-sm text-slate-700">
-                                                {item.time && (
-                                                    <div className="flex items-center justify-between">
-                                                        <dt className="text-slate-500">Horaire</dt>
-                                                        <dd>{item.time}</dd>
-                                                    </div>
-                                                )}
-                                                {locationLabel && (
-                                                    <div className="flex items-center justify-between">
-                                                        <dt className="text-slate-500">Lieu</dt>
-                                                        <dd className="text-right">{locationLabel}</dd>
-                                                    </div>
-                                                )}
-                                                {item.formatrice && (
-                                                    <div className="flex items-center justify-between">
-                                                        <dt className="text-slate-500">Formatrice</dt>
-                                                        <dd>{item.formatrice}</dd>
-                                                    </div>
-                                                )}
-                                                {item.intervenants && (
-                                                    <div>
-                                                        <dt className="text-slate-500">Intervenants</dt>
-                                                        <dd className="mt-1 flex flex-col gap-1 text-right">
-                                                            {Object.entries(item.intervenants).map(([role, name]) => (
-                                                                <span key={role} className="capitalize">{role} · {name}</span>
-                                                            ))}
-                                                        </dd>
-                                                    </div>
-                                                )}
-                                                {item.contact && (
-                                                    <div>
-                                                        <dt className="text-slate-500">Contact</dt>
-                                                        <dd className="mt-1 text-right">{formatContact(item.contact)}</dd>
-                                                    </div>
-                                                )}
-                                            </dl>
-                                            <div className="mt-4 flex flex-wrap gap-2">
-                                                {item.qualifications?.map((qualification) => (
-                                                    <Pill key={qualification}>{qualification}</Pill>
-                                                ))}
-                                                {item.links?.map((link) => (
-                                                    <span
-                                                        key={link}
-                                                        className="rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600"
-                                                    >
-                                                        {link}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </article>
-                                    );
-                                })}
-                            </div>
-                        </SectionCard>
+                        
 
                         {international?.length ? (
                             <SectionCard eyebrow="Présence internationale" title="Tournées & partenariats">

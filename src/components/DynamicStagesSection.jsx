@@ -3,14 +3,16 @@
 import { useState, useEffect } from 'react';
 import StageCard from '@/components/StageCard';
 
-const DynamicStagesSection = () => {
-    const [stages, setStages] = useState([]);
-    const [loading, setLoading] = useState(true);
+const DynamicStagesSection = ({ initialStages = null }) => {
+    const hasInitialData = initialStages !== null;
+    const [stages, setStages] = useState(initialStages || []);
+    const [loading, setLoading] = useState(!hasInitialData);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (hasInitialData) return;
         fetchStages();
-    }, []);
+    }, [hasInitialData]);
 
     const fetchStages = async () => {
         try {

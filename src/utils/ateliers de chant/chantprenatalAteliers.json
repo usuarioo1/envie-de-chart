@@ -1,18 +1,13 @@
 {
     "title": "Chant prénatal – ateliers",
-    "subtitle": "Chanter en attendant son bébé, quelle bonne idée !",
-    "media": {
-        "franceMusique": {
-            "title": "France Musique, \"Faites passer\" la chronique de Nathalie Moller sur le chant prénatal",
-            "url": "https://www.francemusique.fr/emissions/faites-passer/qu-est-ce-que-le-chant-prenatal-71589"
-        }
-    },
+    "subtitle": "Le chant prénatal : les ateliers en groupe ou la pratique individuelle",
     "description": [
         "Chanter en attendant son bébé, quelle bonne idée !",
         "Les exercices pratiqués pendant les séances favorisent le bien-être tout au long de la grossesse.",
         "Des chansons variées évoquent la maternité. Un travail de sons spécifiques est proposé pour l'accouchement.",
         "Le groupe retrouve avec plaisir maman et bébé pendant ses premiers mois."
     ],
+
     "contact": {
         "name": "Marie-Laure Potel",
         "email": "marielaurepotel@orange.fr",

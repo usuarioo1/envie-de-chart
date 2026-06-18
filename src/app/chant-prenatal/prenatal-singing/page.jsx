@@ -78,6 +78,9 @@ const BlockRenderer = () => {
 export const metadata = {
     title: 'Prenatal Singing',
     description: 'Exploration complète du chant prénatal et de la psychophonie en anglais.',
+    alternates: {
+        canonical: '/chant-prenatal/prenatal-singing',
+    },
 };
 
 export default function PrenatalSingingPage() {

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Stage from '@/models/Stage';
+import { getAdminUserFromRequest, requireAdmin } from '@/lib/auth';
 
 const PUBLIC_CACHE_HEADERS = {
     'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300'
@@ -12,9 +13,13 @@ export async function GET(request) {
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');
         const status = searchParams.get('status');
+        const admin = await getAdminUserFromRequest(request);
 
         if (id) {
-            const stage = await Stage.findById(id).lean();
+            const stage = await Stage.findOne({
+                _id: id,
+                ...(admin ? {} : { status: 'published' })
+            }).lean();
             if (!stage) {
                 return NextResponse.json(
                     { success: false, error: 'Stage non trouvé' },
@@ -27,8 +32,8 @@ export async function GET(request) {
             );
         }
 
-        let query = {};
-        if (status) {
+        let query = admin ? {} : { status: 'published' };
+        if (admin && status) {
             query.status = status;
         }
 
@@ -50,6 +55,9 @@ export async function GET(request) {
 
 export async function POST(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { title, date, location, description, contact, email, phone, formatrice, country } = body;
@@ -89,6 +97,9 @@ export async function POST(request) {
 
 export async function PUT(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { id, ...updateData } = body;
@@ -125,6 +136,9 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');

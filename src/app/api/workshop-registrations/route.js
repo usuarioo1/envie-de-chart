@@ -3,10 +3,14 @@ import connectDB from '@/lib/mongodb';
 import WorkshopRegistration from '@/models/WorkshopRegistration';
 import Workshop from '@/models/Workshop';
 import { sendWorkshopRegistrationEmail } from '@/lib/brevo';
+import { requireAdmin } from '@/lib/auth';
 
 // GET - Fetch all registrations or registrations for a specific workshop
 export async function GET(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const workshopId = searchParams.get('workshopId');
@@ -121,6 +125,9 @@ export async function POST(request) {
 // PUT - Update registration status
 export async function PUT(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { id, status } = body;
@@ -158,6 +165,9 @@ export async function PUT(request) {
 // DELETE - Delete a registration
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');

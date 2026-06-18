@@ -3,9 +3,13 @@ import connectDB from '@/lib/mongodb';
 import StageRegistration from '@/models/StageRegistration';
 import Stage from '@/models/Stage';
 import { sendStageRegistrationEmail } from '@/lib/brevo';
+import { requireAdmin } from '@/lib/auth';
 
 export async function GET(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const stageId = searchParams.get('stageId');
@@ -115,6 +119,9 @@ export async function POST(request) {
 
 export async function PUT(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { id, status } = body;
@@ -151,6 +158,9 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');

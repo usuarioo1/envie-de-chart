@@ -1,9 +1,14 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import bcrypt from 'bcryptjs';
+import { requireAdmin } from '@/lib/auth';
 
 export async function POST(req) {
   try {
+    const { response } = await requireAdmin(req);
+    if (response) return response;
+
     await connectDB();
     const { name, email, password } = await req.json();
 
@@ -24,11 +29,12 @@ export async function POST(req) {
       );
     }
 
-    // Create new user (in production, hash the password with bcrypt)
+    const hashedPassword = await bcrypt.hash(password, 12);
+
     const user = await User.create({
       name,
       email: email.toLowerCase(),
-      password,
+      password: hashedPassword,
       role: 'user' // Default role
     });
 

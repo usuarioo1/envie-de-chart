@@ -2,9 +2,13 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import StageInquiry from '@/models/StageInquiry';
 import { sendStageInquiryEmail } from '@/lib/brevo';
+import { requireAdmin } from '@/lib/auth';
 
-export async function GET() {
+export async function GET(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const inquiries = await StageInquiry.find({}).sort({ createdAt: -1 });
         return NextResponse.json({ success: true, data: inquiries });
@@ -46,6 +50,9 @@ export async function POST(request) {
 
 export async function PUT(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
         const { id, isRead } = body;
@@ -81,6 +88,9 @@ export async function PUT(request) {
 
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const { searchParams } = new URL(request.url);
         const id = searchParams.get('id');

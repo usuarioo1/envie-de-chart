@@ -14,28 +14,31 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in
-    const userData = localStorage.getItem('user');
-    if (!userData) {
-      router.push('/login');
-      return;
-    }
+    const loadSession = async () => {
+      try {
+        const response = await fetch('/api/auth/session', { cache: 'no-store' });
+        const data = await response.json();
 
-    const parsedUser = JSON.parse(userData);
+        if (!response.ok || !data.success) {
+          router.replace('/login');
+          return;
+        }
 
-    // Check if user is admin
-    if (parsedUser.role !== 'admin') {
-      router.push('/');
-      return;
-    }
+        setUser(data.user);
+      } catch {
+        router.replace('/login');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    setUser(parsedUser);
-    setLoading(false);
+    loadSession();
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem('user');
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
     router.push('/login');
+    router.refresh();
   };
 
   if (loading) {

@@ -1,10 +1,14 @@
 import connectDB from '@/lib/mongodb';
 import Item from '@/models/Item';
 import { NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/auth';
 
 // GET - Obtener todos los items
-export async function GET() {
+export async function GET(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const items = await Item.find({});
 
@@ -24,6 +28,9 @@ export async function GET() {
 // POST - Crear un nuevo item
 export async function POST(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
         const body = await request.json();
 

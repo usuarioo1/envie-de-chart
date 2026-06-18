@@ -65,6 +65,9 @@ const BlockRenderer = () => {
 export const metadata = {
     title: 'Canto Prenatal',
     description: 'Información en español sobre talleres, formación y fundamentos de la psicofonía.',
+    alternates: {
+        canonical: '/chant-prenatal/canto-prenatal',
+    },
 };
 
 export default function CantoPrenatalPage() {

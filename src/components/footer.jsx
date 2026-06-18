@@ -10,7 +10,7 @@ const Footer = () => {
         { label: 'Agenda', href: '/agenda/prochains-ateliers' },
         { label: 'Chant prénatal', href: '/chant-prenatal/canto-prenatal' },
         { label: 'Ateliers de chant', href: '/ateliers-de-chant/chant-collectif' },
-        { label: 'Contact', href: '/contact' },
+        { label: 'Contact', href: '/contact/liens' },
     ];
 
     return (
@@ -32,7 +32,7 @@ const Footer = () => {
                             </h3>
                         </div>
                         <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                            Le chant prénatal et la psychophonie au service du bien-être et de l'épanouissement personnel.
+                            Le chant prénatal et la psychophonie au service du bien-être et de l&apos;épanouissement personnel.
                         </p>
                         <div className="text-slate-700">
                             <p className="text-sm mb-1">

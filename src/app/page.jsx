@@ -5,6 +5,12 @@ import ScrollingItems from '@/components/ScrollingItems'
 
 import React from 'react'
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
+
 const page = () => {
   return (
     <div>

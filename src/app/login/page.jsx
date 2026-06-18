@@ -1,11 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function LoginPage() {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -30,10 +27,7 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
-        // Store user data in localStorage
-        localStorage.setItem('user', JSON.stringify(data.user));
-        // Redirect to dashboard
-        router.push('/dashboard');
+        window.location.href = '/dashboard';
       } else {
         setError(data.error || 'Login failed');
       }

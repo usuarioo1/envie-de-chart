@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import ContactMessage from '@/models/ContactMessage';
 import { sendContactEmail } from '@/lib/brevo';
+import { requireAdmin } from '@/lib/auth';
 
 export async function POST(request) {
     try {
@@ -46,8 +47,11 @@ export async function POST(request) {
     }
 }
 
-export async function GET() {
+export async function GET(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
 
         const messages = await ContactMessage.find().sort({ createdAt: -1 });
@@ -70,6 +74,9 @@ export async function GET() {
 
 export async function DELETE(request) {
     try {
+        const { response } = await requireAdmin(request);
+        if (response) return response;
+
         await connectDB();
 
         const { searchParams } = new URL(request.url);

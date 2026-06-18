@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
 import connectDB from '@/lib/mongodb';
 import Event from '@/models/Event';
+import { requireAdmin } from '@/lib/auth';
 
 // GET all events
-export async function GET() {
+export async function GET(request) {
   try {
+    const { response } = await requireAdmin(request);
+    if (response) return response;
+
     await connectDB();
     const events = await Event.find({}).populate('createdBy', 'name email').sort({ date: 1 });
     return NextResponse.json({ success: true, data: events });
@@ -19,11 +23,14 @@ export async function GET() {
 // POST create new event
 export async function POST(req) {
   try {
+    const { user, response } = await requireAdmin(req);
+    if (response) return response;
+
     await connectDB();
     const body = await req.json();
-    const { title, description, price, location, date, userId } = body;
+    const { title, description, price, location, date } = body;
 
-    if (!title || !description || price === undefined || !location || !date || !userId) {
+    if (!title || !description || price === undefined || !location || !date) {
       return NextResponse.json(
         { success: false, error: 'Please provide all required fields' },
         { status: 400 }
@@ -36,7 +43,7 @@ export async function POST(req) {
       price,
       location,
       date,
-      createdBy: userId
+      createdBy: user.id
     });
 
     return NextResponse.json({ success: true, data: event });
@@ -51,6 +58,9 @@ export async function POST(req) {
 // DELETE an event
 export async function DELETE(req) {
   try {
+    const { response } = await requireAdmin(req);
+    if (response) return response;
+
     await connectDB();
     const { searchParams } = new URL(req.url);
     const id = searchParams.get('id');

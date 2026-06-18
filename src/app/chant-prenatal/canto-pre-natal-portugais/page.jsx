@@ -65,6 +65,9 @@ const BlockRenderer = () => {
 export const metadata = {
     title: 'Canto Pré-natal em portugais',
     description: 'Descrição em português das formações, fundamentos e psicofonia aplicada.',
+    alternates: {
+        canonical: '/chant-prenatal/canto-pre-natal-portugais',
+    },
 };
 
 export default function CantoPrenatalPortugaisPage() {
