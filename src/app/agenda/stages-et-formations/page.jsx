@@ -129,62 +129,14 @@ export default async function AgendaStagesEtFormationsPage() {
                                     ))}
                                 </div>
                             </SectionCard>
-                        ) : null}
+                        
 
                         
 
-                        {international?.length ? (
-                            <SectionCard eyebrow="Présence internationale" title="Tournées & partenariats">
-                                <div className="grid gap-4 md:grid-cols-2">
-                                    {international.map((entry) => (
-                                        <article key={entry.title} className="rounded-2xl border border-slate-100 bg-white/70 p-5">
-                                            <div className="text-xs uppercase tracking-[0.35em] text-rose-400">
-                                                {entry.country}
-                                            </div>
-                                            <h3 className="mt-2 text-lg font-semibold text-slate-900">{entry.title}</h3>
-                                            <p className="text-sm text-slate-600">{[entry.city, entry.cities?.join(', '), entry.date, entry.year]
-                                                .filter(Boolean)
-                                                .join(' · ')}</p>
-                                            {entry.description && <p className="mt-2 text-sm text-slate-600">{entry.description}</p>}
-                                            {entry.contact && (
-                                                <p className="mt-3 text-sm text-slate-500">{formatContact(entry.contact)}</p>
-                                            )}
-                                        </article>
-                                    ))}
-                                </div>
-                            </SectionCard>
-                        ) : null}
+                        
 
-                        {modules?.length ? (
-                            <SectionCard eyebrow="Parcours" title="Modules complémentaires">
-                                <div className="grid gap-4 md:grid-cols-2">
-                                    {modules.map((module) => (
-                                        <article key={module.title} className="rounded-2xl border border-slate-100 bg-white/70 p-5">
-                                            <div className="text-xs uppercase tracking-[0.35em] text-rose-400">
-                                                {module.year ?? 'Cycle continu'}
-                                            </div>
-                                            <h3 className="mt-2 text-lg font-semibold text-slate-900">{module.title}</h3>
-                                            <p className="text-sm text-slate-600">{[module.module, module.modules?.join(', '), module.mode]
-                                                .filter(Boolean)
-                                                .join(' · ')}</p>
-                                            {module.condition && <p className="mt-2 text-sm text-slate-600">{module.condition}</p>}
-                                            {module.location && (
-                                                <p className="mt-2 text-sm text-slate-600">{formatLocation(module.location)}</p>
-                                            )}
-                                            <div className="mt-3 flex flex-wrap gap-2">
-                                                {module.qualifications?.map((qualification) => (
-                                                    <Pill key={qualification}>{qualification}</Pill>
-                                                ))}
-                                                {module.formatrice && (
-                                                    <span className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-600">
-                                                        {module.formatrice}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </article>
-                                    ))}
-                                </div>
-                            </SectionCard>
+                        
+                            
                         ) : null}
                     </div>
                 </div>
